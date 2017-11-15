@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SBuilderX", "SBuilderX.vbproj", "{90C3DD83-D726-43DF-87B9-97192F3CFAD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90C3DD83-D726-43DF-87B9-97192F3CFAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C3DD83-D726-43DF-87B9-97192F3CFAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C3DD83-D726-43DF-87B9-97192F3CFAD7}.Debug|x86.ActiveCfg = Debug|x86
+		{90C3DD83-D726-43DF-87B9-97192F3CFAD7}.Debug|x86.Build.0 = Debug|x86
+		{90C3DD83-D726-43DF-87B9-97192F3CFAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C3DD83-D726-43DF-87B9-97192F3CFAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C3DD83-D726-43DF-87B9-97192F3CFAD7}.Release|x86.ActiveCfg = Release|x86
+		{90C3DD83-D726-43DF-87B9-97192F3CFAD7}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66E02885-1A86-4BD7-BDD3-86C36E712849}
+	EndGlobalSection
+EndGlobal

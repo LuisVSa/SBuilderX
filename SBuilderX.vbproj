@@ -1,0 +1,2511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90C3DD83-D726-43DF-87B9-97192F3CFAD7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SBuilderX.My.MyApplication</StartupObject>
+    <RootNamespace>SBuilderX</RootNamespace>
+    <AssemblyName>SBuilderX</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>86F4E41A93BE0777EA882BCA2D6590DF819AD953</ManifestCertificateThumbprint>
+    <ManifestKeyFile>SBuilder_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <ApplicationIcon>Resources\fsx.ico</ApplicationIcon>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignAssembly>false</SignAssembly>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\LIXO\SBuilder\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>true</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <SupportUrl>http://www.ptsim.com/forum/forum.asp%3fFORUM_ID=18</SupportUrl>
+    <ProductName>SBuilder</ProductName>
+    <PublisherName>PTSim</PublisherName>
+    <MinimumRequiredVersion>3.0.1.1</MinimumRequiredVersion>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>3.1.4.2</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42020,42021,42022</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42020,42021,42022</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <NoWarn>41999,42016,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>Off</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FSUIPCClient, Version=1.1.2397.13, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\FSUIPCClient.dll</HintPath>
+    </Reference>
+    <Reference Include="jmBglLib, Version=0.99.3340.14999, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\jmBglLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="TileServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\TileServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing.Imaging" />
+    <Import Include="System.IO" />
+    <Import Include="System.Runtime.InteropServices" />
+    <Import Include="System.Runtime.Serialization.Formatters.Binary" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="classDBFWriter.vb" />
+    <Compile Include="classDBFReader.vb" />
+    <Compile Include="classBGLReader.vb" />
+    <Compile Include="classMDLReader.vb" />
+    <Compile Include="classSHPReader.vb" />
+    <Compile Include="classSliceFill.vb" />
+    <Compile Include="frmArcGisMap.Designer.vb">
+      <DependentUpon>frmArcGisMap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmArcGisMap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmObjectFolders.Designer.vb">
+      <DependentUpon>FrmObjectFolders.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmObjectFolders.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTilesServers.Designer.vb">
+      <DependentUpon>frmTilesServers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTilesServers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGotoPos.Designer.vb">
+      <DependentUpon>frmGotoPos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGotoPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWaiting.Designer.vb">
+      <DependentUpon>frmWaiting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWaiting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGBuilding.Designer.vb">
+      <DependentUpon>frmGBuilding.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGBuilding.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExtrusions.Designer.vb">
+      <DependentUpon>frmExtrusions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExtrusions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRAW.Designer.vb">
+      <DependentUpon>frmRAW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRAW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFSXSettings.Designer.vb">
+      <DependentUpon>frmFSXSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFSXSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLibrary.Designer.vb">
+      <DependentUpon>frmLibrary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLibrary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackground.Designer.vb">
+      <DependentUpon>frmBackground.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackground.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScreen.designer.vb">
+      <DependentUpon>frmScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTexPoly.Designer.vb">
+      <DependentUpon>frmTexPoly.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTexPoly.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmObjectsP.Designer.vb">
+      <DependentUpon>frmObjectsP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmObjectsP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExcludesP.designer.vb">
+      <DependentUpon>frmExcludesP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExcludesP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExtraMacro.designer.vb">
+      <DependentUpon>frmExtraMacro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExtraMacro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrder.designer.vb">
+      <DependentUpon>frmOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaxSign.designer.vb">
+      <DependentUpon>frmTaxSign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaxSign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTiles.designer.vb">
+      <DependentUpon>frmTiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWatersP.Designer.vb">
+      <DependentUpon>frmWatersP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWatersP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLandsP.Designer.vb">
+      <DependentUpon>frmLandsP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLandsP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImage.Designer.vb">
+      <DependentUpon>frmImage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFind.Designer.vb">
+      <DependentUpon>frmFind.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFind.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.vb">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSurfer.Designer.vb">
+      <DependentUpon>frmSurfer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSurfer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltitudeLine.Designer.vb">
+      <DependentUpon>frmAltitudeLine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAltitudeLine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransparency.Designer.vb">
+      <DependentUpon>frmTransparency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransparency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapsP.Designer.vb">
+      <DependentUpon>frmMapsP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapsP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalibrate.Designer.vb">
+      <DependentUpon>frmCalibrate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalibrate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBGL.Designer.vb">
+      <DependentUpon>frmBGL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBGL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSHPPoly.Designer.vb">
+      <DependentUpon>frmSHPPoly.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSHPPoly.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTerrainExclude.Designer.vb">
+      <DependentUpon>frmTerrainExclude.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTerrainExclude.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltitudePoly.Designer.vb">
+      <DependentUpon>frmAltitudePoly.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAltitudePoly.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLWidth.Designer.vb">
+      <DependentUpon>frmLWidth.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLWidth.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLPPointsP.Designer.vb">
+      <DependentUpon>frmLPPointsP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLPPointsP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSHPLine.Designer.vb">
+      <DependentUpon>frmSHPLine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSHPLine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPolysP.Designer.vb">
+      <DependentUpon>frmPolysP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPolysP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLinesP.Designer.vb">
+      <DependentUpon>frmLinesP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLinesP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLPSample.Designer.vb">
+      <DependentUpon>frmLPSample.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLPSample.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLPSmooth.Designer.vb">
+      <DependentUpon>frmLPSmooth.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLPSmooth.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProjectP.Designer.vb">
+      <DependentUpon>frmProjectP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProjectP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStart.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStart.Designer.vb">
+      <DependentUpon>frmStart.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGoogleMap.designer.vb">
+      <DependentUpon>frmGoogleMap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGoogleMap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduleKML.vb" />
+    <Compile Include="moduleTRIANGLES.vb" />
+    <Compile Include="moduleEDIT.vb" />
+    <Compile Include="moduleEXCLUDES.vb" />
+    <Compile Include="moduleMACROS.vb" />
+    <Compile Include="moduleOBJECTS.vb" />
+    <Compile Include="moduleCLASSES.vb" />
+    <Compile Include="moduleTILES.vb" />
+    <Compile Include="moduleSURFER.vb" />
+    <Compile Include="moduleSHAPE.vb" />
+    <Compile Include="moduleLINES.vb" />
+    <Compile Include="moduleFILE_IO.vb" />
+    <Compile Include="moduleMAIN.vb" />
+    <Compile Include="moduleMAPS.vb" />
+    <Compile Include="modulePOINTS.vb" />
+    <Compile Include="modulePOLYS.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="modulePOPUP.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmArcGisMap.resx">
+      <DependentUpon>frmArcGisMap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmObjectFolders.resx">
+      <DependentUpon>FrmObjectFolders.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTilesServers.resx">
+      <DependentUpon>frmTilesServers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGotoPos.resx">
+      <DependentUpon>frmGotoPos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWaiting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmWaiting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGBuilding.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGBuilding.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExtrusions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmExtrusions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFSXSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFSXSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLibrary.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLibrary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackground.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBackground.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRAW.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRAW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScreen.resx">
+      <DependentUpon>frmScreen.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTexPoly.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTexPoly.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmObjectsP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmObjectsP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExcludesP.resX">
+      <DependentUpon>frmExcludesP.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExtraMacro.resX">
+      <DependentUpon>frmExtraMacro.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLandsP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLandsP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmImage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder.resX">
+      <DependentUpon>frmOrder.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaxSign.resX">
+      <DependentUpon>frmTaxSign.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTiles.resx">
+      <DependentUpon>frmTiles.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWatersP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmWatersP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFind.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFind.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSurfer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSurfer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltitudeLine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAltitudeLine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransparency.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTransparency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapsP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMapsP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalibrate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCalibrate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBGL.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBGL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSHPPoly.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSHPPoly.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTerrainExclude.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTerrainExclude.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltitudePoly.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAltitudePoly.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLWidth.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLWidth.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLPPointsP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLPPointsP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSHPLine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSHPLine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPolysP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPolysP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLinesP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLinesP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLPSample.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLPSample.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLPSmooth.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLPSmooth.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProjectP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProjectP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStart.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmStart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGoogleMap.resx">
+      <DependentUpon>frmGoogleMap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BaseApplicationManifest Include="My Project\app.manifest" />
+    <None Include="app.config" />
+    <None Include="bin\Debug\API\AeroBus.api" />
+    <None Include="bin\Debug\API\BagCarAK.api" />
+    <None Include="bin\Debug\API\BagCarTap1.api" />
+    <None Include="bin\Debug\API\BagCarTap2.api" />
+    <None Include="bin\Debug\API\BagCarYes1.api" />
+    <None Include="bin\Debug\API\BagCarYes2.api" />
+    <None Include="bin\Debug\API\FollowMe.api" />
+    <None Include="bin\Debug\API\FuelGalp.api" />
+    <None Include="bin\Debug\API\FuelShell.api" />
+    <None Include="bin\Debug\API\GateGourmet.api" />
+    <None Include="bin\Debug\API\Lamp0.api" />
+    <None Include="bin\Debug\API\Lamp1.api" />
+    <None Include="bin\Debug\API\Lamp2.api" />
+    <None Include="bin\Debug\API\LAMP_Base.api" />
+    <None Include="bin\Debug\API\Lamp_LPMA.api" />
+    <None Include="bin\Debug\API\Lamp_LPPS.api" />
+    <None Include="bin\Debug\API\Lamp_LPPS1.api" />
+    <None Include="bin\Debug\API\SmallCarTAP.api" />
+    <None Include="bin\Debug\API\SmallCarTriam.api" />
+    <None Include="bin\Debug\API\TapBus1.api" />
+    <None Include="bin\Debug\API\TAPStairs1.api" />
+    <None Include="bin\Debug\API\TAPStairs2.api" />
+    <None Include="bin\Debug\API\Taxi.api" />
+    <None Include="bin\Debug\API\TriamStairs1.api" />
+    <None Include="bin\Debug\API\TriamStairs2.api" />
+    <None Include="bin\Debug\API\Truck1TAP.api" />
+    <None Include="bin\Debug\API\Truck1TRIAM.api" />
+    <None Include="bin\Debug\API\TruckOpenTAP.api" />
+    <None Include="bin\Debug\API\TruckOpenTriam.api" />
+    <None Include="bin\Debug\API\Wind_Generator.api" />
+    <None Include="bin\Debug\ASD\AreaEnd.scm" />
+    <None Include="bin\Debug\ASD\AreaStart.scm" />
+    <None Include="bin\Debug\ASD\AVGas_Tank.scm" />
+    <None Include="bin\Debug\ASD\BlueLight.scm" />
+    <None Include="bin\Debug\ASD\BPAir_Barrel_0.scm" />
+    <None Include="bin\Debug\ASD\BPAir_Barrel_1.scm" />
+    <None Include="bin\Debug\ASD\BPJet_Tank.scm" />
+    <None Include="bin\Debug\ASD\Cancel.scm" />
+    <None Include="bin\Debug\ASD\CargoShip1.scm" />
+    <None Include="bin\Debug\ASD\CargoShip2.scm" />
+    <None Include="bin\Debug\ASD\Fence1.scm" />
+    <None Include="bin\Debug\ASD\Fence2.scm" />
+    <None Include="bin\Debug\ASD\Fence_barb_gray.scm" />
+    <None Include="bin\Debug\ASD\Fence_barb_green.scm" />
+    <None Include="bin\Debug\ASD\Fence_barb_red.scm" />
+    <None Include="bin\Debug\ASD\Fence_gray.scm" />
+    <None Include="bin\Debug\ASD\Fence_green.scm" />
+    <None Include="bin\Debug\ASD\Fence_red.scm" />
+    <None Include="bin\Debug\ASD\FireCar.scm" />
+    <None Include="bin\Debug\ASD\FuelBPAIR.scm" />
+    <None Include="bin\Debug\ASD\FuelTotal.scm" />
+    <None Include="bin\Debug\ASD\LightPole.scm" />
+    <None Include="bin\Debug\ASD\Shell_Barrel_0.scm" />
+    <None Include="bin\Debug\ASD\Shell_Barrel_1.scm" />
+    <None Include="bin\Debug\ASD\Tank_Fence.scm" />
+    <None Include="bin\Debug\ASD\Total_Barrel_0.scm" />
+    <None Include="bin\Debug\ASD\Total_Barrel_1.scm" />
+    <None Include="bin\Debug\Help\SBuilderX313.chm" />
+    <None Include="bin\Debug\Help\SBuilderX313.chw" />
+    <None Include="bin\Debug\SBuilderX.exe.config" />
+    <None Include="bin\Debug\Texture\fence_CLW.dds" />
+    <None Include="bin\Debug\Texture\house_100.bmp.lnk" />
+    <None Include="bin\Debug\Tools\bglcom9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\Tools\bglcomp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\Tools\terrain.cfg" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="SBuilder_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\LibObjects\NewJpegs\" />
+    <Folder Include="bin\Debug\Mdls\" />
+    <Folder Include="bin\Debug\Scenery\" />
+    <Folder Include="bin\Debug\Tools\Shapes\" />
+    <Folder Include="bin\Debug\Tools\Work\" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\API\AeroBus.jpg" />
+    <Content Include="bin\Debug\API\BagCarAK.jpg" />
+    <Content Include="bin\Debug\API\BagCarTAP1.jpg" />
+    <Content Include="bin\Debug\API\BagCarTAP2.jpg" />
+    <Content Include="bin\Debug\API\BagCarYES1.jpg" />
+    <Content Include="bin\Debug\API\BagCarYES2.jpg" />
+    <Content Include="bin\Debug\API\FollowMe.jpg" />
+    <Content Include="bin\Debug\API\FuelGALP.jpg" />
+    <Content Include="bin\Debug\API\FuelSHELL.jpg" />
+    <Content Include="bin\Debug\API\GateGourmet.jpg" />
+    <Content Include="bin\Debug\API\Lamp0.jpg" />
+    <Content Include="bin\Debug\API\Lamp1.jpg" />
+    <Content Include="bin\Debug\API\Lamp2.jpg" />
+    <Content Include="bin\Debug\API\Lamp_Base.jpg" />
+    <Content Include="bin\Debug\API\Lamp_LPMA.jpg" />
+    <Content Include="bin\Debug\API\Lamp_LPPS.jpg" />
+    <Content Include="bin\Debug\API\Lamp_LPPS1.jpg" />
+    <Content Include="bin\Debug\API\SmallCarTAP.jpg" />
+    <Content Include="bin\Debug\API\SmallCarTRIAM.jpg" />
+    <Content Include="bin\Debug\API\TapBus1.jpg" />
+    <Content Include="bin\Debug\API\TAPStairs1.jpg" />
+    <Content Include="bin\Debug\API\TAPStairs2.jpg" />
+    <Content Include="bin\Debug\API\Taxi.jpg" />
+    <Content Include="bin\Debug\API\TriamStairs1.jpg" />
+    <Content Include="bin\Debug\API\TriamStairs2.jpg" />
+    <Content Include="bin\Debug\API\Truck1TAP.jpg" />
+    <Content Include="bin\Debug\API\Truck1Triam.jpg" />
+    <Content Include="bin\Debug\API\TruckOpenTAP.jpg" />
+    <Content Include="bin\Debug\API\TruckOpenTriam.jpg" />
+    <Content Include="bin\Debug\API\Wind_Generator.jpg" />
+    <Content Include="bin\Debug\ASD\Area.jpg" />
+    <Content Include="bin\Debug\ASD\avgas_tank.jpg" />
+    <Content Include="bin\Debug\ASD\BlueLight.jpg" />
+    <Content Include="bin\Debug\ASD\BPAir_Barrel_0.jpg" />
+    <Content Include="bin\Debug\ASD\BPAir_Barrel_1.jpg" />
+    <Content Include="bin\Debug\ASD\bpjet_tank.jpg" />
+    <Content Include="bin\Debug\ASD\Cancel.jpg" />
+    <Content Include="bin\Debug\ASD\cargoship1.jpg" />
+    <Content Include="bin\Debug\ASD\cargoship2.jpg" />
+    <Content Include="bin\Debug\ASD\fence1.jpg" />
+    <Content Include="bin\Debug\ASD\fence2.jpg" />
+    <Content Include="bin\Debug\ASD\Fence_barb_gray.JPG" />
+    <Content Include="bin\Debug\ASD\Fence_barb_green.JPG" />
+    <Content Include="bin\Debug\ASD\Fence_barb_red.JPG" />
+    <Content Include="bin\Debug\ASD\Fence_gray.JPG" />
+    <Content Include="bin\Debug\ASD\Fence_green.JPG" />
+    <Content Include="bin\Debug\ASD\Fence_red.JPG" />
+    <Content Include="bin\Debug\ASD\FireCar.jpg" />
+    <Content Include="bin\Debug\ASD\Fuelbpair.jpg" />
+    <Content Include="bin\Debug\ASD\Fueltotal.jpg" />
+    <Content Include="bin\Debug\ASD\LightPole.jpg" />
+    <Content Include="bin\Debug\ASD\Shell_Barrel_0.jpg" />
+    <Content Include="bin\Debug\ASD\Shell_Barrel_1.jpg" />
+    <Content Include="bin\Debug\ASD\tank_fence.jpg" />
+    <Content Include="bin\Debug\ASD\total_Barrel_0.jpg" />
+    <Content Include="bin\Debug\ASD\total_Barrel_1.jpg" />
+    <Content Include="bin\Debug\FSUIPCClient.dll" />
+    <Content Include="bin\Debug\GenBuildings\Airport-1Story-44x24.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Airport-1Story-64x22.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Airport-2Story-114x30.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Airport-2Story-40x40.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Airport-2Story-41x24.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Airport-2Story-46x20.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Airport-2Story-72x28.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Airport-3Story-51x37.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Apartment,British-33x31.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Apartment,Default-48x48.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Apartment,German-43x42.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Bank-1Story-46x14.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Bank-1Story-Brick-44x21.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Bank-9Story-Red-51x50.JPG" />
+    <Content Include="bin\Debug\GenBuildings\GenBuildings.txt" />
+    <Content Include="bin\Debug\GenBuildings\Government-1Story-51x20.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Government-25Story-Yellow-50x31.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Government-25Story-Yellow-51x30.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Government-2Story-Yellow-31x30.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Government-6Story-Yellow-51x50.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Large-FlatRoof-255x109.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-Box-RidgeRoof-2door-44x20.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-Box-RidgeRoof-3door-66x24.jpg" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-Box-RidgeRoof-4door-80x21.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-Box-RidgeRoof-5door-100x20.jpg" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-Box-RidgeRoof-6door-120x20.jpg" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-Box-RidgeRoof-7door-150x24.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-Box-RidgeRoof-8door-155x33.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-FlatRoof-1door-50x30.jpg" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-FlatRoof-2door-104x70.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-121x30.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-31x30.jpg" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-35x19.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-40x17.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-41x40.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-42x41.jpg" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-43x21.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-50x30.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-63x28.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-65x63.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-72x16.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Medium-RidgeRoof-90x30.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Small-Box-RidgeRoof-3door-77x16.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Small-RidgeRoof-21x16.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Small-RidgeRoof-21x20.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Small-RidgeRoof-31x20.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Small-RidgeRoof-51x22.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Hangar,Small-RidgeRoof-93x30.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-12Story-White-50x40.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-12Story-White-51x50.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-15Story-Tan-50x31.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-17Story-LtGray-51x50.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-17Story-MidGray-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-1Story-MidGray-23x16.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-1Story-MidGray-39x24.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-1Story-MidGray-64x28.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-1Story-Tan-37x20.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-1Story-Tan-40x31.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-1Story-White-23x22.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-1Story-White-43x14.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-1Story-White-52x29.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-20Story-MidGray-51x40.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-20Story-Tan-51x50.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-25Story-MidGray-51x50.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-25Story-White-50x30.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-2Story-MidGray-50x20.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-2Story-PeakedRoof-White-37x36.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-2Story-Red-40x21.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-2Story-White-26x22.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-30Story-Tan-51x50.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-35Story-Red-50x30.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-3Story-MidGray-121x70.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Office-8Story-MidGray-50x20.JPG" />
+    <Content Include="bin\Debug\GenBuildings\ParkingGarage-4Story-Gray-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\ParkingGarage-4Story-Red-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T100-Terminal,Medium-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T102-Terminal,Large-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T104-Terminal,Small-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T106-Terminal,Medium-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T108-Terminal,Large-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T110-Terminal,Small-Hangar-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T113-Terminal,Medium-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T115-Terminal,Large-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T116-Terminal,Small-Hangar-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T121-Terminal,Large-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T121-Terminal,Medium-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T123-Hangar,Small-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T124-Hangar,Medium-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T126-Hangar,Large-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T128-Hangar,Small-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T130-Hangar,Medium-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T132-Hangar,Large-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T134-Hangar,Small-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T136-Hangar,Medium-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T138-Hangar,Large-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T141-Hangar,Small-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T142-Hangar,Medium-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T144-Hangar,Large-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T147-Hangar,Small-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T148-Hangar,Medium-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T151-Hangar,Large-50x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T86-Terminal,Small-60x25.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T88-Terminal,Medium-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T90-Terminal,Large-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T92-Terminal,Small-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T94-Terminal,Medium-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T96-Terminal,Large-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\T98-Terminal,Small-Hangar-70x35.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Warehouse-7Story-FlatRoof-50x50.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Warehouse-FlatRoof-21x15.JPG" />
+    <Content Include="bin\Debug\GenBuildings\Warehouse-FlatRoof-22x16.JPG" />
+    <Content Include="bin\Debug\jmBglLib.dll" />
+    <Content Include="bin\Debug\LibObjects\BackUps\10_04_2014_04_01_29_objects.txt" />
+    <Content Include="bin\Debug\LibObjects\BackUps\10_04_2014_04_16_13_objects.txt" />
+    <Content Include="bin\Debug\LibObjects\BackUps\24_10_2017_17_43_26_objects.txt" />
+    <Content Include="bin\Debug\LibObjects\BackUps\25_05_2009_2_54_25_objects.txt" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{0b5dfe75-3c87-4091-8568-1d70734a066e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{17dc27f4-79a3-4123-8116-dc4a77f90a9a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{184268a6-db82-413b-bb83-37cc625c9a11}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{2db0350a-8cac-4362-89cd-19afe2f14062}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{2e752d64-9169-4d7b-b04c-151b397ad3de}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{2f14a125-5708-4cfb-bcea-f56b124776dc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{355c8a80-4576-4c7d-9b9b-bd0cba07d267}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{3bcb4fb6-6811-42dd-8345-1ec447765e5f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{3e7d2f41-bbf5-42ab-a22a-8b193909b719}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{412cb845-b39f-44f5-aca5-05b3046ffcba}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{46f3d6cb-4270-4373-aee9-89fb38462ea9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{47c97ced-c4e6-4e4b-8e9f-b110989eea62}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{483f721d-a794-4cb3-b3a8-a05b408a89ca}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{55a27b78-4f03-47db-b0ff-5df20b114085}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{5d048bf7-4673-4b0e-83d5-2284f8a424cd}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{65364a8b-bec4-45dd-a5c9-4460bb24db17}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{68bc20d4-f7b2-4406-a058-64648d4a2e33}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{6c2ca2f6-02e6-450e-96d7-80d7de3941b1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{84744a27-000a-447b-af09-dfaca7d0f2b2}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{91465312-80da-42bd-8125-a56081b7359e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{93802d8b-ba4f-45eb-a272-9f029a0feeb3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{a421bac4-0be5-4320-b4db-9073664f413c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{a5080b4f-b334-4184-83ff-b485c2ed699b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{ab068666-d8e8-486b-90d6-164c45557688}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{c545a29f-e2ec-11d2-9c84-00105a0ce62a}.JPG" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{c8520268-4d86-437a-8c18-5ef1ba2e2ed8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{cd637684-75c4-429d-b295-345ea2551369}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{d81468da-ef1e-4b16-ae1f-396b56b35b48}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{e1ae0703-9f4b-4187-b92e-d08698d19658}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{eb32b37f-b396-4537-993c-f271a3f452b5}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{f131f3d9-5f94-4606-82ed-9e61b7d10e16}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{f2e377e7-b1e3-4d8e-86cf-4184b1ca70be}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{f64a1a40-27ff-42ae-b547-50e20d481f33}.jpg" />
+    <Content Include="bin\Debug\LibObjects\BackUps\{f7076488-4d9b-4c18-b7c7-8d56112c2836}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FS9Fences.txt" />
+    <Content Include="bin\Debug\LibObjects\FSXFences.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{0207168a-73c9-4bf2-9efa-5bffbdea3f2d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{047814f7-e832-45fc-b5a0-4f047f8234b0}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{070525d7-7be8-4c9a-b654-352a2c2e704d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{0cb1b4cc-e828-4dc6-a242-2c3cc57040e3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{0da416ee-c523-4d81-a562-9ce503f28468}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{0e2cc764-02b6-4fed-bee4-6b4744e9d483}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{10331b8f-e27b-4965-a7ca-4e4c23e7d476}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{127ae284-25ae-4ec3-bccf-e372bf7df5a3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{176661b4-ed24-48ac-b86b-89050c55094d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{17ef4f0c-6269-49da-82ab-6f0c13730e59}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{188a07c3-4bd2-407a-add9-e35b9df76398}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{19dc0dcc-8e98-41a1-ace7-94f738e315bc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{1c5c16ed-a51e-4f43-9896-27a5d7a67edb}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{1cd112a9-3875-424c-84d0-211d4c6d3b2a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{1ffdec49-78fa-4b0c-8d9c-b56e91b8fbe8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{23a60e33-ef8e-4a31-8d8b-a74e3b791d3b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{2566bd80-3bc4-41ac-990b-e56cb95f96a0}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{2600b95a-7136-4ee9-a9af-fc737482cf83}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{26546ab7-a46d-410e-8586-4a8fc8749929}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{274790e1-5a12-40e5-9fc3-5b256c7bd70f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{2d20884c-a458-452c-b4cb-3c624bd15719}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{2ec60219-7ac0-479a-9756-f5eb3169d1fd}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{2fb72c66-290c-4727-b970-da20984cee83}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{351414fe-124d-4b58-bc47-1bda5f353912}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{3663648f-0977-4c36-8c44-f0626a9ed9dd}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{36d28168-fd1e-49e3-a004-6fcad1673011}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{3893d694-f519-4314-acb6-fe0b3b0d283a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{38d99426-a14e-4974-93be-59436c10e8b1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{3a5affe1-5cb6-43e9-b5d3-00dfc3b86e78}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{3ea0729f-0ac6-45e3-96f9-5dc5eb5c2db6}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{3ef3d3f9-fc95-4109-93b1-eb368b6f58c6}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{401cb2c5-1791-4757-81ea-163fcb6693e8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{42ad286c-f765-430d-a5ce-cecb79c0709b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{4808a0b0-fc56-4d43-917d-8620b36e8cfc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{4a37182c-502f-491d-a5b8-568897fbb43a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{4a841b6d-4e56-412c-8b70-aa4867c72c21}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{4ccf0e1d-ed8e-4eff-a1ed-411e975418ee}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{4dbdce66-bc00-443d-b143-f17e9171e2ba}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{4ecc195e-573d-4b26-be77-c151ac6512af}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{52197b4e-e245-484f-bc58-b6946d5c55e1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{5911c52a-dd21-4673-a3c7-c95c922e5aaf}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{5a003f36-68dd-4f97-b0b3-616863779a85}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{5d74182f-a094-4024-9121-ef116d7216cb}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{604b317e-3938-4a34-b50a-dc16324baf0f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{618157a1-e440-460a-af0e-ced6ef527fa8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{629788e0-149b-45d4-9e3c-79feead566a6}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{63b57b91-7d66-4706-8a73-b0e3a8083e14}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{671dad27-6158-4f10-8a3f-334485851d82}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{6c07357f-286b-417e-894e-764ba7b82a9b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{6cc5c411-da4e-467c-b48b-57bfc5d5b755}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{6f3b7e7d-f368-45ae-9071-08841787be36}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{722b24db-d51c-47fe-bc19-c387259de70a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{73286269-0380-11d3-9c85-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{7328626a-0380-11d3-9c85-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{7328626b-0380-11d3-9c85-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{7395556b-9997-4146-a28d-7a4c510f22ed}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{740ea90f-6007-4ea0-85f7-538ebcc3d8f8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{752f37ae-7a46-434a-a77d-779e3b502790}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{781c4106-8ca9-4925-af80-d075b2f713e9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{787eee91-f65d-45b6-8b13-3ffe07c2f8ad}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{7975000c-01a8-475b-9983-a9d640cf6fbc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{79dd6892-abc8-41d0-9be9-3243856cf7bd}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{7e6ceef0-7ff4-4738-898f-293e4a5fedb6}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{7f38bfbc-e295-4a40-845c-3f3c872cfa82}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{825cdb55-41c4-4cc3-acf3-9562c911c8d5}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{8284e0e7-8feb-4c4d-aa4d-5a46e1cd18aa}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{86135a86-4776-4bdb-8f17-110949504717}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{8690eb95-a8e2-43ad-b351-68d8b5e86ddf}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{87d440f0-dcfb-42a3-9504-61cee8607fcd}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{88d34df2-94ba-4068-a5a0-59609aeecade}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{894e3cfd-beae-4da0-a96b-1e29c3e9cd1a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{8a627c02-a01c-4c37-a3ce-ac26c21601cc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{90e8f97c-2e58-4aa2-b443-ea002d7182cd}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{960a6e2e-2ac3-405f-81f4-83afca51a20b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{983b1668-abdb-418e-b6ea-898731760aee}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{9d4a2f38-bcb7-4124-8de2-b2811d962858}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{9ed1221b-8150-436f-b78d-d225bf0ba8e4}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{a05f4cf6-c877-4bc1-9e6d-7b7a7a334e70}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{a8423a15-fd00-437b-8289-2bfb7f6d7f05}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{abd29b45-7f2b-43bb-aba8-6b07bb4d0b67}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{ac7ff9e6-f5ce-40c4-8d86-36a4bcfcc913}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{b1b58b56-a054-4bb1-ba96-5e799abcd16c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{b3305c76-de7d-4d54-8265-18822f29a91e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{ba58b565-69c3-4465-a8ca-83ba2388fdc6}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{bfcdf52b-9142-415c-8318-03c1b92ca9d9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c01195dc-0a04-402b-aefc-63131ea0ab5c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c0b537c3-808a-48ba-8eff-e1ca1a872e84}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c1b936ad-a25e-42c3-ad48-2dbcb1a3b501}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c235971d-6e5e-40c9-9bb2-7122eddd22ea}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c29b0f6f-9365-4448-b049-4b3d78abe798}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c4d3129e-98f4-43c6-a9b9-1954d0f17ec6}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c545a270-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c545a271-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c545a272-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c545a273-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{c8adcc4a-7579-4987-a9f0-6711062961c9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{cb8f23d5-cc74-490b-8ff8-d516fb711757}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{cc0b2c23-d6a1-441e-a725-01ee4cbf42a8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{ce222c67-b6d5-4369-8f53-5f8e48d6cbe9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{cf880ed7-8cb3-4cfc-a808-0d3194b74bda}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{d0ebb246-92d9-46c7-8476-22758414f27f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{d57cec5b-1803-4871-b5f5-9c41cb5e08a9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{d5ee4aaa-9fe7-43d6-b0e4-195860aae99f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{d7023584-df04-4684-b0ec-a2a30ed726bf}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{dab4ec3c-212a-4404-985f-34e309e4cf5b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{dc57684c-1c92-4bed-ba44-425250f70bf9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{dc6a2ada-3104-4fbc-9030-5b58906c3834}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{e31fc005-e570-4e6e-a80b-a8a9804d60aa}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{e4070a8f-f8e3-47c3-8e18-241ffe815b88}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{e5891559-ab12-4087-bea4-cfebfec54e20}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{e612421d-ad8d-4673-97cc-7adbf0dd0831}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{f3509ea4-5817-46a5-9cd3-eda3c449f25c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{f4442333-bbe4-4156-95bf-2b25123afe97}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{f51fb5e4-b23b-4a8e-a515-4c92176cc179}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{fe978b1b-6b2f-4898-9e5d-a008e8675ed4}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_airport_objects\{ffbf01ac-2d33-4444-869a-0e1e48cdf2c3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{10252c51-f2c0-4681-9883-e19f5d214999}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{197d5e9b-d3c4-440d-a2ff-5e0cbfd12d73}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{1e3f7492-8ebb-49af-815e-78bed9497761}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{25cceb88-e0b3-4ecb-9289-ea9f548c1b8f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{2e0660b4-cee4-4d21-a8ee-c183fa3cdc39}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{30c58260-c57c-4059-9d91-125356687309}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{33822684-0d17-4784-b419-33533c8aed09}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{450d7a8a-1e18-419d-b15f-ed21a275fdfd}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{49b1e097-1d46-4203-9b3a-458fb467aee8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{4e8523f8-eddc-4e0e-befb-80339d3b8878}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{4f9b99e0-89bc-45bd-be2d-f3fc1893a06a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{58bf614b-14e8-418b-acc5-c30b203f36c3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{5b6fe36c-bc11-46e2-9207-97b1812bd5ad}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{61ff499a-6e71-46ab-bb59-e10f7f457674}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{65c36320-b40d-4080-9b0b-65482105a5af}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{6b7c4733-1e88-42be-800e-dfa696fece43}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{72f40ccf-ce60-48e0-ada6-14e0722194c7}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{735a6aeb-368a-4ae5-a4bc-bcb4f5b88626}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{73cd2d58-4c64-46af-9c83-0935cce46435}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{7637cc9a-7634-4343-85ef-44fa3dc3c5f8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{7c371c72-4c7a-4117-901a-3f79a1398337}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{7fb69e86-837b-48f0-947c-e8063ec3beda}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{81e8331a-6baa-4bd5-b1d5-a5a0dedf665c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{8d318afa-5a3f-46ec-88eb-547180920371}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{93605138-63e2-4d48-838a-56e85a8f29a7}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{a2e6f107-425b-410e-a260-cfb40c537244}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{a409d1b4-c5f1-4188-aabc-9154cfb0a20e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{a65a89b7-d94b-4d9e-9031-0525f24c365a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{ae013bd4-53eb-4f3d-88e3-e3584ba4d8ff}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{b2da32dd-e3e7-4fa1-9fc9-9c0d75d0e514}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{b70d63cf-22e8-42a3-a5b1-3c33d87ca3af}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{b7d7a3e4-1534-4871-b83d-a175fcd8215d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{b89286bf-5eed-4d43-86de-ab3f03e9e56c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{c0e304c9-2cf8-4011-91cd-53ffe82e941d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{c11813e0-4dec-4f84-86df-5655e1b81813}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{c1405eb9-572f-4969-b920-148ede5be13c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{c8bec80b-a0e6-4a31-b5ce-9bf43aaa61ac}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{cb0d5a90-0f68-4c9f-a712-589db235d37e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{cb53d96d-2c23-4829-82cb-b7e4d86c4e3c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{d40c23fa-b7b4-4956-aca8-3c151d00f80c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{d45b8762-baf3-494d-b4fc-c3cc21d14cb4}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{d7842826-3e36-45fc-a48d-27603042333c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{d8db522c-7ee8-4ee5-ae93-515ddd6024ab}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{dbcb7216-8ad6-40f2-a738-1f8dbb5e2948}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{dc1d1fe1-aeb0-4217-9db5-294ffc008841}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{de73afab-0171-4059-9825-6c65ba439f43}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{df2dbb8d-cd69-43f4-98d9-5e6238313b4a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{e2b1d2aa-8094-4d23-829c-d0686a78210d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{e3662c61-755d-4ab9-819c-775559ac423c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{e54cea36-10a7-4aae-a6da-f75cc39feb49}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{ebf3e089-08f5-4e5f-8b77-c08a88d15b10}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{ee3d0e1a-d84d-4dcd-90f9-36c4beda834a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{f2bf5483-f043-4f6a-83b5-fe46ccd3680e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_animals\{f413b73a-126c-43af-a5a8-6ddabc6b6ff4}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{034f8334-fede-427e-a025-59b140fada56}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{0b5dfe75-3c87-4091-8568-1d70734a066e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{0bb07ff0-7fb0-4c88-acdf-106339ff59d3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{17dc27f4-79a3-4123-8116-dc4a77f90a9a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{184268a6-db82-413b-bb83-37cc625c9a11}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{2703bda7-a685-4152-9f70-1cefe40bdcca}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{2db0350a-8cac-4362-89cd-19afe2f14062}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{2e752d64-9169-4d7b-b04c-151b397ad3de}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{2f14a125-5708-4cfb-bcea-f56b124776dc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{355c8a80-4576-4c7d-9b9b-bd0cba07d267}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{3bcb4fb6-6811-42dd-8345-1ec447765e5f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{3e7d2f41-bbf5-42ab-a22a-8b193909b719}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{412cb845-b39f-44f5-aca5-05b3046ffcba}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{46f3d6cb-4270-4373-aee9-89fb38462ea9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{47c97ced-c4e6-4e4b-8e9f-b110989eea62}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{483f721d-a794-4cb3-b3a8-a05b408a89ca}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{55a27b78-4f03-47db-b0ff-5df20b114085}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{5d048bf7-4673-4b0e-83d5-2284f8a424cd}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{65364a8b-bec4-45dd-a5c9-4460bb24db17}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{682406ce-2e8b-48e8-833e-affad1df3ca2}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{68bc20d4-f7b2-4406-a058-64648d4a2e33}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{6c2ca2f6-02e6-450e-96d7-80d7de3941b1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{6dc7e21e-4d73-4f0c-ac8d-4895a1992410}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{84744a27-000a-447b-af09-dfaca7d0f2b2}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{91465312-80da-42bd-8125-a56081b7359e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{93802d8b-ba4f-45eb-a272-9f029a0feeb3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{94e830d5-5ad0-47e7-8877-9743f1bd57f1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{999b34c1-09cc-4172-a314-4a9371a8a8ff}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{a421bac4-0be5-4320-b4db-9073664f413c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{a5080b4f-b334-4184-83ff-b485c2ed699b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{ab068666-d8e8-486b-90d6-164c45557688}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{abecbcc1-9d8a-405c-9ec6-01d37b72ee13}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{b0573142-e40a-4120-82e0-a61f58cca6b2}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{c12b53de-4ac9-46a1-a2b5-79c3d88f70f8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{c2d9acaa-b2c5-4a55-9880-9bfa8d5a3a2b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{c8520268-4d86-437a-8c18-5ef1ba2e2ed8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{cd637684-75c4-429d-b295-345ea2551369}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{d74829dc-57ee-41da-95b4-6beeb860b54e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{d81468da-ef1e-4b16-ae1f-396b56b35b48}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{da302e05-6454-4f7a-8c6f-c5fc32a77174}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{db86abde-51fd-4ab5-8470-a3c2d334a7f8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{e1ae0703-9f4b-4187-b92e-d08698d19658}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{e2b7cd38-1e03-442d-982d-f1ebcdb98767}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{e75256ee-38fc-49a9-9689-a5f81bc1d2c0}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{eb32b37f-b396-4537-993c-f271a3f452b5}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{f131f3d9-5f94-4606-82ed-9e61b7d10e16}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{f214ae09-5de8-4ab1-bc22-5a3a210c7b75}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{f2e377e7-b1e3-4d8e-86cf-4184b1ca70be}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{f64a1a40-27ff-42ae-b547-50e20d481f33}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_autogen\{f7076488-4d9b-4c18-b7c7-8d56112c2836}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{127136ea-49c2-4223-aa15-de12d79b44ad}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{18b2918f-11d1-497c-b5c0-a2f26263e565}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{18b41d45-749e-47f8-b6e5-133835d7cd57}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{193a2264-53ec-464e-b139-6b790d9f92ae}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{2b931b90-9438-4493-b0a5-386fc2e7b5ff}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{2d7d189a-f0e5-43f3-b73f-d075f84e7a6b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{3216f40b-0f54-434d-9b2c-73a0feed7f08}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{5c0f70da-fe09-4c3e-a2e7-2737ec700422}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{600e0f2f-0592-4777-979d-e4acdf048762}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{9ed413c1-90df-4635-84c9-fd3eda671cfb}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{b0013e7c-fea9-4a90-b576-a9b051dd5b41}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{b2b05be7-7daf-4b92-8f92-50f19f14cc50}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{bbf02ca5-90fc-4da8-8892-42d0ac74b80d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{c45eea03-a40e-464b-8347-26a382dfb57e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{c9775c1f-1e3e-4856-a416-34adefc096b6}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{d9aaae37-38b7-4694-aad2-19ed06531a10}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{da002e64-342c-4742-b70d-96dc569c0b60}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_bridges\{dd021ee7-a57b-441f-a035-6edb24cde104}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{0e9712ce-5cf0-4648-8c75-45c4518ffa83}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{4ee46d45-c0ed-4db9-9d3e-6e0cd94ae5d8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{51aa12d6-ae0f-49e6-a916-6dbcd81cf402}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{5556330d-a612-4a51-a220-440f35a97112}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{5b479fb1-d134-4060-aac3-fe80e1ba5286}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{78217ab4-76d2-46e3-8438-57ad27e6ed6d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{8747280b-0769-4340-95f1-dc7da70cdc88}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{8b63a054-b32e-415d-9884-258008444268}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{8ebb0ba5-9f81-4cae-8c78-c23b96e01ff4}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{a0f21144-1921-401e-a2eb-7b8763e1a1bc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{ad4f1f5a-de8b-45a5-bc27-3e85f5670227}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{be7fa036-6133-48cd-b3a3-bdc339e6ab35}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{c545a292-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{c545a293-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{c545a294-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_buildings\{de00535c-5e8c-4cc0-932f-e82355a37412}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_gameobjects.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_gameobjects\{05bee77b-1e1a-4aaf-bd89-87045c34b473}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_gameobjects\{0c213bd1-6000-4d37-8e73-6e123285d23b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_gameobjects\{87f22bab-08e9-4dc3-a9d8-beafce9d679b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_gameobjects\{96fc6d79-8cdd-491d-bd80-b04c004b0d1c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_generic.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_generic\{32519fea-0035-406d-b6a5-689ea928ea2c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_generic\{bad28dcf-7c85-416c-a630-818969e994a3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_generic\{d7cc7ce9-82a9-4411-8ba8-cd0c2ad022ab}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_generic\{f8459fec-3740-4177-ac5b-068ae9ccadb3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{0c0c2054-0abb-4e86-91a1-b146c3350558}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{1fc7d750-3281-435b-b517-19292b1ec846}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{38c55f68-d0ea-418d-8c3d-cc797b80d410}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{4a5ceec8-9e27-4f2a-a4e7-2ef16c850c0f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{5137c384-3c55-4346-a368-b0270a08fd11}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{54382ec5-b1bd-4a43-aa1a-4f5f529356c3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{567c15bf-e002-4de9-a38c-b68c55135a8a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{6b2b7d78-967a-4dbe-9867-83e255f8b1b6}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{6fc40cc0-04cf-4373-a30e-9f1510587368}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{72f14e29-2b31-49f9-9a06-5a3c28dddf57}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{7328626c-0380-11d3-9c85-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{7328626d-0380-11d3-9c85-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{7328626e-0380-11d3-9c85-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{7328626f-0380-11d3-9c85-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{73286270-0380-11d3-9c85-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{74a77569-a6a8-4ad2-a607-73773e937c68}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{7549dba5-8710-4c0f-bf62-324244d86c31}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{8166fd03-4111-480c-92d1-4c7fb329264c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{a134eaa9-b11f-42aa-ba09-c34c29a03bc4}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{c545a28c-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{c545a28d-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{c545a28e-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{c545a28f-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{c545a290-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{c545a291-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{d1c0b5a3-69af-4d87-8ac7-a0bd216d548f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{dda775e2-5e3e-435e-9a11-f5a8ecf75d37}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{e480537d-c220-4e15-8e99-e733ebd4296e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{f21db452-6d9d-424d-b608-a9c34c194cc1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_hazards\{f2ef2cd2-539c-49c3-812d-128167d6ebb0}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_landmark.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_landmark\{1590dcde-b884-4bd6-9005-29213c637cd2}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_missionobjects.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_missionobjects\{8446f6e5-bc99-4e24-8ca4-67cfa12d6c64}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_aircraft.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_aircraft\{52019e40-036e-11d3-9c85-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{0627877e-8643-4436-8f91-b271f9b11b82}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{0892939a-f66a-4df6-8021-658e01bcbf1c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{130cc312-b712-4335-85a6-e0cb5a5274e1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{28b28644-3abb-4482-8fcb-d99a6fd5d061}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{2dcb5d17-0533-44f6-a607-3570aba1f827}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{2fac553d-5238-428b-b9ac-0921eeda5bbf}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{304df0a8-fb2f-4916-bfbe-00bef15b0b3f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{3053b700-9f7b-4e11-81b8-b1d205a921b1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{37e5ef42-4c19-45f3-9d7d-2171e3626712}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{3ffe66af-d97f-4986-9fd8-6c0a1ca72a3b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{4c0ab419-8265-4160-b02c-4d0dddd7f6be}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{4eab5f14-41d0-4486-974c-01d2d24b1bd5}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{50a64d4e-128c-4c2a-a102-07942769898c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{52b65889-69d2-46f4-97ae-e418c33f43ec}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{52d460b9-acc9-4b05-b904-7c69d50a2360}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{535f58ef-5c5a-4dde-a9e7-d92517186fa7}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{539ca498-ec1f-4287-980a-9c84a0d74caa}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{5ade0809-4dcf-42e1-a1b9-ae736060ec89}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{645d53db-8674-468d-a716-c487e2b698fc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{680db15b-9646-4146-9412-8cbba0520b81}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{6880d52b-8dd7-4aa2-b88a-03a7a5dd600e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{68bc60f6-43cf-44bf-818a-abdd2ad87082}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{6de93ad2-31f3-4044-9ac5-74071ed4386b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{75ca524e-fd7e-46b3-9365-f2fcafcb3634}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{7825f7df-d949-42dd-93b7-cbebf985708c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{82a2760f-2871-4933-85c5-7b8125189edf}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{859be619-5d76-4f42-a175-b82ab3e8111c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{8a7a72fe-286f-49c1-a342-bcea0d00679d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{8ae97be9-7492-4b2c-af2d-f867c89304c8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{8c038540-b71c-4c47-873c-13fc40894a90}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{9406831a-be95-4f13-b0be-e3e7900cad23}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{9f31b851-887e-499e-9b91-a869b2695540}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{a75cbe2c-0479-416e-a833-5f1b8ccc0f93}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{aac710f6-68fb-4e7b-bf1d-458843b34c56}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{b9a5a450-a443-4513-a0e3-44f9d04bdfa0}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c26dcd4b-e80c-473d-b17f-ab055a150242}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c545a2a1-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c545a2a2-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c545a2a3-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c545a2a4-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c545a2a5-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c545a2a6-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c545a2a7-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c5935597-28a6-45b4-b3aa-ed3eb9a58ecc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{c792a0f8-8661-48d0-87ee-c881aae1b43b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{cd69fc27-8cf3-4fa0-aafd-67be3d24e9ef}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{d5560d11-4294-4fe7-a162-c033e5047a88}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{d7c80684-24e2-4137-a911-9772228f7101}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{d8b5572c-8902-4252-b4c3-359ec3b3fa3b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{dbf53c30-d46c-43b6-b0ef-388c4ac9af79}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{dd1c95f1-598b-4fda-acff-ccffb1df940d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{dee20ad8-985b-425d-befb-cba4972393ee}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{f4d81cc3-5fa3-41c8-968a-e17958f1f9b7}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{fb3c0ffb-5028-4737-8358-601afd4c6920}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{fcb9eed4-a0c4-4dca-9f98-22af049d93a8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_airport\{ffbac240-d9b8-4fbd-840f-19bc861c368a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_land.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_land\{e9a4eca9-8e1a-49c0-8d5e-5574865d316c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{03e43599-6fe6-4e87-8fb2-3c8d4d1bc9ce}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{089841ec-0a99-45f4-9b8e-befd4e8389ca}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{0a66a25e-dd10-47e9-9c61-78134a69cb23}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{17a54b77-d0a2-459d-ab7b-705587bd7e3b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{22d9ae7c-3cf1-491c-be10-a0de273c15d5}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{2bf74ea2-7df8-4a06-9a7b-074f7d909040}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{317374a4-c44f-436b-8bce-ff55dd833fdf}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{4170e428-6e21-4399-82c7-86c54a52a3f4}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{4d9e1588-e509-4234-a374-68ae114d718c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{58276a7d-d068-4051-aab6-31bbabf54d9d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{595fd3ed-585d-44aa-9588-24e1be7ae3c1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{60eb7054-8969-40be-a560-ed76e1c7630e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{650a8b83-f7e2-4f63-bbb2-5ae73b05d26e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{68992e3d-c52a-47f1-8054-3970c6017c75}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{7766807e-9fb7-4862-8aae-8051cde678ee}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{7f58f108-d72e-43aa-9e9d-eee6e5d4d66d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{82e4ac8f-2ad1-4ad3-b211-58de9d2ec26c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{886e7d43-380a-4bc2-a755-a2781d12d548}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{8eddac4c-013f-43bc-8704-a298f701f4f5}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{9d917126-9054-4d48-b22c-8f68419db461}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{9eea367b-18c3-4bdc-b16a-4ccf99214cfd}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{a5d38d43-a509-4d53-bb38-c58959bb58d3}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{bb720361-6d74-4280-bde4-2c23a85e45c1}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{c545a29e-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{c545a2a0-e2ec-11d2-9c84-00105a0ce62a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{cc073ded-4f98-45f5-8294-c05110954241}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{e6058da3-c50c-48d8-a6da-c8051d11435c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{eab79a00-c060-4fe2-be70-f63f4b8b4c26}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{f2c5e6a9-d7af-4d32-9d24-240de94959f2}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{f468350b-1c1b-4eef-9ec2-76f69ea48994}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_vehicles_water\{fe2e607f-a1d1-490d-93c2-04665698e4cc}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects.txt" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{057ecc53-7b23-40a5-98be-0a6d9ecdeb29}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{08713190-e8fc-45ea-b171-1f3091179893}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{0fea38e2-cedd-4a64-b90d-8269f1b0233c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{1194794f-f831-425e-8435-cbeba718220f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{157ba42a-370b-4b16-b58a-a45c9a91ae07}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{1b0089f7-f04f-42c5-afb7-2c3a825d8e52}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{1d201f18-200e-43ff-82c7-15542da2b0b8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{23ee29b9-2f04-47e8-abec-58877ef1fee8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{2906f546-ecdf-44b1-ba24-a06217554d57}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{2dce071f-bf8a-421a-892b-1495983daa4d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{2e9d24f9-8da2-4bc1-9b01-059640ef590e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{2ef499e8-72f7-423d-8bfc-cbf4976452d0}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{3221d6f7-eff7-4535-8914-9483b7946213}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{36d772f0-c5d6-47fc-80d4-af18452ef9f9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{3e1ca5c7-daed-4a63-9f4a-3473704e6044}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{413fdc2d-131e-46c0-a8d5-e3c59465654f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{450ef4a0-41df-48d1-8867-292fbb015b4f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{4bd2d896-1416-4467-8552-7576b5e54fff}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{5891c64e-ee5e-4b61-ae2f-e384315c6339}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{6070a816-b56c-457e-846b-b476de3b6a85}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{62c4907a-0253-4626-96ca-0fdcaabc050d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{68ef0ab4-04f3-4caf-8672-01ee69cda5f9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{6f04fe78-9995-49c6-970b-e34655605a3b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{6f2a52cd-54c1-46a1-b6f1-880743df6346}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{6f4710b8-7535-4665-a052-a5666658ff76}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{740b086e-18ec-4116-9503-e39d8a0e8bab}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{751e7208-417f-4da4-96dc-27182068a60d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{802b8854-986d-475c-bc2c-94ce04a7a018}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{80efccdf-0b68-4453-9ae1-b81528ed2072}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{82e6ee2b-6cae-4945-82f2-5f241f856cac}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{905f9a90-770d-43e2-91ad-50007c11ef0a}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{90db55c0-c6ca-45f1-a197-f8031faedc4d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{96e30c78-56b5-44a2-af75-6c12530a2f4c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{a293cef9-cd06-4d8f-9cd9-ada9a0b367b8}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{a7d7c886-d5cd-4055-9122-5656888946ae}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{aa416df1-0ffd-4e84-813d-d1004b274b53}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{ab882ff9-dd60-479b-bd3e-4e403ca91aae}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{af39a6cf-7cc3-42d8-a449-e8f4372bbc1d}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{b9b66979-0b3a-403e-b1a8-cbee0dde34f2}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{c08dd808-d268-434f-b46d-e18766db2f92}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{c0906b89-f5b7-4db3-94cc-b4482764881c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{c1e01ca7-1262-40c4-a0d4-330ea9c1c20b}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{c3202179-0d9a-4bd3-91b6-d28bb55b0d47}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{c3651f83-d95b-47a7-8c4f-fb0278003b33}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{c7d34b69-f041-4ba8-bace-dfb61e430302}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{ce0cc249-75b5-4e99-831f-3221edd51289}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{ce332e37-6a2c-443e-a845-8cf92ddbdaf4}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{cf966a90-548c-4b7c-b9c0-e37eca97b4c7}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{d342de64-6d12-4c87-a435-ef148e365a61}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{da204e9e-f9f9-4d8b-b4c4-f0d55e16853c}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{dd032a16-789b-44bc-b603-64cc401a4185}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{e08c61ae-d728-454b-a72c-0cd72be0f36f}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{e20da92a-1eab-4680-9d49-2798e93c50f9}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{e214d2ab-ebb2-43b3-9101-0b36cc8585ce}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{ea573b0f-69ad-45c4-a345-b3563ad1a506}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{ea728f12-41f9-4f76-952f-535f76d1d9ef}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{f21f25fb-c407-4e41-9b40-b2520c562514}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{f3466ae3-69b4-4360-998a-e048746a757e}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{f7b45093-9042-4b6b-b88d-e983a5ca91c7}.jpg" />
+    <Content Include="bin\Debug\LibObjects\FSX_waterobjects\{fb6a9530-11d7-49ae-914e-0a2d2425d664}.jpg" />
+    <Content Include="bin\Debug\LibObjects\objects.txt" />
+    <Content Include="bin\Debug\Rwy12\add_ag_tree_lib.xml" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree01.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree02.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree03.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree04.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree05.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree06.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree07.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree08.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree09.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree10.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree11.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree12.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree13.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree14.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree15.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree16.jpg" />
+    <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree17.jpg" />
+    <Content Include="bin\Debug\SBuilderX.exe" />
+    <Content Include="bin\Debug\SBuilderX.pdb" />
+    <Content Include="bin\Debug\SlimDX-x64.dll" />
+    <Content Include="bin\Debug\SlimDX-x86.dll" />
+    <Content Include="bin\Debug\SlimDX.dll" />
+    <Content Include="bin\Debug\Texture\010b2su1.bmp" />
+    <Content Include="bin\Debug\Texture\025b2su1.bmp" />
+    <Content Include="bin\Debug\Texture\049b2su1.bmp" />
+    <Content Include="bin\Debug\Texture\132b2su1.bmp" />
+    <Content Include="bin\Debug\Texture\a08.bmp" />
+    <Content Include="bin\Debug\Texture\aerobus.bmp" />
+    <Content Include="bin\Debug\Texture\aerobus_lm.bmp" />
+    <Content Include="bin\Debug\Texture\avgas.bmp" />
+    <Content Include="bin\Debug\Texture\avgas1.bmp" />
+    <Content Include="bin\Debug\Texture\beaml.bmp" />
+    <Content Include="bin\Debug\Texture\bidaoairbp.bmp" />
+    <Content Include="bin\Debug\Texture\bidaoairbp1.bmp" />
+    <Content Include="bin\Debug\Texture\bidaoshell.bmp" />
+    <Content Include="bin\Debug\Texture\bidaoshell1.bmp" />
+    <Content Include="bin\Debug\Texture\bidaototal.bmp" />
+    <Content Include="bin\Debug\Texture\bidaototal1.bmp" />
+    <Content Include="bin\Debug\Texture\bomba.bmp" />
+    <Content Include="bin\Debug\Texture\bomba_lm.bmp" />
+    <Content Include="bin\Debug\Texture\bombeiro1.bmp" />
+    <Content Include="bin\Debug\Texture\bombeiro2.bmp" />
+    <Content Include="bin\Debug\Texture\bombeiro3.bmp" />
+    <Content Include="bin\Debug\Texture\bombeiro4.bmp" />
+    <Content Include="bin\Debug\Texture\bombeiro5.bmp" />
+    <Content Include="bin\Debug\Texture\bombeiro6.bmp" />
+    <Content Include="bin\Debug\Texture\bombeiro7.bmp" />
+    <Content Include="bin\Debug\Texture\bpjet.bmp" />
+    <Content Include="bin\Debug\Texture\bpjet1.bmp" />
+    <Content Include="bin\Debug\Texture\bridge.bmp" />
+    <Content Include="bin\Debug\Texture\bus1b.bmp" />
+    <Content Include="bin\Debug\Texture\bus1bi.bmp" />
+    <Content Include="bin\Debug\Texture\bus1bi_lm.bmp" />
+    <Content Include="bin\Debug\Texture\bus1b_lm.bmp" />
+    <Content Include="bin\Debug\Texture\bus1f.bmp" />
+    <Content Include="bin\Debug\Texture\bus1fi.bmp" />
+    <Content Include="bin\Debug\Texture\bus1fi_lm.bmp" />
+    <Content Include="bin\Debug\Texture\bus1f_lm.bmp" />
+    <Content Include="bin\Debug\Texture\bus1i.bmp" />
+    <Content Include="bin\Debug\Texture\bus1i_lm.bmp" />
+    <Content Include="bin\Debug\Texture\bus1l.bmp" />
+    <Content Include="bin\Debug\Texture\bus1l_lm.bmp" />
+    <Content Include="bin\Debug\Texture\bus1r.bmp" />
+    <Content Include="bin\Debug\Texture\bus1r_lm.bmp" />
+    <Content Include="bin\Debug\Texture\bus1t.bmp" />
+    <Content Include="bin\Debug\Texture\bus1topl.bmp" />
+    <Content Include="bin\Debug\Texture\bus1topl_lm.bmp" />
+    <Content Include="bin\Debug\Texture\bus1t_lm.bmp" />
+    <Content Include="bin\Debug\Texture\busroda.bmp" />
+    <Content Include="bin\Debug\Texture\busroda_lm.bmp" />
+    <Content Include="bin\Debug\Texture\cab1.bmp" />
+    <Content Include="bin\Debug\Texture\cab1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\cab2.bmp" />
+    <Content Include="bin\Debug\Texture\cab2_lm.bmp" />
+    <Content Include="bin\Debug\Texture\cancela.bmp" />
+    <Content Include="bin\Debug\Texture\cancela_lm.bmp" />
+    <Content Include="bin\Debug\Texture\capot.bmp" />
+    <Content Include="bin\Debug\Texture\capot_lm.bmp" />
+    <Content Include="bin\Debug\Texture\carga1.bmp" />
+    <Content Include="bin\Debug\Texture\carga1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\cargo1.bmp" />
+    <Content Include="bin\Debug\Texture\cargo1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\cargo2.bmp" />
+    <Content Include="bin\Debug\Texture\cargo2_lm.bmp" />
+    <Content Include="bin\Debug\Texture\chapa1.bmp" />
+    <Content Include="bin\Debug\Texture\chapametal.bmp" />
+    <Content Include="bin\Debug\Texture\cimento.bmp" />
+    <Content Include="bin\Debug\Texture\cimento0.bmp" />
+    <Content Include="bin\Debug\Texture\cimento0_LM.bmp" />
+    <Content Include="bin\Debug\Texture\cimento_lm.bmp" />
+    <Content Include="bin\Debug\Texture\classmap1.bmp" />
+    <Content Include="bin\Debug\Texture\conten1.bmp" />
+    <Content Include="bin\Debug\Texture\conten1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\escada1.bmp" />
+    <Content Include="bin\Debug\Texture\fence.bmp" />
+    <Content Include="bin\Debug\Texture\fence3.bmp" />
+    <Content Include="bin\Debug\Texture\fence3b.bmp" />
+    <Content Include="bin\Debug\Texture\fence_CLW.bmp" />
+    <Content Include="bin\Debug\Texture\fence_fuel.bmp" />
+    <Content Include="bin\Debug\Texture\fence_LM.bmp" />
+    <Content Include="bin\Debug\Texture\front.bmp" />
+    <Content Include="bin\Debug\Texture\front_lm.bmp" />
+    <Content Include="bin\Debug\Texture\galp1.bmp" />
+    <Content Include="bin\Debug\Texture\galp1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\gateg0.bmp" />
+    <Content Include="bin\Debug\Texture\gateg0_lm.bmp" />
+    <Content Include="bin\Debug\Texture\gateg1.bmp" />
+    <Content Include="bin\Debug\Texture\gateg1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\gateg2.bmp" />
+    <Content Include="bin\Debug\Texture\gateg2_lm.bmp" />
+    <Content Include="bin\Debug\Texture\guard0.bmp" />
+    <Content Include="bin\Debug\Texture\guard0_lm.bmp" />
+    <Content Include="bin\Debug\Texture\guard1.bmp" />
+    <Content Include="bin\Debug\Texture\guard1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\guard2.bmp" />
+    <Content Include="bin\Debug\Texture\guard2_lm.bmp" />
+    <Content Include="bin\Debug\Texture\lampada.bmp" />
+    <Content Include="bin\Debug\Texture\lampada_lm.bmp" />
+    <Content Include="bin\Debug\Texture\luzazul.bmp" />
+    <Content Include="bin\Debug\Texture\p14.bmp" />
+    <Content Include="bin\Debug\Texture\palas.bmp" />
+    <Content Include="bin\Debug\Texture\palas_lm.bmp" />
+    <Content Include="bin\Debug\Texture\railroadsu.bmp" />
+    <Content Include="bin\Debug\Texture\RiverSU.bmp" />
+    <Content Include="bin\Debug\Texture\roda.bmp" />
+    <Content Include="bin\Debug\Texture\rodablue.bmp" />
+    <Content Include="bin\Debug\Texture\rodablue_lm.bmp" />
+    <Content Include="bin\Debug\Texture\rodam.bmp" />
+    <Content Include="bin\Debug\Texture\rodam_lm.bmp" />
+    <Content Include="bin\Debug\Texture\roda_lm.bmp" />
+    <Content Include="bin\Debug\Texture\rodinha.bmp" />
+    <Content Include="bin\Debug\Texture\rodinha_lm.bmp" />
+    <Content Include="bin\Debug\Texture\shell1.bmp" />
+    <Content Include="bin\Debug\Texture\shell1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\side.bmp" />
+    <Content Include="bin\Debug\Texture\side_lm.bmp" />
+    <Content Include="bin\Debug\Texture\stop.bmp" />
+    <Content Include="bin\Debug\Texture\stop_lm.bmp" />
+    <Content Include="bin\Debug\Texture\tanklabel.bmp" />
+    <Content Include="bin\Debug\Texture\tap1.bmp" />
+    <Content Include="bin\Debug\Texture\tap1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\tap2.bmp" />
+    <Content Include="bin\Debug\Texture\tap2_lm.bmp" />
+    <Content Include="bin\Debug\Texture\tap3.bmp" />
+    <Content Include="bin\Debug\Texture\tap3_lm.bmp" />
+    <Content Include="bin\Debug\Texture\taxilinebmp.bmp" />
+    <Content Include="bin\Debug\Texture\taxisign.bmp" />
+    <Content Include="bin\Debug\Texture\temp.bmp" />
+    <Content Include="bin\Debug\Texture\topo.bmp" />
+    <Content Include="bin\Debug\Texture\topo_lm.bmp" />
+    <Content Include="bin\Debug\Texture\traz.bmp" />
+    <Content Include="bin\Debug\Texture\traz_lm.bmp" />
+    <Content Include="bin\Debug\Texture\triam0.bmp" />
+    <Content Include="bin\Debug\Texture\triam0_lm.bmp" />
+    <Content Include="bin\Debug\Texture\triam1.bmp" />
+    <Content Include="bin\Debug\Texture\triam1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\triam2.bmp" />
+    <Content Include="bin\Debug\Texture\triam2_lm.bmp" />
+    <Content Include="bin\Debug\Texture\triam3.bmp" />
+    <Content Include="bin\Debug\Texture\triam3_lm.bmp" />
+    <Content Include="bin\Debug\Texture\triam4.bmp" />
+    <Content Include="bin\Debug\Texture\triam4_lm.bmp" />
+    <Content Include="bin\Debug\Texture\truck1.bmp" />
+    <Content Include="bin\Debug\Texture\truck1_lm.bmp" />
+    <Content Include="bin\Debug\Texture\utilitymask.bmp" />
+    <Content Include="bin\Debug\Texture\zebra.bmp" />
+    <Content Include="bin\Debug\TileServer.dll" />
+    <Content Include="bin\Debug\Tiles\ArcGisServer.dll" />
+    <Content Include="bin\Debug\Tiles\blank.jpg" />
+    <Content Include="bin\Debug\Tiles\globe.jpg" />
+    <Content Include="bin\Debug\Tiles\GLS_Server.dll" />
+    <Content Include="bin\Debug\Tiles\GoogleServer_api3.dll" />
+    <Content Include="bin\Debug\Tiles\na.jpg" />
+    <Content Include="bin\Debug\Tiles\OpenStreetMapServer.dll" />
+    <Content Include="bin\Debug\Tiles\ThunderForestLandscape.dll" />
+    <Content Include="bin\Debug\Tiles\VirtualEarthServer.dll" />
+    <Content Include="bin\Debug\Tools\bglcom9.exe" />
+    <Content Include="bin\Debug\Tools\bglcomp.exe" />
+    <Content Include="bin\Debug\Tools\Bmps\000b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\001b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\001b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\002b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\002b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\003b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\003b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\004b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\004b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\005b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\005b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\006b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\006b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\007b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\007b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\008b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\008b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\009b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\009b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\010b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\010b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\011b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\011b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\012b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\012b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\013b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\013b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\014b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\014b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\016b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\016b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\017b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\017b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\018b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\018b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\019b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\019b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\020b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\020b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\022b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\022b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\023b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\023b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\024b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\024b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\025b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\025b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\026b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\026b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\027b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\027b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\028b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\028b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\029b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\029b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\030b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\030b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\031b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\031b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\032b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\032b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\033b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\033b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\034b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\034b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\035b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\035b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\036b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\036b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\037b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\037b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\038b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\038b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\039b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\039b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\040b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\040b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\041b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\041b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\043b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\043b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\045b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\045b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\046b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\046b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\047b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\047b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\048b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\048b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\049b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\049b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\050b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\050b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\051b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\051b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\052b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\052b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\056b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\056b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\057h2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\057h2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\058b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\058b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\059b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\059b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\060b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\060b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\066b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\066b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\067b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\067b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\068b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\068b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\069b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\069b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\070b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\070b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\071b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\071b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\074b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\074b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\075b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\075b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\076b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\076b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\078b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\078b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\079b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\079b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\080b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\080b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\081b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\081b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\082b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\082b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\127b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\127b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\128b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\128b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\129b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\129b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\131b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\131b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\132b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\132b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\133b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\133b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\134b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\134b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\135b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\135b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\136b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\136b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\137b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\137b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\138b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\138b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\139b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\139b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\140b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\140b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\141b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\141b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\142b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\142b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\143b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\143b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\301b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\301b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\302b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\302b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\303b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\303b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\304b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\304b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\305b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\305b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\306b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\306b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\307b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\307b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\308b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\308b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\309b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\309b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\310b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\310b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\311b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\311b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\312b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\312b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\313b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\313b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\314b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\314b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\315b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\315b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\316b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\316b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\317b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\317b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\318b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\318b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\319b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\319b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\320b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\320b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\321b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\321b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\322b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\322b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\323b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\323b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\324b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\324b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\325b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\325b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\326b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\326b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\327b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\327b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\328b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\328b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\329b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\329b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\330b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\330b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\331b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\331b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\332b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\332b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\333b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\333b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\334b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\334b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\335b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\335b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\336b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\336b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\337b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\337b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\338b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\338b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\339b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\339b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\340b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\340b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\341b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\341b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\342b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\342b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\343b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\343b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\344b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\344b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\345b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\345b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\346b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\346b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\347b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\347b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\348b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\348b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\349b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\349b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\350b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\350b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\351b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\351b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\352b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\352b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\353b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\353b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\354b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\354b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\355b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\355b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\356b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\356b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\357b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\357b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\358b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\358b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\359b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\359b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\360b2su1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\360b2su1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\air.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\air.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\beacon.gif" />
+    <Content Include="bin\Debug\Tools\Bmps\BlendMask.tif" />
+    <Content Include="bin\Debug\Tools\Bmps\bridge.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\bridge.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\dirtroadsu.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\dirtroadsu.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\effect.gif" />
+    <Content Include="bin\Debug\Tools\Bmps\exc.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\exc.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\fsx.ico" />
+    <Content Include="bin\Debug\Tools\Bmps\gps.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\gps.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_1_lane_asphalt_su.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_1_lane_asphalt_su.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_1_lane_gravel_su.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_1_lane_gravel_su.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_1_lane_su.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_1_lane_su.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_2_lane_asphalt_su.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_2_lane_asphalt_su.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_2_lane_su.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_2_lane_su.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_4_lane_su.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\hiway_4_lane_su.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\lwm.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\lwm.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\l_swamp_p.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\l_swamp_p.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\l_tanrock_ns.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\l_tanrock_ns.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\l_tansand_p.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\l_tansand_p.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\na.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\none.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_blackrock_ls.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_blackrock_ls.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_blackrock_ns.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_blackrock_ns.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_blacksand_ls.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_blacksand_ls.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_blacksand_ns.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_blacksand_ns.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_ice_ns.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_ice_ns.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_tanrock_ls.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_tanrock_ls.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_tanrock_ns.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_tanrock_ns.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_tansand_ls.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_tansand_ls.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_tansand_ns.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_tansand_ns.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_whitesand_ls.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_whitesand_ls.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\o_whitesand_ns.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\o_whitesand_ns.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\railroadsu.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\railroadsu.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Railroad_Bridge_Double_Concrete_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Railroad_Bridge_Double_Concrete_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Railroad_Bridge_Double_Concrete_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Railroad_Bridge_Double_Concrete_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\RailRoad_Bridge_Double_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\RailRoad_Bridge_Double_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\RailRoad_Bridge_Double_Girder_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\RailRoad_Bridge_Double_Girder_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Railroad_Bridge_Single_Concrete_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Railroad_Bridge_Single_Concrete_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Railroad_Bridge_Single_Concrete_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Railroad_Bridge_Single_Concrete_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\RailRoad_Bridge_Single_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\RailRoad_Bridge_Single_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\RailRoad_Bridge_Single_Girder_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\RailRoad_Bridge_Single_Girder_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\rbankNPsu.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\rbankNPsu.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\RiverSU.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\RiverSU.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_1_Lane_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_1_Lane_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_1_Lane_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_1_Lane_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_1_Lane_3.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_1_Lane_3_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_3.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_3_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_4.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_4_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Concrete_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Girder_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_2_Lane_Girder_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_3.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_3_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_4.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_4_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Concrete_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Girder_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_4_Lane_Girder_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_3.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_3_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_4.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_4_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Concrete_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Girder_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_6_Lane_Girder_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_3.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_3_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_4.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_4_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Concrete_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Girder_1.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Girder_1_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Girder_2.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\Road_Bridge_Divided_4_Lane_Girder_2_close.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\r_tanrock_ns.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\r_tanrock_ns.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\r_tansand_p.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\r_tansand_p.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\sel.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\sel.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\SELB2SU1.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\taxisign.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\unknown.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\utilitymask.bmp" />
+    <Content Include="bin\Debug\Tools\Bmps\utilitymask.jpg" />
+    <Content Include="bin\Debug\Tools\Bmps\windsock.gif" />
+    <Content Include="bin\Debug\Tools\Bridges.txt" />
+    <Content Include="bin\Debug\Tools\Cursors\calib.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\exclude.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\grab.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\land.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\line.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\macro.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\measure.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\move.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\object.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\pan.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\paste.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\poly.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\size.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\turn.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\water.cur" />
+    <Content Include="bin\Debug\Tools\Cursors\zoom.cur" />
+    <Content Include="bin\Debug\Tools\EXX.xml" />
+    <Content Include="bin\Debug\Tools\FLX.xml" />
+    <Content Include="bin\Debug\Tools\FWX.xml" />
+    <Content Include="bin\Debug\Tools\GenB\base00.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom0.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom00.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom1.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom10.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom100.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom101.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom102.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom103.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom104.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom105.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom106.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom107.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom108.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom109.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom11.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom110.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom111.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom112.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom113.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom114.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom115.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom116.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom117.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom118.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom119.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom12.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom120.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom121.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom122.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom123.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom124.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom125.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom126.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom127.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom128.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom129.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom13.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom130.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom131.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom132.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom133.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom134.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom135.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom136.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom137.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom138.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom139.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom14.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom140.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom141.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom142.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom143.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom144.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom145.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom146.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom147.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom148.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom149.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom15.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom150.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom151.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom16.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom17.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom18.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom19.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom2.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom20.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom21.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom22.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom23.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom24.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom25.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom26.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom27.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom28.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom29.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom3.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom30.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom31.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom32.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom33.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom34.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom35.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom36.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom37.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom38.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom39.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom4.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom40.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom41.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom42.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom43.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom44.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom45.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom46.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom47.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom48.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom49.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom5.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom50.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom51.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom52.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom53.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom54.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom55.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom56.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom57.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom58.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom59.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom6.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom60.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom61.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom62.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom63.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom64.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom65.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom66.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom67.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom68.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom69.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom7.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom70.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom71.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom72.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom73.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom74.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom75.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom76.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom77.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom78.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom79.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom8.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom80.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom81.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom82.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom83.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom84.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom85.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\bottom86.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom87.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom88.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom89.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom9.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom90.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom91.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom92.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom93.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom94.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom95.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom96.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom97.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom98.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\bottom99.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\face00.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\gable00.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof0.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\roof00.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof1.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\roof10.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof11.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof12.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof13.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof14.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof15.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof16.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof17.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof18.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof19.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof2.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\roof20.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof21.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof22.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof23.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof24.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof25.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof26.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof27.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof28.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof29.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof3.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\roof30.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof31.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof32.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof33.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof34.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof35.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof36.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof37.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof4.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof5.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof6.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof7.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof8.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\roof9.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top0.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top00.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top1.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top10.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top11.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top12.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top13.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top14.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top15.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top16.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top17.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top18.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top19.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top2.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top20.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top21.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top22.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top23.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top24.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top25.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top26.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top27.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top28.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top29.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top3.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top30.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top31.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top32.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top33.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top34.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top35.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top36.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top37.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top38.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top39.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top4.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top40.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top41.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top42.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top43.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top44.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top45.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top46.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top47.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top48.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top49.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top5.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top50.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top51.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top52.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top53.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top54.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top55.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top56.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top57.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top58.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top59.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top6.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top60.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top61.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top62.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top63.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top64.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top65.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top66.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top67.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top68.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top69.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top7.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top70.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top71.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top72.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top73.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top74.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top75.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top76.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top77.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top78.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top79.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top8.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\top80.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top81.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top82.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top83.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top84.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top85.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\top9.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window0.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window00.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window1.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window10.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window100.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window101.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window102.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window103.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window104.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window105.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window106.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window107.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window108.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window109.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window11.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window110.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window111.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window112.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window113.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window114.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window115.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window116.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window117.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window118.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window119.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window12.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window13.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window14.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window15.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window16.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window17.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window18.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window19.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window2.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window20.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window21.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window22.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window23.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window24.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window25.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window26.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window27.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window28.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window29.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window3.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window30.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window31.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window32.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window33.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window34.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window35.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window36.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window37.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window38.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window39.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window4.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window40.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window41.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window42.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window43.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window44.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window45.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window46.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window47.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window48.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window49.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window5.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window50.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window51.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window52.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window53.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window54.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window55.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window56.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window57.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window58.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window59.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window6.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window60.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window61.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window62.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window63.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window64.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window65.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window66.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window67.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window68.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window69.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window7.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window70.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window71.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window72.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window73.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window74.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window75.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window76.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window77.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window78.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window79.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window8.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window80.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window81.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window82.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window83.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window84.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window85.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window86.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window87.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window88.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window89.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window9.jpg" />
+    <Content Include="bin\Debug\Tools\GenB\window90.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window91.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window92.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window93.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window94.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window95.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window96.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window97.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window98.JPG" />
+    <Content Include="bin\Debug\Tools\GenB\window99.JPG" />
+    <Content Include="bin\Debug\Tools\HGX.xml" />
+    <Content Include="bin\Debug\Tools\HLX.xml" />
+    <Content Include="bin\Debug\Tools\HPX.xml" />
+    <Content Include="bin\Debug\Tools\ImageTool.exe" />
+    <Content Include="bin\Debug\Tools\Lands.txt" />
+    <Content Include="bin\Debug\Tools\Lines.txt" />
+    <Content Include="bin\Debug\Tools\Managed_CrashTree.dll" />
+    <Content Include="bin\Debug\Tools\Managed_Lookup_Keyword.dll" />
+    <Content Include="bin\Debug\Tools\PKX.xml" />
+    <Content Include="bin\Debug\Tools\Polys.txt" />
+    <Content Include="bin\Debug\Tools\RDX.xml" />
+    <Content Include="bin\Debug\Tools\resample.exe" />
+    <Content Include="bin\Debug\Tools\RRX.xml" />
+    <Content Include="bin\Debug\Tools\scasm.exe" />
+    <Content Include="bin\Debug\Tools\Shp2Vec.exe" />
+    <Content Include="bin\Debug\Tools\STX.xml" />
+    <Content Include="bin\Debug\Tools\UTX.xml" />
+    <Content Include="bin\Debug\Tools\Waters.txt" />
+    <Content Include="bin\Debug\Tools\XToMdl.exe" />
+    <Content Include="bin\Debug\Tools\x_material.txt" />
+    <Content Include="bin\Debug\Tools\x_templates.txt" />
+    <Content Include="Resources\bottom.gif" />
+    <Content Include="Resources\down.gif" />
+    <Content Include="Resources\fsx.ico" />
+    <Content Include="Resources\Help.bmp" />
+    <Content Include="Resources\HelpFile.bmp" />
+    <Content Include="Resources\left.gif" />
+    <Content Include="Resources\right.gif" />
+    <Content Include="Resources\searchFiles.bmp" />
+    <Content Include="Resources\top.gif" />
+    <Content Include="Resources\up.gif" />
+    <None Include="Resources\newsbuilderx315.jpg" />
+    <None Include="Resources\Red_grid.png" />
+    <None Include="Resources\AlignToGridHS.png" />
+    <None Include="Resources\polys.gif" />
+    <None Include="Resources\insertmap.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\waters.gif" />
+    <None Include="Resources\lands.gif" />
+    <None Include="Resources\lines.png" />
+    <None Include="Resources\polys.png" />
+    <None Include="Resources\measure.png" />
+    <None Include="Resources\ZoomOut.gif" />
+    <None Include="Resources\ZoomIn.gif" />
+    <None Include="Resources\XML.png" />
+    <None Include="Resources\objects.png" />
+    <None Include="Resources\maps.gif" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
