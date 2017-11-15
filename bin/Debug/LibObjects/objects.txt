@@ -1,0 +1,53 @@
+;     This file should only be used with:
+
+;     SBuilderX 3.04 or later
+;     ***********************
+
+; Lines started by ; are comments and are ignored
+; Lines enclosed in [] are category designators.
+; You can have more objects references in secondary files
+; using the include directive in the "objects.txt" file. 
+; The secondary files should exist in the SBuilder/Tools/
+; folder and they are processed after the processing of
+; the primary - "objects.txt" - file. 
+
+; You can enter your objects in any of the following 3 forms:
+
+; 6dc7e21e4f0c4d7395488dac102499a1 0 38 14 1 ag_barn
+; 6dc7e21e4f0c4d7395488dac102499a1 1 38 14 1 ag_barn
+; {6dc7e21e-4d73-4f0c-ac8d-4895a1992410} 2 38 15 1 ag_barn
+
+; In the 1st case the object is placed using FS8 techniques
+; and you can control some extra visibility parameters. In the
+; 2nd case it will be placed via SCASM exactly in the same way
+; as BGLComp from the FS2004 SDK. In the 3rd case the object
+; be placed with FSX' BGLComp.
+
+;     SBuilderX 3.13 or later
+;     ***********************
+
+; 1 - This file and all included (secondary) files have moved to the
+;     SBuilderX/LibObjects/ folder. It is required that each Category
+;     should be defined in a single secondary file and that the Category
+;     Name should match the name of the corresponding secondary file.
+; 2 - All object definitions should be moved to secondary files
+; 3 - Thumbnails need to be JPEG type. All that is needed is to place
+;     them in the SBuilderX/LibObjects/NewJpegs/ folder
+
+; comment on 27-10-2017 01:58:35
+; include=FSX_airport_objects.txt
+; comment on 27-10-2017 01:58:35
+; include=FSX_animals.txt
+include=FSX_autogen.txt
+include=FSX_bridges.txt
+include=FSX_buildings.txt
+include=FSX_gameobjects.txt
+include=FSX_generic.txt
+include=FSX_hazards.txt
+include=FSX_landmark.txt
+include=FSX_missionobjects.txt
+include=FSX_vehicles_aircraft.txt
+include=FSX_vehicles_airport.txt
+include=FSX_vehicles_land.txt
+include=FSX_vehicles_water.txt
+; comment on 27-10-20

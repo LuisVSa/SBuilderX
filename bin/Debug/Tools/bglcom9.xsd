@@ -1,0 +1,1573 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!--
+To use this add the following attributes to your FSDATA tag:
+
+xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+xsi:noNamespaceSchemaLocation="bglcomp.xsd"
+-->
+
+<!--
+optional attributes signified by use="optional" or use="required"
+optional elements signified by minOccurs=0
+-->
+
+<!--
+Problems: 1) mandatory sequence
+-->
+
+<xs:annotation>
+	<xs:documentation xml:lang="en">
+	Schema for scenery and AFD data supported by facilities compiler.
+	This file is: "bglcomp.xsd"
+	</xs:documentation>
+</xs:annotation>
+
+<xs:element name="FSData" type="ctFSData" />
+
+
+<!-- Complex Types -->
+
+<xs:complexType name="ctFSData">
+	<xs:sequence>
+		<xs:group ref="grpFSDataChildren" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+	<xs:attribute name="version" form="unqualified" type="xs:string" />
+</xs:complexType>
+
+<xs:group name="grpFSDataChildren">
+	<xs:choice>
+		<xs:element name="Airport" type="ctAirport" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Marker" type="ctMarker" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Waypoint" type="ctWaypoint" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Boundary" type="ctBoundary" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Vor" type="ctVor" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Ndb" type="ctNdb" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="SceneryObject" type="ctSceneryObject" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="ModelData" type="ctModelData" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Geopol" type="ctGeopol" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="ExclusionRectangle" type="ctExclusionRectangle" minOccurs="0" maxOccurs="unbounded" />
+	</xs:choice>
+</xs:group>
+
+<xs:complexType name="ctAirport">
+	<xs:sequence>
+		<xs:group ref="grpAirportChildren" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+	<xs:attribute name="country" form="unqualified" type="stString48" />
+	<xs:attribute name="state" form="unqualified" type="stString48" />
+	<xs:attribute name="city" form="unqualified" type="stString48" />
+	<xs:attribute name="name" form="unqualified" type="stString48" />
+	<xs:attribute name="region" form="unqualified" type="stString48" />
+	<xs:attribute name="lat" form="unqualified" type="stLatitude" use="required" />
+	<xs:attribute name="lon" form="unqualified" type="stLongitude" use="required"/>
+	<xs:attribute name="alt" form="unqualified" type="stAltitude" use="required" />
+	<xs:attribute name="magvar" form="unqualified" type="stAngle" />
+	<xs:attribute name="ident" form="unqualified" type="stString5" use="required" />
+</xs:complexType>
+
+<xs:group name="grpAirportChildren">
+	<xs:choice>
+		<xs:element name="Tower" type="ctTower" minOccurs="0" maxOccurs="1" />
+		<xs:element name="Services" type="ctServices" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Com" type="ctCom" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Runway" type="ctRunway" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="RunwayAlias" type="ctRunwayAlias" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Aprons" type="ctAprons" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="ApronEdgeLights" type="ctApronEdgeLights" minOccurs="0" maxOccurs="unbounded" />
+        
+        <!-- Taxiway data needs to be specifically ordered -->
+        <xs:sequence>
+    		<xs:element name="TaxiwayPoint" type="ctTaxiwayPoint" minOccurs="0" maxOccurs="unbounded" />
+    		<xs:element name="TaxiwayParking" type="ctTaxiwayParking" minOccurs="0" maxOccurs="unbounded" />
+    		<xs:element name="TaxiName" type="ctTaxiName" minOccurs="0" maxOccurs="unbounded" />
+    		<xs:element name="TaxiwayPath" type="ctTaxiwayPath" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        
+		<xs:element name="TaxiwaySign" type="ctTaxiwaySign" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Waypoint" type="ctWaypoint" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Approach" type="ctApproach" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Ndb" type="ctNdb" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Helipad" type="ctHelipad" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Start" type="ctStart" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="DeleteAirport" type="ctDeleteAirport" minOccurs="0" maxOccurs="unbounded" />
+	</xs:choice>
+</xs:group>
+
+<xs:complexType name="ctDeleteAirport">
+    <xs:sequence> 
+        <xs:group ref="grpDeleteAirportChildren" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="deleteAllApproaches" form="unqualified" type="stBool" />
+    <xs:attribute name="deleteAllApronLights" form="unqualified" type="stBool" />
+    <xs:attribute name="deleteAllAprons" form="unqualified" type="stBool" />
+    <xs:attribute name="deleteAllFrequencies" form="unqualified" type="stBool" />
+    <xs:attribute name="deleteAllHelipads" form="unqualified" type="stBool" />
+    <xs:attribute name="deleteAllRunways" form="unqualified" type="stBool" />
+    <xs:attribute name="deleteAllStarts" form="unqualified" type="stBool" />
+    <xs:attribute name="deleteAllTaxiways" form="unqualified" type="stBool" />
+</xs:complexType>
+
+<xs:group name="grpDeleteAirportChildren">
+    <xs:choice>
+        <xs:element name="DeleteRunway" type="ctDeleteRunway" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="DeleteStart" type="ctDeleteStart" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="DeleteFrequency" type="ctDeleteFrequency" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:choice>
+</xs:group>
+
+<xs:complexType name="ctDeleteRunway">
+    <xs:attribute name="surface" form="unqualified" type="stSurface" use="required" />
+    <xs:attribute name="number" form="unqualified" type="stRunwayNumber" use="required" />
+    <xs:attribute name="designator" form="unqualified" type="stDesignator" />
+</xs:complexType>
+
+<xs:complexType name="ctDeleteStart">
+    <xs:attribute name="type" form="unqualified" type="stStart" use="required" />
+    <xs:attribute name="number" form="unqualified" type="stRunwayNumber" use="required" />
+    <xs:attribute name="designator" form="unqualified" type="stDesignator" />
+</xs:complexType>
+
+<xs:complexType name="ctDeleteFrequency">
+    <xs:attribute name="frequency" form="unqualified" type="stFrequencyMhz" use="required" />
+    <xs:attribute name="type" form="unqualified" type="stComType" use="required" />
+</xs:complexType>
+
+<xs:complexType name="ctMarker">
+	<xs:attribute name="lat" form="unqualified" type="stLatitude" />
+	<xs:attribute name="lon" form="unqualified" type="stLongitude" />
+	<xs:attribute name="alt" form="unqualified" type="stAltitude" />
+	<xs:attribute name="type" form="unqualified" type="stMarkerType" />
+	<xs:attribute name="heading" form="unqualified" type="stHeading" />
+	<xs:attribute name="ident" form="unqualified" type="stString5" />
+	<xs:attribute name="region" form="unqualified" type="stString2" />
+	<xs:attribute name="name" form="unqualified" type="stString48" />
+</xs:complexType>
+
+<xs:complexType name="ctCom">
+	<xs:attribute name="frequency" form="unqualified" type="stFrequencyMhz" />
+	<xs:attribute name="type" form="unqualified" type="stComType" />
+	<xs:attribute name="name" form="unqualified" type="stString48" />
+</xs:complexType>
+
+<xs:complexType name="ctOffsetThreshold">
+	<xs:attribute name="end" form="unqualified" type="stEnd" use="required" />
+	<xs:attribute name="length" form="unqualified" type="stDistance" use="required" />
+	<xs:attribute name="width" form="unqualified" type="stDistance" />
+	<xs:attribute name="surface" form="unqualified" type="stSurface" />
+</xs:complexType>
+
+<xs:complexType name="ctRunwayStart">
+	<xs:attribute name="end" form="unqualified" type="stEnd" />
+	<xs:attribute name="lat" form="unqualified" type="stLatitude" use="required" />
+	<xs:attribute name="lon" form="unqualified" type="stLongitude" use="required" />
+	<xs:attribute name="alt" form="unqualified" type="stAltitude" use="required" />
+	<xs:attribute name="heading" form="unqualified" type="stHeading" use="required" />
+	<xs:attribute name="type" form="unqualified" type="stStart" />
+</xs:complexType>
+
+<xs:complexType name="ctStart">
+	<xs:attribute name="number" form="unqualified" type="stRunwayNumber" />
+	<xs:attribute name="designator" form="unqualified" type="stDesignator" />
+	<xs:attribute name="lat" form="unqualified" type="stLatitude" use="required" />
+	<xs:attribute name="lon" form="unqualified" type="stLongitude" use="required" />
+	<xs:attribute name="alt" form="unqualified" type="stAltitude" use="required" />
+	<xs:attribute name="heading" form="unqualified" type="stHeading" use="required" />
+	<xs:attribute name="type" form="unqualified" type="stStart" />
+</xs:complexType>
+
+
+<xs:complexType name="ctMarkings">
+	<xs:attribute name="edges" form="unqualified" type="stBool" />
+	<xs:attribute name="threshold" form="unqualified" type="stBool" />
+	<xs:attribute name="fixedDistance" form="unqualified" type="stBool" />
+	<xs:attribute name="dashes" form="unqualified" type="stBool" />
+	<xs:attribute name="ident" form="unqualified" type="stBool" />
+	<xs:attribute name="primaryClosed" form="unqualified" type="stBool" />
+	<xs:attribute name="secondaryClosed" form="unqualified" type="stBool" />
+	<xs:attribute name="touchdown" form="unqualified" type="stBool" />
+	<xs:attribute name="precision" form="unqualified" type="stBool" />
+	<xs:attribute name="edgePavement" form="unqualified" type="stBool" />
+	<xs:attribute name="singleEnd" form="unqualified" type="stBool" />
+	<xs:attribute name="primaryStol" form="unqualified" type="stBool" />
+	<xs:attribute name="secondaryStol" form="unqualified" type="stBool" />
+</xs:complexType>
+
+<xs:complexType name="ctLights">
+	<xs:attribute name="edge" form="unqualified" type="stLights" />
+	<xs:attribute name="center" form="unqualified" type="stLights" />
+	<xs:attribute name="centerRed" form="unqualified" type="stBool" />
+</xs:complexType>
+
+<xs:complexType name="ctApproachLights">
+	<xs:attribute name="end" form="unqualified" type="stEnd" use="required" />
+	<xs:attribute name="system" form="unqualified" type="stApproachLights" />
+	<xs:attribute name="reil" form="unqualified" type="stBool" />
+	<xs:attribute name="strobes" form="unqualified" type="xs:nonNegativeInteger" />
+	<xs:attribute name="endLights" form="unqualified" type="stBool" />
+	<xs:attribute name="touchdown" form="unqualified" type="stBool" />
+</xs:complexType>
+
+<xs:complexType name="ctBlastPad">
+	<xs:attribute name="end" form="unqualified" type="stEnd" use="required" />
+	<xs:attribute name="length" form="unqualified" type="stDistance" use="required" />
+	<xs:attribute name="width" form="unqualified" type="stDistance" />
+	<xs:attribute name="surface" form="unqualified" type="stSurface" />
+</xs:complexType>
+
+<xs:complexType name="ctOverrun">
+	<xs:attribute name="end" form="unqualified" type="stEnd" use="required" />
+	<xs:attribute name="length" form="unqualified" type="stDistance" use="required" />
+	<xs:attribute name="width" form="unqualified" type="stDistance" />
+	<xs:attribute name="surface" form="unqualified" type="stSurface" />
+</xs:complexType>
+
+<xs:complexType name="ctVasi">
+	<xs:attribute name="end" form="unqualified" type="stEnd" use="required" />
+	<xs:attribute name="type" form="unqualified" type="stVasi" use="required" />
+	<xs:attribute name="side" form="unqualified" type="stSide" use="required" />
+	<xs:attribute name="biasX" form="unqualified" type="stDistance" use="required" />
+	<xs:attribute name="biasZ" form="unqualified" type="stDistance" use="required" />
+	<xs:attribute name="spacing" form="unqualified" type="stDistance" use="required" />
+	<xs:attribute name="pitch" form="unqualified" type="stAngle" use="required" />
+</xs:complexType>
+
+<xs:complexType name="ctVisualModel">
+	<xs:sequence>
+		<xs:element name="BiasXYZ" type="ctBias" minOccurs="0" maxOccurs="1" />
+	</xs:sequence>
+    <xs:attribute name="imageComplexity" form="unqualified" type="stComplexity" />
+    <xs:attribute name="heading" form="unqualified" type="stHeading" />
+    <xs:attribute name="name" form="unqualified" type="xs:hexBinary" use="required" />
+</xs:complexType>
+
+<xs:complexType name="ctGlideSlope">
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" use="required" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" use="required" />
+    <xs:attribute name="alt" form="unqualified" type="stAltitude" use="required" />
+    <xs:attribute name="pitch" form="unqualified" type="stAngle" use="required" />
+    <xs:attribute name="range" form="unqualified" type="stDistance" />
+</xs:complexType>
+
+<xs:complexType name="ctDme">
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" />
+    <xs:attribute name="alt" form="unqualified" type="stAltitude" />
+    <xs:attribute name="range" form="unqualified" type="stDistance" />
+</xs:complexType>
+
+<xs:complexType name="ctIls">
+	<xs:sequence>
+		<xs:group ref="grpIlsChildren" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+	<xs:attribute name="lat" form="unqualified" type="stLatitude" use="required" />
+	<xs:attribute name="lon" form="unqualified" type="stLongitude" use="required" />
+	<xs:attribute name="alt" form="unqualified" type="stAltitude" use="required" />
+	<xs:attribute name="heading" form="unqualified" type="stHeading" use="required" />
+	<xs:attribute name="frequency" form="unqualified" type="stFrequencyMhz" use="required" />
+	<xs:attribute name="end" form="unqualified" type="stEnd" use="required" />
+	<xs:attribute name="range" form="unqualified" type="stDistance" />
+	<xs:attribute name="magvar" form="unqualified" type="stAngle" use="required" />
+	<xs:attribute name="ident" form="unqualified" type="stString5" use="required" />
+	<xs:attribute name="width" form="unqualified" type="stAngle" />
+	<xs:attribute name="name" form="unqualified" type="stString48" />
+	<xs:attribute name="backCourse" form="unqualified" type="stBool" />
+</xs:complexType>
+
+<xs:group name="grpIlsChildren">
+	<xs:choice>
+		<xs:element name="GlideSlope" type="ctGlideSlope" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Dme" type="ctDme" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="VisualModel" type="ctVisualModel" minOccurs="0" maxOccurs="unbounded" />
+    </xs:choice>
+</xs:group>
+
+<xs:complexType name="ctRunway">
+	<xs:sequence>
+		<xs:element name="Markings" type="ctMarkings" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Lights" type="ctLights" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="OffsetThreshold" type="ctOffsetThreshold" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="BlastPad" type="ctBlastPad" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Overrun" type="ctOverrun" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="ApproachLights" type="ctApproachLights" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Vasi" type="ctVasi" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Ils" type="ctIls" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="RunwayStart" type="ctRunwayStart" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" use="required" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" use="required" />
+    <xs:attribute name="alt" form="unqualified" type="stAltitude" use="required" />
+    <xs:attribute name="surface" form="unqualified" type="stSurface" use="required" />
+    <xs:attribute name="heading" form="unqualified" type="stHeading" use="required" />
+    <xs:attribute name="length" form="unqualified" type="stDistance" use="required" />
+    <xs:attribute name="width" form="unqualified" type="stDistance" use="required" />
+    <xs:attribute name="number" form="unqualified" type="stRunwayNumber" use="required" />
+    <xs:attribute name="designator" form="unqualified" type="stDesignator" />
+    <xs:attribute name="patternAltitude" form="unqualified" type="stAltitude" />
+    <xs:attribute name="primaryTakeoff" form="unqualified" type="stBool" />
+    <xs:attribute name="primaryLanding" form="unqualified" type="stBool" />
+    <xs:attribute name="secondaryTakeoff" form="unqualified" type="stBool" />
+    <xs:attribute name="secondaryLanding" form="unqualified" type="stBool" />
+    <xs:attribute name="primaryPattern" form="unqualified" type="stSide" />
+    <xs:attribute name="secondaryPattern" form="unqualified" type="stSide" />
+</xs:complexType>
+
+<xs:complexType name="ctRunwayAlias">
+    <xs:attribute name="number" form="unqualified" type="stRunwayNumber" use="required" />
+    <xs:attribute name="designator" form="unqualified" type="stDesignator" />
+</xs:complexType>
+
+<xs:complexType name="ctFuel">
+	<xs:attribute name="type" form="unqualified" type="stFuelType" />
+	<xs:attribute name="availability" form="unqualified" type="stFuelAvail" />
+</xs:complexType>
+
+<xs:complexType name="ctServices">
+  <xs:sequence>
+    <xs:element name="Fuel" type="ctFuel" minOccurs="0" maxOccurs="unbounded" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ctVertexLL">
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" />
+</xs:complexType>
+
+<xs:complexType name="ctBias">
+    <xs:attribute name="biasX" form="unqualified" type="stDistance" />
+    <xs:attribute name="biasY" form="unqualified" type="stDistance" />
+    <xs:attribute name="biasZ" form="unqualified" type="stDistance" />
+</xs:complexType>
+
+<xs:complexType name="ctTriggerWeatherData">
+	<xs:attribute name="type" form="unqualified" type="stTriggerWeatherDataType" />
+	<xs:attribute name="heading" form="unqualified" type="stHeading" />
+	<xs:attribute name="scalar" form="unqualified" type="stTriggerWeatherDataScalar" />
+</xs:complexType>
+
+<xs:complexType name="ctApron">
+	<xs:sequence>
+		<xs:element name="Vertex" type="ctVertexLL" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+	<xs:attribute name="surface" form="unqualified" type="stSurface" />
+	<xs:attribute name="drawSurface" form="unqualified" type="stBool" />
+	<xs:attribute name="drawDetail" form="unqualified" type="stBool" />
+</xs:complexType>
+
+<xs:complexType name="ctAprons">
+  <xs:sequence>
+    <xs:element name="Apron" type="ctApron" minOccurs="0" maxOccurs="unbounded" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ctGeopol">
+	<xs:sequence>
+		<xs:element name="Vertex" type="ctVertexLL" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+	<xs:attribute name="type" form="unqualified" type="stGeopolType" />
+</xs:complexType>
+
+<xs:complexType name="ctTaxiwayPoint">
+    <xs:attribute name="index" form="unqualified" type="xs:nonNegativeInteger" use="required" />
+    <xs:attribute name="type" form="unqualified" type="stTaxiPointType" use="required" />
+    <xs:attribute name="biasX" form="unqualified" type="stDistance" use="optional" />
+    <xs:attribute name="biasZ" form="unqualified" type="stDistance" use="optional" />
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" use="optional" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" use="optional" />
+    <xs:attribute name="orientation" form="unqualified" type="stTaxiPointOrientation" />
+</xs:complexType>
+
+<xs:complexType name="ctTaxiName">
+    <xs:attribute name="index" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="name" form="unqualified" type="stString8" />
+</xs:complexType>
+
+<xs:complexType name="ctTaxiwayPath">
+    <xs:attribute name="start" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="end" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="type" form="unqualified" type="stTaxiwayPathType" />
+    <xs:attribute name="surface" form="unqualified" type="stSurface" />
+    <xs:attribute name="width" form="unqualified" type="stDistance" />
+    <xs:attribute name="weightLimit" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="name" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="centerLine" form="unqualified" type="stBool" />
+    <xs:attribute name="centerLineLighted" form="unqualified" type="stBool" />
+    <xs:attribute name="leftEdgeLighted" form="unqualified" type="stBool" />
+    <xs:attribute name="rightEdgeLighted" form="unqualified" type="stBool" />
+    <xs:attribute name="leftEdge" form="unqualified" type="stTaxiwayEdgeType" />
+    <xs:attribute name="rightEdge" form="unqualified" type="stTaxiwayEdgeType" />
+    <xs:attribute name="number" form="unqualified" type="stRunwayNumber" />
+    <xs:attribute name="designator" form="unqualified" type="stDesignator" />
+</xs:complexType>
+
+<xs:complexType name="ctTaxiwaySign">
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" />
+    <xs:attribute name="heading" form="unqualified" type="stHeading" />
+    <xs:attribute name="label" form="unqualified" type="xs:string" />
+    <xs:attribute name="justification" form="unqualified" type="stSide" />
+    <xs:attribute name="size" form="unqualified" type="stSignSize" />
+</xs:complexType>
+
+<xs:complexType name="ctWaypoint">
+	<xs:sequence>
+		<xs:element name="Route" type="ctRoute" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" />
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" />
+    <xs:attribute name="waypointType" form="unqualified" type="stWaypointType" />
+    <xs:attribute name="waypointRegion" form="unqualified" type="stString2" />
+    <xs:attribute name="waypointIdent" form="unqualified" type="stString5" />
+    <xs:attribute name="magvar" form="unqualified" type="stAngle" />
+</xs:complexType>
+
+<xs:complexType name="ctLeg">
+    <xs:attribute name="type" form="unqualified" type="stLegType" />
+    <xs:attribute name="fixType" form="unqualified" type="stFixType" />
+    <xs:attribute name="fixRegion" form="unqualified" type="stString2" />
+    <xs:attribute name="fixIdent" form="unqualified" type="stString5" />
+    <xs:attribute name="flyOver" form="unqualified" type="stBool" />
+    <xs:attribute name="turnDirection" form="unqualified" type="stTurnDirection" />
+    <xs:attribute name="recommendedType" form="unqualified" type="stFixType" />
+    <xs:attribute name="recommendedIdent" form="unqualified" type="stString5" />
+    <xs:attribute name="recommendedRegion" form="unqualified" type="stString2" />
+    <xs:attribute name="theta" form="unqualified" type="stAngle" />
+    <xs:attribute name="rho" form="unqualified" type="stDistance" />
+    <xs:attribute name="trueCourse" form="unqualified" type="stHeading" />
+    <xs:attribute name="magneticCourse" form="unqualified" type="stHeading" />
+    <xs:attribute name="distance" form="unqualified" type="stDistance" />
+    <xs:attribute name="time" form="unqualified" type="xs:double" />
+    <xs:attribute name="altitudeDescriptor" form="unqualified" type="stAltitudeDescriptor" />
+    <xs:attribute name="altitude1" form="unqualified" type="stAltitude" />
+    <xs:attribute name="altitude2" form="unqualified" type="stAltitude" />
+</xs:complexType>
+
+<xs:complexType name="ctApproachLegs">
+  <xs:sequence>
+    <xs:element name="Leg" type="ctLeg" minOccurs="0" maxOccurs="unbounded" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ctDmeArc">
+    <xs:attribute name="radial" form="unqualified" type="stAngle" />
+    <xs:attribute name="distance" form="unqualified" type="stDistance" />
+    <xs:attribute name="dmeRegion" form="unqualified" type="stString2" />
+    <xs:attribute name="dmeIdent" form="unqualified" type="stString5" />
+</xs:complexType>
+
+<xs:complexType name="ctTransition">
+  <xs:sequence>
+	<xs:element name="DmeArc" type="ctDmeArc" minOccurs="0" maxOccurs="unbounded" />
+	<xs:element name="TransitionLegs" type="ctApproachLegs" minOccurs="0" maxOccurs="unbounded" />
+  </xs:sequence>
+	<xs:attribute name="transitionType" form="unqualified" type="stTransitionType" />
+	<xs:attribute name="fixType" form="unqualified" type="stFixType" />
+	<xs:attribute name="fixRegion" form="unqualified" type="stString2" />
+	<xs:attribute name="fixIdent" form="unqualified" type="stString5" />
+	<xs:attribute name="altitude" form="unqualified" type="stAltitude" />
+</xs:complexType>
+
+<xs:complexType name="ctApproach">
+  <xs:sequence>
+    <xs:element name="ApproachLegs" type="ctApproachLegs" minOccurs="0" maxOccurs="unbounded" />
+    <xs:element name="MissedApproachLegs" type="ctApproachLegs" minOccurs="0" maxOccurs="unbounded" />
+    <xs:element name="Transition" type="ctTransition" minOccurs="0" maxOccurs="unbounded" />
+  </xs:sequence>
+    <xs:attribute name="type" form="unqualified" type="stApproachType" use="required" />
+    <xs:attribute name="runway" form="unqualified" type="stRunwayNumber" />
+    <xs:attribute name="designator" form="unqualified" type="stDesignator" />
+    <xs:attribute name="suffix" form="unqualified" type="stCharacter" />
+    <xs:attribute name="gpsOverlay" form="unqualified" type="stBool" />
+    <xs:attribute name="fixType" form="unqualified" type="stFixType" use="required" />
+    <xs:attribute name="fixRegion" form="unqualified" type="stString2" use="required" />
+    <xs:attribute name="fixIdent" form="unqualified" type="stString5" use="required" />
+    <xs:attribute name="altitude" form="unqualified" type="stAltitude" use="required" />
+    <xs:attribute name="heading" form="unqualified" type="stHeading" use="required" />
+    <xs:attribute name="missedAltitude" form="unqualified" type="stAltitude" use="required" />
+</xs:complexType>
+
+<xs:complexType name="ctEdgeLights">
+  <xs:sequence>
+	<xs:element name="Vertex" type="ctVertexLL" minOccurs="0" maxOccurs="unbounded" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ctApronEdgeLights">
+  <xs:sequence>
+    <xs:element name="EdgeLights" type="ctEdgeLights" minOccurs="0" maxOccurs="unbounded" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ctTaxiwayParking">
+    <xs:attribute name="index" form="unqualified" type="xs:nonNegativeInteger" use="required" />
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" use="optional" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" use="optional" />
+    <xs:attribute name="biasX" form="unqualified" type="stLatitude" use="optional" />
+    <xs:attribute name="biasZ" form="unqualified" type="stLongitude" use="optional" />
+    <xs:attribute name="heading" form="unqualified" type="stHeading" use="required" />
+    <xs:attribute name="radius" form="unqualified" type="stDistance" use="required" />
+    <xs:attribute name="type" form="unqualified" type="stParkingType" use="required" />
+    <xs:attribute name="name" form="unqualified" type="stParkingName" use="required" />
+    <xs:attribute name="number" form="unqualified" type="xs:nonNegativeInteger" use="required" />
+    <xs:attribute name="pushBack" form="unqualified" type="stParkingPushback" use="required" />
+    <xs:attribute name="airlineCodes" form="unqualified" type="xs:string" />
+</xs:complexType>
+
+<xs:complexType name="ctTower">
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" use="required" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" use="required" />
+    <xs:attribute name="alt" form="unqualified" type="stAltitude" use="required" />
+</xs:complexType>
+
+<xs:complexType name="ctNdb">
+	<xs:sequence>
+		<xs:element name="VisualModel" type="ctVisualModel" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" />
+    <xs:attribute name="alt" form="unqualified" type="stAltitude" />
+    <xs:attribute name="type" form="unqualified" type="stNdbType" />
+    <xs:attribute name="frequency" form="unqualified" type="stFrequencyKhz" />
+    <xs:attribute name="range" form="unqualified" type="stDistance" />
+    <xs:attribute name="magvar" form="unqualified" type="stAngle" />
+    <xs:attribute name="region" form="unqualified" type="stString2" />
+    <xs:attribute name="ident" form="unqualified" type="stString5" />
+    <xs:attribute name="name" form="unqualified" type="stString48" />
+</xs:complexType>
+
+<xs:complexType name="ctHelipad">
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" use="required" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" use="required" />
+    <xs:attribute name="alt" form="unqualified" type="stAltitude" use="required" />
+    <xs:attribute name="surface" form="unqualified" type="stSurface" use="required" />
+    <xs:attribute name="heading" form="unqualified" type="stHeading" use="required" />
+    <xs:attribute name="length" form="unqualified" type="stDistance" use="required" />
+    <xs:attribute name="width" form="unqualified" type="stDistance" use="required" />
+    <xs:attribute name="type" form="unqualified" type="stHelipad" use="required" />
+    <xs:attribute name="closed" form="unqualified" type="stBool" />
+    <xs:attribute name="transparent" form="unqualified" type="stBool" />
+    <xs:attribute name="red" form="unqualified" type="xs:unsignedByte" />
+    <xs:attribute name="green" form="unqualified" type="xs:unsignedByte" />
+    <xs:attribute name="blue" form="unqualified" type="xs:unsignedByte" />
+</xs:complexType>
+
+<xs:complexType name="ctPreviousNext">
+	<xs:attribute name="waypointRegion" form="unqualified" type="stString2" />
+	<xs:attribute name="waypointIdent" form="unqualified" type="stString5" />
+	<xs:attribute name="waypointType" form="unqualified" type="stWaypointType" />
+	<xs:attribute name="altitudeMinimum" form="unqualified" type="stAltitude" />
+</xs:complexType>
+
+<xs:complexType name="ctRoute">
+	<xs:sequence>
+		<xs:element name="Previous" type="ctPreviousNext" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Next" type="ctPreviousNext" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+    <xs:attribute name="name" form="unqualified" type="xs:string" />
+    <xs:attribute name="routeType" form="unqualified" type="stRouteType" />
+</xs:complexType>
+
+<xs:complexType name="ctCircle">
+    <xs:attribute name="index" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="radius" form="unqualified" type="stDistance" />
+    <xs:attribute name="altitudeMinimum" form="unqualified" type="stAltitude" />
+    <xs:attribute name="minimumAltitudeType" form="unqualified" type="stAltitudeType" />
+    <xs:attribute name="altitudeMaximum" form="unqualified" type="stAltitude" />
+    <xs:attribute name="maximumAltitudeType" form="unqualified" type="stAltitudeType" />
+</xs:complexType>
+
+<xs:complexType name="ctStartBoundary">
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" />
+    <xs:attribute name="altitudeMinimum" form="unqualified" type="stAltitude" />
+    <xs:attribute name="minimumAltitudeType" form="unqualified" type="stAltitudeType" />
+    <xs:attribute name="altitudeMaximum" form="unqualified" type="stAltitude" />
+    <xs:attribute name="maximumAltitudeType" form="unqualified" type="stAltitudeType" />
+</xs:complexType>
+
+<xs:complexType name="ctArc">
+    <xs:attribute name="index" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="type" form="unqualified" type="stArcDirection" />
+    <xs:attribute name="lat" form="unqualified" type="stLatitude" />
+    <xs:attribute name="lon" form="unqualified" type="stLongitude" />
+</xs:complexType>
+
+<xs:complexType name="ctBoundary">
+	<xs:sequence>
+		<xs:group ref="grpBoundaryChildren" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+	<xs:attribute name="type" form="unqualified" type="stBoundaryType" />
+	<xs:attribute name="name" form="unqualified" type="stString48" />
+</xs:complexType>
+
+<xs:group name="grpBoundaryChildren">
+	<xs:choice>
+		<xs:element name="Origin" type="ctVertexLL" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Circle" type="ctCircle" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="BoundaryStart" type="ctStartBoundary" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Line"  type="ctVertexLL" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="Arc" type="ctArc" minOccurs="0" maxOccurs="unbounded" />
+	</xs:choice>
+</xs:group>
+
+
+<xs:complexType name="ctVor">
+	<xs:sequence>
+		<xs:element name="Dme" type="ctDme" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="VisualModel" type="ctVisualModel" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+	<xs:attribute name="lat" form="unqualified" type="stLatitude" />
+	<xs:attribute name="lon" form="unqualified" type="stLongitude" />
+	<xs:attribute name="alt" form="unqualified" type="stAltitude" />
+	<xs:attribute name="type" form="unqualified" type="stVorType" />
+	<xs:attribute name="frequency" form="unqualified" type="stFrequencyMhz" />
+	<xs:attribute name="magvar" form="unqualified" type="stAngle" />
+	<xs:attribute name="range" form="unqualified" type="stDistance" />
+    <xs:attribute name="region" form="unqualified" type="stString2" />
+	<xs:attribute name="ident" form="unqualified" type="stString5" />
+	<xs:attribute name="name" form="unqualified" type="stString48" />
+	<xs:attribute name="nav" form="unqualified" type="stBool" />
+	<xs:attribute name="dmeOnly" form="unqualified" type="stBool" />
+	<xs:attribute name="dme" form="unqualified" type="stBool" />
+</xs:complexType>
+
+<xs:complexType name="ctLibraryObject">
+    <xs:attribute name="name" form="unqualified" type="xs:hexBinary" />
+    <xs:attribute name="scale" form="unqualified" type="xs:double" />
+</xs:complexType>
+
+<xs:complexType name="ctEffect">
+    <xs:attribute name="effectName" form="unqualified" type="stString80" />
+    <xs:attribute name="effectParams" form="unqualified" type="xs:string" />
+</xs:complexType>
+
+<xs:complexType name="ctSceneryObject">
+    <xs:sequence>
+       <xs:element name="BiasXYZ" type="ctBias" minOccurs="0" maxOccurs="1" />
+    
+       <xs:choice>
+            <xs:element name="Beacon" type="ctBeacon" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Effect" type="ctEffect" minOccurs="0" maxOccurs="1" />
+            <xs:element name="GenericBuilding" type="ctGenericBuilding" minOccurs="0" maxOccurs="1" />
+            <xs:element name="LibraryObject" type="ctLibraryObject" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Trigger" type="ctTrigger" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Windsock" type="ctWindsock" minOccurs="0" maxOccurs="1" />
+        </xs:choice>
+        
+        <xs:element name="AttachedObject" type="ctAttachedObject" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    
+	<xs:attribute name="lat" form="unqualified" type="stLatitude" />
+	<xs:attribute name="lon" form="unqualified" type="stLongitude" />
+	<xs:attribute name="alt" form="unqualified" type="stAltitude" />
+	<xs:attribute name="altitudeIsAgl" form="unqualified" type="stBool" />
+	<xs:attribute name="pitch" form="unqualified" type="stAngle" />
+	<xs:attribute name="bank" form="unqualified" type="stAngle" />
+	<xs:attribute name="heading" form="unqualified" type="stHeading" />
+	<xs:attribute name="imageComplexity" form="unqualified" type="stComplexity" />
+</xs:complexType>
+
+<xs:complexType name="ctTrigger">
+    <xs:sequence>
+        <xs:element name="Fuel" type="ctFuel" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="Vertex" type="ctBias" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="TriggerWeatherData" type="ctTriggerWeatherData" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+
+	<xs:attribute name="type" form="unqualified" type="stTriggerType" />
+	<xs:attribute name="triggerHeight" form="unqualified" type="stTriggerHeight" use="optional" />
+</xs:complexType>
+
+<xs:complexType name="ctWindsock">
+	<xs:sequence>
+		<xs:element name="PoleColor" type="ctColor" minOccurs="0" maxOccurs="1" />
+		<xs:element name="SockColor" type="ctColor" minOccurs="0" maxOccurs="1" />
+	</xs:sequence>
+	<xs:attribute name="poleHeight" form="unqualified" type="stDistance" />
+	<xs:attribute name="sockLength" form="unqualified" type="stDistance" />
+	<xs:attribute name="lighted" form="unqualified" type="stBool" />
+</xs:complexType>
+
+<xs:complexType name="ctColor">
+    <xs:attribute name="red" form="unqualified" type="xs:unsignedByte" />
+    <xs:attribute name="green" form="unqualified" type="xs:unsignedByte" />
+    <xs:attribute name="blue" form="unqualified" type="xs:unsignedByte" />
+</xs:complexType>
+
+<xs:complexType name="ctAttachedObject">
+	<xs:sequence>
+		<xs:element name="BiasXYZ" type="ctBias" minOccurs="0" maxOccurs="1" />
+		<xs:element name="Beacon" type="ctBeacon" minOccurs="0" maxOccurs="1" />
+		<xs:element name="Effect" type="ctEffect" minOccurs="0" maxOccurs="1" />
+		<xs:element name="LibraryObject" type="ctLibraryObject" minOccurs="0" maxOccurs="1" />
+	</xs:sequence>
+	<xs:attribute name="attachpointName" form="unqualified" type="xs:string" />
+	<xs:attribute name="pitch" form="unqualified" type="stAngle" />
+	<xs:attribute name="bank" form="unqualified" type="stAngle" />
+	<xs:attribute name="heading" form="unqualified" type="stHeading" />
+</xs:complexType>
+
+<xs:complexType name="ctBeacon">
+    <xs:attribute name="type" form="unqualified" type="stBeaconType" />
+    <xs:attribute name="baseType" form="unqualified" type="stBeaconBase" />
+</xs:complexType>
+
+<xs:complexType name="ctGenericBuilding">
+	<xs:sequence>
+		<xs:element name="RectangularBuilding" type="ctRectangularBuilding" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="PyramidalBuilding" type="ctPyramidalBuilding" minOccurs="0" maxOccurs="unbounded" />
+		<xs:element name="MultiSidedBuilding" type="ctMultiSidedBuilding" minOccurs="0" maxOccurs="unbounded" />
+	</xs:sequence>
+	<xs:attribute name="scale" form="unqualified" type="xs:double" />
+	<xs:attribute name="windowTexture" form="unqualified" type="xs:nonNegativeInteger" />
+	<xs:attribute name="bottomTexture" form="unqualified" type="xs:nonNegativeInteger" />
+	<xs:attribute name="topTexture" form="unqualified" type="xs:nonNegativeInteger" />
+	<xs:attribute name="roofTexture" form="unqualified" type="xs:nonNegativeInteger" />
+</xs:complexType>
+
+<xs:complexType name="ctRectangularBuilding">
+    <xs:attribute name="roofType" form="unqualified" type="stRoofType" />
+    <xs:attribute name="sizeX" form="unqualified" type="xs:double" />
+    <xs:attribute name="sizeZ" form="unqualified" type="xs:double" />
+    <xs:attribute name="sizeBottomY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexBottomX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexBottomZ" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="sizeWindowY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexWindowX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexWindowY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexWindowZ" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="sizeTopY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexTopX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexTopZ" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexRoofX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexRoofZ" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="sizeRoofY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexRoofY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="gableTexture" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexGableY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexGableZ" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="faceTexture" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexFaceX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexFaceY" form="unqualified" type="xs:nonNegativeInteger" />
+</xs:complexType>
+
+<xs:complexType name="ctPyramidalBuilding">
+    <xs:attribute name="sizeX" form="unqualified" type="xs:double" />
+    <xs:attribute name="sizeZ" form="unqualified" type="xs:double" />
+    <xs:attribute name="sizeTopX" form="unqualified" type="xs:double" />
+    <xs:attribute name="sizeTopZ" form="unqualified" type="xs:double" />
+    <xs:attribute name="sizeBottomY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexBottomX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexBottomZ" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="sizeWindowY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexWindowX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexWindowY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexWindowZ" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="sizeTopY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexTopX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexTopZ" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexRoofX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexRoofZ" form="unqualified" type="xs:nonNegativeInteger" />
+</xs:complexType>
+
+<xs:complexType name="ctMultiSidedBuilding">
+    <xs:attribute name="buildingSides" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="smoothing" form="unqualified" type="stBool" />
+    <xs:attribute name="sizeX" form="unqualified" type="xs:double" />
+    <xs:attribute name="sizeZ" form="unqualified" type="xs:double" />
+    <xs:attribute name="sizeBottomY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexBottomX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="sizeWindowY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexWindowX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexWindowY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="sizeTopY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexTopX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="sizeRoofY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexRoofX" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexRoofY" form="unqualified" type="xs:nonNegativeInteger" />
+    <xs:attribute name="textureIndexRoofZ" form="unqualified" type="xs:nonNegativeInteger" />
+</xs:complexType>
+
+<!-- support ModelData start and end tags separated only by whitespace -->
+<xs:complexType name="ctModelData">
+	<xs:simpleContent>
+		<xs:extension base="xs:string">
+			<xs:attribute name="name" form="unqualified" type="xs:hexBinary" />
+			<xs:attribute name="sourceFile" form="unqualified" type="xs:string" />
+			<xs:attribute name="fileOffset" form="unqualified" type="xs:nonNegativeInteger" />
+		</xs:extension>
+	</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="ctExclusionRectangle">
+	<xs:attribute name="latitudeMinimum" form="unqualified" type="stLatitude" use="required" />
+	<xs:attribute name="latitudeMaximum" form="unqualified" type="stLatitude" use="required" />
+	<xs:attribute name="longitudeMinimum" form="unqualified" type="stLongitude" use="required" />
+	<xs:attribute name="longitudeMaximum" form="unqualified" type="stLongitude" use="required" />
+	<xs:attribute name="excludeAllObjects" form="unqualified" type="stBool" use="optional" />
+	<xs:attribute name="excludeBeaconObjects" form="unqualified" type="stBool" use="optional" />
+	<xs:attribute name="excludeEffectObjects" form="unqualified" type="stBool" use="optional" />
+	<xs:attribute name="excludeGenericBuildingObjects" form="unqualified" type="stBool" use="optional" />
+	<xs:attribute name="excludeLibraryObjects" form="unqualified" type="stBool" use="optional" />
+	<xs:attribute name="excludeTaxiwaySignObjects" form="unqualified" type="stBool" use="optional"  />
+	<xs:attribute name="excludeTriggerObjects" form="unqualified" type="stBool" use="optional" />
+	<xs:attribute name="excludeWindsockObjects" form="unqualified" type="stBool" use="optional" />
+</xs:complexType>
+
+<!-- Simple Types -->
+
+<xs:simpleType name="stLatitude">
+	<xs:union>
+		<xs:simpleType>
+			<xs:restriction base="stLatitudeAsDouble"/>
+		</xs:simpleType>
+		<xs:simpleType>
+			<xs:restriction base="stLatitudeAsString"/>
+		</xs:simpleType>
+	</xs:union>
+</xs:simpleType>
+
+<xs:simpleType name="stLatitudeAsDouble">
+	<xs:restriction base="xs:double">
+		<xs:minInclusive value="-90.0"/>
+		<xs:maxInclusive value="90.0"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stLatitudeAsString">
+	<xs:restriction base="xs:string">
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stLongitude">
+	<xs:union>
+		<xs:simpleType>
+			<xs:restriction base="stLongitudeAsDouble"/>
+		</xs:simpleType>
+		<xs:simpleType>
+			<xs:restriction base="stLongitudeAsString"/>
+		</xs:simpleType>
+	</xs:union>
+</xs:simpleType>
+
+<xs:simpleType name="stLongitudeAsDouble">
+	<xs:restriction base="xs:double">
+		<xs:minInclusive value="-180.0"/>
+		<xs:maxInclusive value="180.0"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stLongitudeAsString">
+	<xs:restriction base="xs:string">
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stAngle">
+	<xs:restriction base="xs:double">
+		<xs:minInclusive value="-360.0"/>
+		<xs:maxInclusive value="360.0"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stHeading">
+	<xs:restriction base="xs:double">
+		<xs:minInclusive value="0.0"/>
+		<xs:maxInclusive value="360.0"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<!-- Needs further work on constraints -->
+<xs:simpleType name="stFrequencyMhz">
+	<xs:restriction base="xs:double">
+		<xs:minInclusive value="108.0"/>
+		<xs:maxInclusive value="136.992"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<!-- Needs further work on constraints -->
+<xs:simpleType name="stFrequencyKhz">
+	<xs:restriction base="xs:double">
+		<xs:minInclusive value="0.0"/>
+		<xs:maxInclusive value="1737.0"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<!-- Accepts only lower-case suffix -->
+<xs:simpleType name="stDistance">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="-?\d*\.?\d*[FNM]?"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<!-- Accepts only lower-case suffix -->
+<xs:simpleType name="stAltitude">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="-?\d*\.?\d*[FM]?"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stBool">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="YES"/>
+		<xs:enumeration value="NO"/>
+		<xs:enumeration value="TRUE"/>
+		<xs:enumeration value="FALSE"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stSide">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="LEFT"/>
+		<xs:enumeration value="RIGHT"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stLights">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NONE"/>
+		<xs:enumeration value="LOW"/>
+		<xs:enumeration value="MEDIUM"/>
+		<xs:enumeration value="HIGH"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stEnd">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="PRIMARY"/>
+		<xs:enumeration value="SECONDARY"/>
+		<xs:enumeration value="BASE"/>
+		<xs:enumeration value="RECIP"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stApproachLights">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NONE"/>
+		<xs:enumeration value="ALSF1"/>
+		<xs:enumeration value="ALSF2"/>
+		<xs:enumeration value="CALVERT"/>
+		<xs:enumeration value="CALVERT2"/>
+		<xs:enumeration value="MALS"/>
+		<xs:enumeration value="MALSF"/>
+		<xs:enumeration value="MALSR"/>
+		<xs:enumeration value="ODALS"/>
+		<xs:enumeration value="RAIL"/>
+		<xs:enumeration value="SALS"/>
+		<xs:enumeration value="SSALF"/>
+		<xs:enumeration value="SSALR"/>
+		<xs:enumeration value="SSALS"/>
+		<xs:enumeration value="SSALSF"/>
+		<xs:enumeration value="SSALSR"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stVasi">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="PAPI2"/>
+		<xs:enumeration value="PAPI4"/>
+		<xs:enumeration value="PVASI"/>
+		<xs:enumeration value="TRICOLOR"/>
+		<xs:enumeration value="TVASI"/>
+		<xs:enumeration value="VASI21"/>
+		<xs:enumeration value="VASI22"/>
+		<xs:enumeration value="VASI23"/>
+		<xs:enumeration value="VASI31"/>
+		<xs:enumeration value="VASI32"/>
+		<xs:enumeration value="VASI33"/>
+		<xs:enumeration value="BALL"/>
+		<xs:enumeration value="APAP"/>
+		<xs:enumeration value="PANELS"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stDesignator">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NONE"/>
+		<xs:enumeration value="C"/>
+		<xs:enumeration value="CENTER"/>
+		<xs:enumeration value="L"/>
+		<xs:enumeration value="LEFT"/>
+		<xs:enumeration value="R"/>
+		<xs:enumeration value="RIGHT"/>
+		<xs:enumeration value="W"/>
+		<xs:enumeration value="WATER"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stSurface">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="ASPHALT"/>
+		<xs:enumeration value="BITUMINOUS"/>
+		<xs:enumeration value="BRICK"/>
+		<xs:enumeration value="CLAY"/>
+		<xs:enumeration value="CEMENT"/>
+		<xs:enumeration value="CONCRETE"/>
+		<xs:enumeration value="CORAL"/>
+		<xs:enumeration value="DIRT"/>
+		<xs:enumeration value="GRASS"/>
+		<xs:enumeration value="GRAVEL"/>
+		<xs:enumeration value="ICE"/>
+		<xs:enumeration value="MACADAM"/>
+		<xs:enumeration value="OIL_TREATED"/>
+		<xs:enumeration value="PLANKS"/>
+		<xs:enumeration value="SAND"/>
+		<xs:enumeration value="SHALE"/>
+		<xs:enumeration value="SNOW"/>
+		<xs:enumeration value="STEEL_MATS"/>
+		<xs:enumeration value="TARMAC"/>
+		<xs:enumeration value="UNKNOWN"/>
+		<xs:enumeration value="WATER"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stCharacter">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="1"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stString2">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="2"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stString5">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="5"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stString6">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="6"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stString8">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="8"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stString48">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="48"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stString80">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="80"/>
+	</xs:restriction>
+</xs:simpleType>
+
+
+<xs:simpleType name="stRunwayNumber">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="0"/>
+		<xs:enumeration value="1"/>
+		<xs:enumeration value="2"/>
+		<xs:enumeration value="3"/>
+		<xs:enumeration value="4"/>
+		<xs:enumeration value="5"/>
+		<xs:enumeration value="6"/>
+		<xs:enumeration value="7"/>
+		<xs:enumeration value="8"/>
+		<xs:enumeration value="9"/>
+		<xs:enumeration value="01"/>
+		<xs:enumeration value="02"/>
+		<xs:enumeration value="03"/>
+		<xs:enumeration value="04"/>
+		<xs:enumeration value="05"/>
+		<xs:enumeration value="06"/>
+		<xs:enumeration value="07"/>
+		<xs:enumeration value="08"/>
+		<xs:enumeration value="09"/>
+		<xs:enumeration value="10"/>
+		<xs:enumeration value="11"/>
+		<xs:enumeration value="12"/>
+		<xs:enumeration value="13"/>
+		<xs:enumeration value="14"/>
+		<xs:enumeration value="15"/>
+		<xs:enumeration value="16"/>
+		<xs:enumeration value="17"/>
+		<xs:enumeration value="18"/>
+		<xs:enumeration value="19"/>
+		<xs:enumeration value="20"/>
+		<xs:enumeration value="21"/>
+		<xs:enumeration value="22"/>
+		<xs:enumeration value="23"/>
+		<xs:enumeration value="24"/>
+		<xs:enumeration value="25"/>
+		<xs:enumeration value="26"/>
+		<xs:enumeration value="27"/>
+		<xs:enumeration value="28"/>
+		<xs:enumeration value="29"/>
+		<xs:enumeration value="30"/>
+		<xs:enumeration value="31"/>
+		<xs:enumeration value="32"/>
+		<xs:enumeration value="33"/>
+		<xs:enumeration value="34"/>
+		<xs:enumeration value="35"/>
+		<xs:enumeration value="36"/>
+		<xs:enumeration value="EAST"/>
+		<xs:enumeration value="NORTH"/>
+		<xs:enumeration value="NORTHEAST"/>
+		<xs:enumeration value="NORTHWEST"/>
+		<xs:enumeration value="SOUTH"/>
+		<xs:enumeration value="SOUTHEAST"/>
+		<xs:enumeration value="SOUTHWEST"/>
+		<xs:enumeration value="WEST"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stComplexity">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="VERY_SPARSE"/>
+		<xs:enumeration value="SPARSE"/>
+		<xs:enumeration value="NORMAL"/>
+		<xs:enumeration value="DENSE"/>
+		<xs:enumeration value="VERY_DENSE"/>
+		<xs:enumeration value="EXTREMELY_DENSE"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stStart">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="RUNWAY"/>
+		<xs:enumeration value="HELIPAD"/>
+		<xs:enumeration value="WATER"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stHelipad">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NONE"/>
+		<xs:enumeration value="CIRCLE"/>
+		<xs:enumeration value="H"/>
+		<xs:enumeration value="MEDICAL"/>
+		<xs:enumeration value="SQUARE"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stComType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="APPROACH"/>
+		<xs:enumeration value="ASOS"/>
+		<xs:enumeration value="ATIS"/>
+		<xs:enumeration value="AWOS"/>
+		<xs:enumeration value="CENTER"/>
+		<xs:enumeration value="CLEARANCE"/>
+		<xs:enumeration value="CTAF"/>
+		<xs:enumeration value="DEPARTURE"/>
+		<xs:enumeration value="FSS"/>
+		<xs:enumeration value="GROUND"/>
+		<xs:enumeration value="MULTICOM"/>
+		<xs:enumeration value="TOWER"/>
+		<xs:enumeration value="UNICOM"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stApproachType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="GPS"/>
+		<xs:enumeration value="ILS"/>
+		<xs:enumeration value="LDA"/>
+		<xs:enumeration value="LOCALIZER"/>
+		<xs:enumeration value="LOCALIZER_BACKCOURSE"/>
+		<xs:enumeration value="NDB"/>
+		<xs:enumeration value="NDBDME"/>
+		<xs:enumeration value="RNAV"/>
+		<xs:enumeration value="SDF"/>
+		<xs:enumeration value="VOR"/>
+		<xs:enumeration value="VORDME"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<!-- CONFUSION BETWEEN TRANSITION TYPES AND IAF TYPES! -->
+<xs:simpleType name="stTransitionType">
+	<xs:restriction base="xs:string">
+		<!-- Data has these: -->
+		<xs:enumeration value="FULL"/>
+		<xs:enumeration value="DME"/>
+		<!-- Steve's doc has these: -->
+		<xs:enumeration value="NDB"/>
+		<xs:enumeration value="VOR"/>
+		<xs:enumeration value="GPS"/>
+		<xs:enumeration value="AIRWAY"/>
+		<xs:enumeration value="ILS"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stFixType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NDB"/>
+		<xs:enumeration value="TERMINAL_NDB"/>
+		<xs:enumeration value="TERMINAL_WAYPOINT"/>
+		<xs:enumeration value="VOR"/>
+		<xs:enumeration value="WAYPOINT"/>
+		<xs:enumeration value="RUNWAY"/>
+		<xs:enumeration value="LOCALIZER"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stLegType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="AF"/>
+		<xs:enumeration value="CA"/>
+		<xs:enumeration value="CD"/>
+		<xs:enumeration value="CF"/>
+		<xs:enumeration value="CI"/>
+		<xs:enumeration value="CR"/>
+		<xs:enumeration value="DF"/>
+		<xs:enumeration value="FA"/>
+		<xs:enumeration value="FC"/>
+		<xs:enumeration value="FD"/>
+		<xs:enumeration value="FM"/>
+		<xs:enumeration value="HA"/>
+		<xs:enumeration value="HF"/>
+		<xs:enumeration value="HM"/>
+		<xs:enumeration value="IF"/>
+		<xs:enumeration value="PI"/>
+		<xs:enumeration value="RF"/>
+		<xs:enumeration value="TF"/>
+		<xs:enumeration value="VA"/>
+		<xs:enumeration value="VD"/>
+		<xs:enumeration value="VI"/>
+		<xs:enumeration value="VM"/>
+		<xs:enumeration value="VR"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stAltitudeDescriptor">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="+"/>
+		<xs:enumeration value="-"/>
+		<xs:enumeration value="A"/>
+		<xs:enumeration value="B"/>
+		<xs:enumeration value="C"/>
+		<xs:enumeration value="G"/>
+		<xs:enumeration value="H"/>
+		<xs:enumeration value="I"/>
+		<xs:enumeration value="J"/>
+		<xs:enumeration value="V"/>
+		<xs:enumeration value=" "/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stTurnDirection">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="L"/>
+		<xs:enumeration value="R"/>
+		<xs:enumeration value="E"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stTaxiPointType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NORMAL"/>
+		<xs:enumeration value="HOLD_SHORT"/>
+		<xs:enumeration value="ILS_HOLD_SHORT"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stTaxiPointOrientation">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="FORWARD"/>
+		<xs:enumeration value="REVERSE"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stParkingType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NONE"/>
+		<xs:enumeration value="DOCK_GA"/>
+		<xs:enumeration value="GATE_HEAVY"/>
+		<xs:enumeration value="GATE_MEDIUM"/>
+		<xs:enumeration value="GATE_SMALL"/>
+		<xs:enumeration value="RAMP_CARGO"/>
+		<xs:enumeration value="RAMP_GA"/>
+		<xs:enumeration value="RAMP_GA_LARGE"/>
+		<xs:enumeration value="RAMP_GA_MEDIUM"/>
+		<xs:enumeration value="RAMP_GA_SMALL"/>
+		<xs:enumeration value="RAMP_MIL_CARGO"/>
+		<xs:enumeration value="RAMP_MIL_COMBAT"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stParkingName">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="DOCK"/>
+		<xs:enumeration value="E_PARKING"/>
+		<xs:enumeration value="GATE"/>
+		<xs:enumeration value="GATE_A"/>
+		<xs:enumeration value="GATE_B"/>
+		<xs:enumeration value="GATE_C"/>
+		<xs:enumeration value="GATE_D"/>
+		<xs:enumeration value="GATE_E"/>
+		<xs:enumeration value="GATE_F"/>
+		<xs:enumeration value="GATE_G"/>
+		<xs:enumeration value="GATE_H"/>
+		<xs:enumeration value="GATE_I"/>
+		<xs:enumeration value="GATE_J"/>
+		<xs:enumeration value="GATE_K"/>
+		<xs:enumeration value="GATE_L"/>
+		<xs:enumeration value="GATE_M"/>
+		<xs:enumeration value="GATE_N"/>
+		<xs:enumeration value="GATE_O"/>
+		<xs:enumeration value="GATE_P"/>
+		<xs:enumeration value="GATE_Q"/>
+		<xs:enumeration value="GATE_R"/>
+		<xs:enumeration value="GATE_S"/>
+		<xs:enumeration value="GATE_T"/>
+		<xs:enumeration value="GATE_U"/>
+		<xs:enumeration value="GATE_V"/>
+		<xs:enumeration value="GATE_W"/>
+		<xs:enumeration value="GATE_X"/>
+		<xs:enumeration value="GATE_Y"/>
+		<xs:enumeration value="GATE_Z"/>
+		<xs:enumeration value="NE_PARKING"/>
+		<xs:enumeration value="NONE"/>
+		<xs:enumeration value="N_PARKING"/>
+		<xs:enumeration value="NW_PARKING"/>
+		<xs:enumeration value="PARKING"/>
+		<xs:enumeration value="SE_PARKING"/>
+		<xs:enumeration value="S_PARKING"/>
+		<xs:enumeration value="SW_PARKING"/>
+		<xs:enumeration value="W_PARKING"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stParkingPushback">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NONE"/>
+		<xs:enumeration value="LEFT"/>
+		<xs:enumeration value="RIGHT"/>
+		<xs:enumeration value="BOTH"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stTaxiwayPathType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="PARKING"/>
+		<xs:enumeration value="RUNWAY"/>
+		<xs:enumeration value="PATH"/>
+		<xs:enumeration value="CLOSED"/>
+		<xs:enumeration value="TAXI"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stTaxiwayEdgeType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NONE"/>
+		<xs:enumeration value="SOLID"/>
+		<xs:enumeration value="DASHED"/>
+		<xs:enumeration value="SOLID_DASHED"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stWaypointType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="NAMED"/>
+		<xs:enumeration value="UNNAMED"/>
+		<xs:enumeration value="VOR"/>
+		<xs:enumeration value="NDB"/>
+		<xs:enumeration value="OFF_ROUTE"/>
+		<xs:enumeration value="IAF"/>
+		<xs:enumeration value="FAF"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stRouteType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="VICTOR"/>
+		<xs:enumeration value="JET"/>
+		<xs:enumeration value="BOTH"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stFuelType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="UNKNOWN"/>
+		<xs:enumeration value="73"/>
+		<xs:enumeration value="87"/>
+		<xs:enumeration value="100"/>
+		<xs:enumeration value="130"/>
+		<xs:enumeration value="145"/>
+		<xs:enumeration value="MOGAS"/>
+		<xs:enumeration value="JET"/>
+		<xs:enumeration value="JETA"/>
+		<xs:enumeration value="JETA1"/>
+		<xs:enumeration value="JETAP"/>
+		<xs:enumeration value="JETB"/>
+		<xs:enumeration value="JET4"/>
+		<xs:enumeration value="JET5"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stFuelAvail">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="YES"/>
+		<xs:enumeration value="NO"/>
+		<xs:enumeration value="PRIOR_REQUEST"/>
+		<xs:enumeration value="UNKNOWN"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stSignSize">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="SIZE1"/>
+		<xs:enumeration value="SIZE2"/>
+		<xs:enumeration value="SIZE3"/>
+		<xs:enumeration value="SIZE4"/>
+		<xs:enumeration value="SIZE5"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stBoundaryType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="ALERT"/>
+		<xs:enumeration value="APPROACH"/>
+		<xs:enumeration value="CENTER"/>
+		<xs:enumeration value="CLASS_A"/>
+		<xs:enumeration value="CLASS_B"/>
+		<xs:enumeration value="CLASS_C"/>
+		<xs:enumeration value="CLASS_D"/>
+		<xs:enumeration value="CLASS_E"/>
+		<xs:enumeration value="CLASS_F"/>
+		<xs:enumeration value="CLASS_G"/>
+		<xs:enumeration value="CLEARANCE"/>
+		<xs:enumeration value="DANGER"/>
+		<xs:enumeration value="DEPARTURE"/>
+		<xs:enumeration value="GROUND"/>
+		<xs:enumeration value="MOA"/>
+		<xs:enumeration value="MODEC"/>
+		<xs:enumeration value="NATIONAL_PARK"/>
+		<xs:enumeration value="NONE"/>
+		<xs:enumeration value="PROHIBITED"/>
+		<xs:enumeration value="RADAR"/>
+		<xs:enumeration value="RESTRICTED"/>
+		<xs:enumeration value="TOWER"/>
+		<xs:enumeration value="TRAINING"/>
+		<xs:enumeration value="WARNING"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stAltitudeType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="ABOVE_GROUND_LEVEL"/>
+		<xs:enumeration value="AGL"/>
+		<xs:enumeration value="MEAN_SEA_LEVEL"/>
+		<xs:enumeration value="MSL"/>
+		<xs:enumeration value="UNKNOWN"/>
+		<xs:enumeration value="UNLIMITED"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stTriggerHeight">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="-?\d*\.?\d*[FM]?"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stTriggerWeatherDataType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="RIDGE_LIFT"/>
+		<xs:enumeration value="NONDIRECTIONAL_TURBULENCE"/>
+		<xs:enumeration value="DIRECTIONAL_TURBULENCE"/>
+		<xs:enumeration value="THERMAL"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stTriggerWeatherDataScalar">
+	<xs:restriction base="xs:double">
+		<xs:minInclusive value="0.0"/>
+		<xs:maxInclusive value="1000.0"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stArcDirection">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="CLOCKWISE"/>
+		<xs:enumeration value="COUNTER_CLOCKWISE"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stVorType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="LOW"/>
+		<xs:enumeration value="HIGH"/>
+		<xs:enumeration value="TERMINAL"/>
+		<xs:enumeration value="VOT"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stNdbType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="H"/>
+		<xs:enumeration value="HH"/>
+		<xs:enumeration value="MH"/>
+		<xs:enumeration value="COMPASS_POINT"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stMarkerType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="INNER"/>
+		<xs:enumeration value="MIDDLE"/>
+		<xs:enumeration value="OUTER"/>
+		<xs:enumeration value="BACKCOURSE"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stGeopolType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="COASTLINE"/>
+		<xs:enumeration value="BOUNDARY"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stLightRowType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="POINT"/>
+		<xs:enumeration value="SMALL_HALO"/>
+		<xs:enumeration value="BIG_HALO"/>
+		<xs:enumeration value="SPOT"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stBeaconType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="CIVILIAN"/>
+		<xs:enumeration value="MILITARY"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stBeaconBase">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="AIRPORT"/>
+		<xs:enumeration value="SEA_BASE"/>
+		<xs:enumeration value="HELIPORT"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stRoofType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="FLAT"/>
+		<xs:enumeration value="SLANT"/>
+		<xs:enumeration value="PEAKED"/>
+		<xs:enumeration value="RIDGE"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stTriggerType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="REFUEL_REPAIR"/>
+		<xs:enumeration value="WEATHER"/>
+	</xs:restriction>
+</xs:simpleType>
+
+</xs:schema>
+

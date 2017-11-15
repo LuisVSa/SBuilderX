@@ -1,0 +1,17 @@
+[FSX_buildings]
+{8747280b-0769-4340-95f1-dc7da70cdc88} 2 236 222 1 gen_ampitheater
+{5556330d-a612-4a51-a220-440f35a97112} 2 172 248 1 gen_amusementpark
+{4ee46d45-c0ed-4db9-9d3e-6e0cd94ae5d8} 2 74 40 1 gen_barn01
+{8ebb0ba5-9f81-4cae-8c78-c23b96e01ff4} 2 318 318 1 gen_dome01
+{51aa12d6-ae0f-49e6-a916-6dbcd81cf402} 2 50 24 1 gen_elevator01
+{5b479fb1-d134-4060-aac3-fe80e1ba5286} 2 85 43 1 gen_factory01
+{a0f21144-1921-401e-a2eb-7b8763e1a1bc} 2 69 134 1 gen_ferryterminal
+{78217ab4-76d2-46e3-8438-57ad27e6ed6d} 2 10 10 1 gen_hutopen
+{ad4f1f5a-de8b-45a5-bc27-3e85f5670227} 2 10 10 1 gen_hutwalled
+{0e9712ce-5cf0-4648-8c75-45c4518ffa83} 2 240 148 1 gen_refinery01
+{be7fa036-6133-48cd-b3a3-bdc339e6ab35} 2 8 14 1 lighthouse1
+{8b63a054-b32e-415d-9884-258008444268} 2 8 8 1 lighthouse2
+{de00535c-5e8c-4cc0-932f-e82355a37412} 2 14 12 1 lighthouse3
+{c545a292-e2ec-11d2-9c84-00105a0ce62a} 2 136 64 1 sco_statecapital1
+{c545a293-e2ec-11d2-9c84-00105a0ce62a} 2 112 112 1 sco_statecapital2
+{c545a294-e2ec-11d2-9c84-00105a0ce62a} 2 76 40 1 sco_statecapital3

@@ -1,0 +1,2 @@
+[FSX_vehicles_land]
+{e9a4eca9-8e1a-49c0-8d5e-5574865d316c} 2 2 5 1 gen_aviator01

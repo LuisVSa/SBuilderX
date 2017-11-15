@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<metadata xml:lang="en">
+    <FlightSim>
+        <Geometry clipLevel="15"></Geometry>
+        <AttributeSet>
+            <AttributeBlock name="FreewayTrafficRoads" guid="{54B91ED8-BC02-41B7-8C3B-2B8449FF85EC}">
+                <Field name="NumberOfLanes" type="UINT8" />
+                <Field name="TrafficDirection" type="CHAR" />
+                <Field name="Uuid" type="GUID" />
+            </AttributeBlock>
+        </AttributeSet>
+    </FlightSim>
+</metadata>

@@ -1,0 +1,2 @@
+[FSX_landmark]
+{1590dcde-b884-4bd6-9005-29213c637cd2} 2 603 108 1 mil

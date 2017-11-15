@@ -1,0 +1,2 @@
+[FSX_missionobjects]
+{8446f6e5-bc99-4e24-8ca4-67cfa12d6c64} 2 44 35 1 gen_daredevil

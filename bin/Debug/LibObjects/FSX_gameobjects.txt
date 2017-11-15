@@ -1,0 +1,5 @@
+[FSX_gameobjects]
+{87f22bab-08e9-4dc3-a9d8-beafce9d679b} 2 50 2 1 efis_hoop
+{05bee77b-1e1a-4aaf-bd89-87045c34b473} 2 14 28 1 efis_road
+{0c213bd1-6000-4d37-8e73-6e123285d23b} 2 46 2 1 efis_square
+{96fc6d79-8cdd-491d-bd80-b04c004b0d1c} 2 16 1 1 efis_tee

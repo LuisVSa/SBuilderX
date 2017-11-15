@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<metadata xml:lang="en">
+    <FlightSim>
+        <Geometry clipLevel="11"></Geometry>
+        <AttributeSet>
+            <AttributeBlock name="WaterPolysGPS" guid="{EA0C44F7-01DE-4D10-97EB-FB5510EB7B72}">
+                <Field name="Uuid" type="GUID" />
+            </AttributeBlock>
+        </AttributeSet>
+    </FlightSim>
+</metadata>

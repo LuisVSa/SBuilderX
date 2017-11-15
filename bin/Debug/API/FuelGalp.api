@@ -1,0 +1,58 @@
+;CATEGORY Vehicle Objects
+;MACRODESC FuelGALP
+;DEFAULTSCALE 0,10
+;DEFAULTRANGE 5000 M
+;DEFAULTDENSITY DENSE
+;DESIGNSHAPELINES -10, -20, 10, -20, 10, -20, 10, 20, 10, 20, -10, 20, 
+
+;   %1  Latitude
+;   %2  Longitude
+;   %3  Range 
+;   %4  Scale
+;   %5  Heading
+;   %6  User
+;   %7  User 
+;   %8  User
+;   %9  Shadow
+;  %10  V1 value
+;  %11  Elevation
+;  %12  Scenery complexity
+
+	IfVarRange( :next@ 346  %12  5 )  ;check complexity
+
+mif( %9 )
+	ShadowCall( :scall@ )
+mifend
+
+	PerspectiveCall( :pcall@ )
+	Jump( :next@ )
+
+:pcall@
+
+	Perspective
+
+:scall@
+
+mif( %11 )
+	RefPoint(  ns  :ret@  %1 %2  v1= %10  E= %11  v2= 50   )
+	SetScale( :ret@ 0 0 0.025 )
+
+melse
+	RefPoint(  rel  :ret@  1  %1 %2  v1= %10  v2= 50   )
+	SetScale( :ret@ 0 0 0.025 )
+mifend
+
+mif( %5 )
+	RotatedCall( :start@ 0 0 %5 )
+melse
+	Call( :start@ )
+mifend
+	Return
+
+:start@
+	CallLibObj(0 5469BAA2 267300F0 022E0DB1 C0F65F5C )
+:ret@
+	Return
+
+:next@
+

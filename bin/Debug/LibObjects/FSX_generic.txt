@@ -1,0 +1,5 @@
+[FSX_generic]
+{f8459fec-3740-4177-ac5b-068ae9ccadb3} 2 27 26 1 dirtmound
+{bad28dcf-7c85-416c-a630-818969e994a3} 2 1156 1000 1 gen_aerobaticbox
+{32519fea-0035-406d-b6a5-689ea928ea2c} 2 1 2 1 gen_balloon01
+{d7cc7ce9-82a9-4411-8ba8-cd0c2ad022ab} 2 4 4 1 gen_monument01

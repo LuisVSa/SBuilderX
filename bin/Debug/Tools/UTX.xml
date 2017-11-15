@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<metadata xml:lang="en">
+    <FlightSim>
+        <Geometry clipLevel="11"></Geometry>
+        <AttributeSet>
+            <AttributeBlock name="Texture" guid="{1B6A15BB-05FB-4401-A8D1-BB520E84904C}">
+                <Field name="Guid" type="GUID" />
+            </AttributeBlock>
+            <AttributeBlock name="Utilities" guid="{C7ACE4AE-871D-4938-8BDC-BB29C4BBF4E3}">
+                <Field name="Uuid" type="GUID" />
+            </AttributeBlock>
+        </AttributeSet>
+    </FlightSim>
+</metadata>

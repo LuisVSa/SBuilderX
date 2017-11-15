@@ -1,0 +1,70 @@
+  FS10Material {
+  1.000; 1.000; 1.000; 1.000;;
+  0.000; 0.000; 0.000;;
+    0.000000;
+    1.000000; 1.000000;
+    1.000000;
+    0;
+    0;
+    0;
+    0; 0; 0;
+    0; 0; 0.000000;
+    64.000000;
+    "SrcAlpha"; "InvSrcAlpha";
+    BlendDiffuseByBaseAlpha  {
+      0;
+    }
+    BlendDiffuseByInverseSpecularMapAlpha  {
+      0;
+    }
+    AllowBloom  {
+      1;
+    }
+    SpecularBloomFloor  {
+      0.900000;
+    }
+    EmissiveData  {
+      "AdditiveNightOnly";  // Emissive mode
+    }
+    AlphaData  {
+      1;  // ZTest Alpha
+      134.000000;  // Alpha test threshold
+      "Greater";  // Alpha test function
+      0;  // Perform final alpha write
+      255.000000;  // Final alpha value
+    }
+    EnhancedParameters  {
+      0;  // Assume vertical normal
+      1;  // Z-Write alpha
+      0;  // No Z-Write 
+      0;  // Volume shadow
+      0;  // No shadow
+      0;  // Prelit vertices
+    }
+    BaseMaterialSkin {
+      0;  // Skinned
+    }
+    DoubleSidedMaterial {
+      0;  // Double sided
+    }
+    BlendConstantSetting {
+      0;  // Blend constant
+    }
+    ForceTextureAddressWrapSetting {
+      0;  // Force texture address wrap
+    }
+    ForceTextureAddressClampSetting {
+      0;  // Force texture address clamp
+    }
+    BaseMaterialSpecular {
+      1;  // AllowBaseMaterialSpecular
+    }
+    NoSpecularBloom {
+      1;  // AllowSpecularBloom
+    }
+    EmissiveBloom {
+      0;  // AllowEmissiveBloom
+    }
+    AmbientLightScale  {
+      1.000000;
+    }

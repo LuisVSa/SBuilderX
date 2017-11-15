@@ -1,0 +1,19 @@
+[FSX_bridges]
+{3216f40b-0f54-434d-9b2c-73a0feed7f08} 2 30 24 1 concretebridge1a
+{d9aaae37-38b7-4694-aad2-19ed06531a10} 2 30 24 1 concretebridge1b
+{bbf02ca5-90fc-4da8-8892-42d0ac74b80d} 2 220 28 1 gen_bridge01
+{2b931b90-9438-4493-b0a5-386fc2e7b5ff} 2 80 28 1 gen_bridge01_2
+{9ed413c1-90df-4635-84c9-fd3eda671cfb} 2 100 12 1 gen_bridge02
+{18b41d45-749e-47f8-b6e5-133835d7cd57} 2 50 12 1 gen_bridge02_2
+{b0013e7c-fea9-4a90-b576-a9b051dd5b41} 2 38 10 1 gen_bridge03
+{dd021ee7-a57b-441f-a035-6edb24cde104} 2 12 10 1 gen_bridge03_2
+{127136ea-49c2-4223-aa15-de12d79b44ad} 2 304 48 1 gen_bridge04
+{600e0f2f-0592-4777-979d-e4acdf048762} 2 38 34 1 gen_bridge04_2
+{193a2264-53ec-464e-b139-6b790d9f92ae} 2 50 14 1 gen_bridge05
+{5c0f70da-fe09-4c3e-a2e7-2737ec700422} 2 26 14 1 gen_bridge05_2
+{b2b05be7-7daf-4b92-8f92-50f19f14cc50} 2 16 14 1 gen_bridge06
+{c9775c1f-1e3e-4856-a416-34adefc096b6} 2 10 6 1 gen_bridge06_2
+{2d7d189a-f0e5-43f3-b73f-d075f84e7a6b} 2 120 34 1 gen_bridge07
+{18b2918f-11d1-497c-b5c0-a2f26263e565} 2 40 34 1 gen_bridge07_2
+{da002e64-342c-4742-b70d-96dc569c0b60} 2 60 30 1 gen_bridge08
+{c45eea03-a40e-464b-8347-26a382dfb57e} 2 60 30 1 gen_bridge08_2

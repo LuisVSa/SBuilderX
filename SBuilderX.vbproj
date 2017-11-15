@@ -1428,7 +1428,6 @@
     <Content Include="bin\Debug\Rwy12\img\ag_tree_lib - Arno Gerretsen\tree17.jpg" />
     <Content Include="bin\Debug\SBuilderX.exe" />
     <Content Include="bin\Debug\SBuilderX.pdb" />
-    <Content Include="bin\Debug\SlimDX-x64.dll" />
     <Content Include="bin\Debug\SlimDX-x86.dll" />
     <Content Include="bin\Debug\SlimDX.dll" />
     <Content Include="bin\Debug\Texture\010b2su1.bmp" />

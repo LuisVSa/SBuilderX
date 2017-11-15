@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<metadata xml:lang="en">
+    <FlightSim>
+        <Geometry clipLevel="11"></Geometry>
+        <AttributeSet>
+            <AttributeBlock name="Slope" guid="{CEB07D86-3605-44BE-B48A-97F8D01B74DE}">
+                <Field name="SlopeX" type="FLOAT32" />
+                <Field name="SlopeY" type="FLOAT32" />
+            </AttributeBlock>
+            <AttributeBlock name="Texture" guid="{1B6A15BB-05FB-4401-A8D1-BB520E84904C}">
+                <Field name="Guid" type="GUID" />
+            </AttributeBlock>
+            <AttributeBlock name="WaterPolys" guid="{956A42AD-EC8A-41BE-B7CB-C68B5FF1727E}">
+                <Field name="Uuid" type="GUID" />
+            </AttributeBlock>
+        </AttributeSet>
+    </FlightSim>
+</metadata>

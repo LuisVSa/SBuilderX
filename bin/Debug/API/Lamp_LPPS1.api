@@ -1,0 +1,119 @@
+;CATEGORY Airport Objects
+;MACRODESC Lamp_LPPS1 10 by 10 at scale 1
+;DEFAULTRANGE 10000
+
+;   %1  Latitude
+;   %2  Longitude
+;   %3  Range 
+;   %4  Scale
+;   %5  Heading
+;   %6  User
+;   %7  User 
+;   %8  User
+;   %9  Shadow
+;  %10  V1 value
+;  %11  Elevation
+;  %12  Scenery complexity
+
+	IfVarRange( :next@ 346  %12  5 )  ;check complexity
+
+mif( %9 )
+	ShadowCall( :scall@ )
+mifend
+
+	PerspectiveCall( :pcall@ )
+
+; se for dia falha o teste seguinte
+IfVarAnd ( :next@ 28C FFFE )
+	PerspectiveCall( :lcall@ )
+
+	Jump( :next@ )
+
+:pcall@
+
+	Perspective
+
+:scall@
+
+mif( %11 )
+	RefPoint(  ns  :ret@  %1 %2  v1= %10  E= %11  v2= 50   )
+	SetScaleX( :ret@ 0 0 10 )
+melse
+	RefPoint(  rel  :ret@  1  %1 %2  v1= %10  v2= 50   )
+	SetScaleX( :ret@ 0 0 10 )
+mifend
+
+mif( %5 )
+	RotatedCall( :start@ 0 0 %5 )
+melse
+	Call( :start@ )
+mifend
+	Return
+
+:start@
+	CallLibObj(0 5469BAAE 267300F0 022E0DB1 C0F65F5C )
+
+	Return
+
+
+:lcall@
+
+	Perspective
+
+mif( %11 )
+	RefPoint(  ns  :ret@  %1 %2  v1= %10  E= %11  v2= 50   )
+	SetScaleX( :ret@ 0 0 10 )
+melse
+	RefPoint(  rel  :ret@  1  %1 %2  v1= %10  v2= 50   )
+	SetScaleX( :ret@ 0 0 10 )
+mifend
+
+mif( %5 )
+	RotatedCall( :startl@ 0 0 %5 )
+melse
+	Call( :startl@ )
+mifend
+	Return
+
+:startl@
+
+BGLVersion( 0800 )
+TextureList( 0
+    6 FF 255 255 255 0 20.000000 "beaml.bmp"
+    256 FF 255 255 255 0 20.000000 "beaml.bmp"
+    )
+MaterialList( 0
+    0.752941 0.752941 0.752941 1.000000   0.250980 0.250980 0.250980 1.000000   0.000000 0.000000 0.000000 1.000000   0.000000 0.000000 0.000000 1.000000 0.000000
+    )
+VertexList( 0
+    -1195.000000 0.000000 1195.000000  0.000000 1.000000 0.000000  0.000000 1.00000
+    -1195.000000 0.000000 -1195.000000  0.000000 1.000000 0.000000  0.000000 0.000000
+    1195.000000 0.000000 -1195.000000  0.000000 1.000000 0.000000  1.00000 0.000000
+    1195.000000 0.000000 1195.000000  0.000000 1.000000 0.000000  1.00000 1.00000
+   )
+
+Transform_Mat(
+    0.000000 0.000000 -300.000000
+    1.000000 0.000000 0.000000
+    0.000000 1.000000 0.000000
+    0.000000 0.000000 1.000000
+    )
+ZBias( 2 )
+SetMaterial( 0 0 )
+DrawTriList( 0
+    0 1 2
+    0 2 3
+    )
+ZBias( 0 )
+TransformEnd
+
+EndVersion
+
+:ret@
+
+	Return
+
+
+:next@
+
+

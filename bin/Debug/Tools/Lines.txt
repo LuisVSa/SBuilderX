@@ -1,0 +1,1592 @@
+[Texture.-1]
+Name=Line_of_Type_None
+Color=FF0000FF
+Guid={00000000-0000-0000-0000-333333333333}
+Textures=none
+Type=
+
+[Texture.-1]
+Name=Old_SBuilder_Line_Type
+Color=FF000080
+Guid={00000000-0000-0000-0000-444444444444}
+Textures=none
+Type=
+
+[Texture.-1]
+Name=Freeway_Traffic_Line
+Color=FF000080
+Guid={54B91ED8-BC02-41B7-8C3B-2B8449FF85EC}
+Textures=none
+Type=FWX
+
+[Texture.0]
+Color=FF0000FF
+Name=Stream Lines Perennial
+Guid={2D3FC985-A72B-473D-B23B-D78E72E63B53}
+Textures=riversu
+Type=STX1024
+
+[Texture.1]
+Color=FF0000FF
+Name=Stream Lines Unknown Non-Perennial
+Guid={CBEE9E69-8792-4cad-96BF-455EC77E2007}
+Textures=riversu
+Type=STX1025
+
+[Texture.2]
+Color=800000FF
+Name=Ocean White Sand Perennial
+Guid={42E70A8E-6A7D-4279-9A0C-2AE9C2FCFD16}
+Textures=o_whitesand_ls
+Type=HLX1026
+
+[Texture.3]
+Color=FF0000FF
+Name=Ocean Tan Sand Perennial
+Guid={D49D8C72-3D5C-46c4-8C27-37CF7C36FAE5}
+Textures=o_tansand_ls
+Type=HLX1027
+
+[Texture.4]
+Color=FF0000FF
+Name=Ocean Black Sand Perennial
+Guid={582CA385-AD3C-4892-A4D5-E8EADBB84304}
+Textures=o_blacksand_ls
+Type=HLX1028
+
+[Texture.5]
+Color=FF0000FF
+Name=Ocean Urban Perennial
+Guid={3BBA72D4-03DE-443c-951E-C76883EDA7E4}
+Textures=o_tanrock_ls
+Type=HLX1029
+
+[Texture.6]
+Color=FF0000FF
+Name=Ocean Harbor Perennial
+Guid={477AAFDA-387C-4b15-B4AB-399619AF62BF}
+Textures=o_tanrock_ls
+Type=HLX1030
+
+[Texture.7]
+Color=FF0000FF
+Name=Ocean Ice Perennial
+Guid={63AC6C65-3AAF-4855-8120-E3F000EC81E8}
+Textures=o_ice_ns
+Type=HLX1031
+
+[Texture.8]
+Color=FF0000FF
+Name=Ocean Bank Perennial
+Guid={9ABA3FFB-7A55-40db-95E8-4C64814D6948}
+Textures=o_tanrock_ls
+Type=HLX1032
+
+[Texture.9]
+Color=FF0000FF
+Name=Ocean Swamp Perennial
+Guid={B2049E35-4985-4027-B4C2-1195088E23B5}
+Textures=l_swamp_p
+Type=HLX1033
+
+[Texture.10]
+Color=FF0000FF
+Name=Ocean Dry Oceanbed Perennial
+Guid={A91935D6-5830-478c-92DE-A59374AC7C51}
+Textures=o_tansand_ls
+Type=HLX1034
+
+[Texture.11]
+Color=FF0000FF
+Name=Ocean White Sand Non Perennial
+Guid={838A6F8C-5BAD-4f66-A5DD-9A2DE81EE732}
+Textures=rbankNPsu
+Type=HLX1035
+
+[Texture.12]
+Color=FF0000FF
+Name=Ocean Tan Sand Non Perennial
+Guid={55CF9FC1-5F3B-4826-A1B9-4BEC65B128E0}
+Textures=rbankNPsu
+Type=HLX1036
+
+[Texture.13]
+Color=FF0000FF
+Name=Ocean Black Sand Non Perennial
+Guid={42B3D61C-CB0D-400d-A67C-1D17C157BC3D}
+Textures=rbankNPsu
+Type=HLX1037
+
+[Texture.14]
+Color=FF0000FF
+Name=Ocean Urban Non Perennial
+Guid={C2312C27-08B0-4eb8-8910-FB5A1F69145D}
+Textures=rbankNPsu
+Type=HLX1038
+
+[Texture.15]
+Color=FF0000FF
+Name=Ocean Harbor Non Perennial
+Guid={AAD3F6F9-D965-4f49-9F10-C80274CE8AC7}
+Textures=rbankNPsu
+Type=HLX1039
+
+[Texture.16]
+Color=FF0000FF
+Name=Ocean Ice Non Perennial
+Guid={1B2A0E9E-7010-4092-B9CA-97FEA911D4E6}
+Textures=rbankNPsu
+Type=HLX1040
+
+[Texture.17]
+Color=FF0000FF
+Name=Ocean Bank Non Perennial
+Guid={F93291CA-A9E4-4ca5-B0A6-06CDBCC7A9EA}
+Textures=rbankNPsu
+Type=HLX1041
+
+[Texture.18]
+Color=FF0000FF
+Name=Ocean Swamp Non Perennial
+Guid={35AB5673-0B57-46d5-82E9-818C925376CF}
+Textures=rbankNPsu
+Type=HLX1042
+
+[Texture.19]
+Color=FF0000FF
+Name=Ocean Dry Oceanbed Non Perennial
+Guid={2F79D4F8-B6A2-4d73-A32B-2FE0E36B8EFD}
+Textures=rbankNPsu
+Type=HLX1043
+
+[Texture.20]
+Color=FF0000FF
+Name=Ocean White Sand Surf
+Guid={B41954D2-789A-44c8-9D08-9A8E8EEED679}
+Textures=o_whitesand_ls
+Type=HLX1044
+
+[Texture.21]
+Color=FF0000FF
+Name=Ocean Tan Sand Surf
+Guid={CF2B4363-F90C-4ff4-B9F3-79DEE372EDD3}
+Textures=o_tansand_ls
+Type=HLX1045
+
+[Texture.22]
+Color=FF0000FF
+Name=Ocean Black Sand Surf
+Guid={51C97B0E-431B-4b4b-9194-00B23A62D297}
+Textures=o_blacksand_ls
+Type=HLX1046
+
+[Texture.23]
+Color=FF0000FF
+Name=Ocean Urban Surf
+Guid={B9059BE1-CEFD-4973-BAA3-5E2344D35294}
+Textures=o_tanrock_ls
+Type=HLX1047
+
+[Texture.24]
+Color=FF0000FF
+Name=Ocean Harbor Surf
+Guid={50B06C30-7030-4745-B3E1-35528A8C8566}
+Textures=o_tanrock_ls
+Type=HLX1048
+
+[Texture.25]
+Color=FF0000FF
+Name=Ocean Ice Surf
+Guid={9C215576-C13C-4078-ADB5-044D3B55DEA5}
+Textures=o_ice_ns
+Type=HLX1049
+
+[Texture.26]
+Color=FF0000FF
+Name=Ocean Bank Surf
+Guid={6F768FAE-4527-4706-9252-67F256F71D47}
+Textures=o_tanrock_ls
+Type=HLX1050
+
+[Texture.27]
+Color=FF0000FF
+Name=Ocean Swamp Surf
+Guid={01613F4B-9DD5-4848-9BE6-FD2CF8BEE5FC}
+Textures=l_swamp_p
+Type=HLX1051
+
+[Texture.28]
+Color=FF0000FF
+Name=Ocean Dry Oceanbed Surf
+Guid={82502408-D6DE-406a-8614-3EC4A79394A7}
+Textures=o_tansand_ls
+Type=HLX1052
+
+[Texture.29]
+Color=FF0000FF
+Name=Ocean White Sand No Surf
+Guid={65B6939C-0E80-4917-9BDD-E9D3314DC4BD}
+Textures=o_whitesand_ns
+Type=HLX1053
+
+[Texture.30]
+Color=FF0000FF
+Name=Ocean Tan Sand No Surf
+Guid={220CDD79-5791-4a04-B182-AAA66E8EF67C}
+Textures=o_tansand_ns
+Type=HLX1054
+
+[Texture.31]
+Color=FF0000FF
+Name=Ocean Black Sand No Surf
+Guid={DD5161F1-C14B-4394-BCD4-EDAE4FD0A7E4}
+Textures=o_blacksand_ns
+Type=HLX1055
+
+[Texture.32]
+Color=FF0000FF
+Name=Ocean Urban No Surf
+Guid={41BDDCB4-EF36-4600-967E-C91D14A9CDBA}
+Textures=o_tanrock_ns
+Type=HLX1056
+
+[Texture.33]
+Color=FF0000FF
+Name=Ocean Harbor No Surf
+Guid={1B7881FB-1C34-4574-A90A-843DF099B6A1}
+Textures=o_tanrock_ns
+Type=HLX1057
+
+[Texture.34]
+Color=FF0000FF
+Name=Ocean Ice No Surf
+Guid={385DBF95-EA7E-4b0c-AC1D-C3BE3207F620}
+Textures=o_ice_ns
+Type=HLX1058
+
+[Texture.35]
+Color=FF0000FF
+Name=Ocean Bank No Surf
+Guid={F3CA2183-A43C-4768-8A22-4E03905E0D2F}
+Textures=o_blackrock_ns
+Type=HLX1059
+
+[Texture.36]
+Color=FF0000FF
+Name=Ocean Swamp No Surf
+Guid={C13A591D-69AB-47ce-BDEC-F332E6464C31}
+Textures=l_swamp_p
+Type=HLX1060
+
+[Texture.37]
+Color=FF0000FF
+Name=Ocean Dry Oceanbed No Surf
+Guid={94E2EDB9-7A4C-4968-9EB8-9B8BA684F5F6}
+Textures=o_tansand_ns
+Type=HLX1061
+
+[Texture.38]
+Color=FF0000FF
+Name=Lake White Sand Perennial
+Guid={9D1B47F5-3194-4814-97A2-D1ED463998EA}
+Textures=o_whitesand_ns
+Type=HLX1062
+
+[Texture.39]
+Color=FF0000FF
+Name=Lake Tan Sand Perennial
+Guid={F31741F0-0A07-4e7f-8188-53DD8FFF5AB0}
+Textures=l_tansand_p
+Type=HLX1063
+
+[Texture.40]
+Color=FF0000FF
+Name=Lake Black Sand Perennial
+Guid={F1E86D8A-E014-4725-8733-999516607A98}
+Textures=o_blacksand_ns
+Type=HLX1064
+
+[Texture.41]
+Color=FF0000FF
+Name=Lake Urban Perennial
+Guid={F3658FE6-7BFD-4934-AB4D-F528ECC0C235}
+Textures=l_tanrock_ns
+Type=HLX1065
+
+[Texture.42]
+Color=FF0000FF
+Name=Lake Harbor Perennial
+Guid={5195E114-865C-4402-937E-8DF5FA720F30}
+Textures=l_tanrock_ns
+Type=HLX1066
+
+[Texture.43]
+Color=FF0000FF
+Name=Lake Ice Perennial
+Guid={005F3972-F5E0-4f15-B3CA-4271285868C1}
+Textures=o_ice_ns
+Type=HLX1067
+
+[Texture.44]
+Color=FF0000FF
+Name=Lake Bank Perennial
+Guid={DC3AF434-D01B-493e-8F91-3A99E4BA9268}
+Textures=l_tanrock_ns
+Type=HLX1068
+
+[Texture.45]
+Color=FF0000FF
+Name=Lake Swamp Perennial
+Guid={657C838D-0CB2-4f86-903C-ABA566567994}
+Textures=l_swamp_p
+Type=HLX1069
+
+[Texture.46]
+Color=FF0000FF
+Name=Lake Dry Lakebed Perennial
+Guid={03142043-0371-4786-8B06-2199F976EC16}
+Textures=l_tansand_p
+Type=HLX1070
+
+[Texture.47]
+Color=FF0000FF
+Name=Lake White Sand Non Perennial
+Guid={A54096B9-AE6B-4e7b-8419-BB2945F87783}
+Textures=rbankNPsu
+Type=HLX1071
+
+[Texture.48]
+Color=FF0000FF
+Name=Lake Tan Sand Non Perennial
+Guid={3A58146E-5EE2-4874-B698-80B8D0C4D77D}
+Textures=rbankNPsu
+Type=HLX1072
+
+[Texture.49]
+Color=FF0000FF
+Name=Lake Black Sand Non Perennial
+Guid={F551546D-8287-492a-B1E3-66C7ED64858B}
+Textures=rbankNPsu
+Type=HLX1073
+
+[Texture.50]
+Color=FF0000FF
+Name=Lake Urban Non Perennial
+Guid={075EEA4B-2E54-44a5-B4BC-E586EA725CB1}
+Textures=rbankNPsu
+Type=HLX1074
+
+[Texture.51]
+Color=FF0000FF
+Name=Lake Harbor Non Perennial
+Guid={569E93A6-A61E-49ec-A3C6-862FEBCC3004}
+Textures=rbankNPsu
+Type=HLX1075
+
+[Texture.52]
+Color=FF0000FF
+Name=Lake Ice Non Perennial
+Guid={B8A09B7B-3A4F-401f-B090-AF77F1F23A19}
+Textures=rbankNPsu
+Type=HLX1076
+
+[Texture.53]
+Color=FF0000FF
+Name=Lake Bank Non Perennial
+Guid={CE1903CF-8893-484b-920D-5995DC52F649}
+Textures=rbankNPsu
+Type=HLX1077
+
+[Texture.54]
+Color=FF0000FF
+Name=Lake Swamp Non Perennial
+Guid={0B9116CA-720C-482b-8C35-D59ABCD3EBEE}
+Textures=rbankNPsu
+Type=HLX1078
+
+[Texture.55]
+Color=FF0000FF
+Name=Lake Dry Lakebed Non Perennial
+Guid={32EFB2C1-9363-4b06-A3CC-1178C73D3330}
+Textures=rbankNPsu
+Type=HLX1079
+
+[Texture.56]
+Color=FF0000FF
+Name=Lake White Sand Surf
+Guid={00F7F3C4-1585-47c9-8FC1-6C1AFEFC7D8A}
+Textures=o_whitesand_ls
+Type=HLX1080
+
+[Texture.57]
+Color=FF0000FF
+Name=Lake Tan Sand Surf
+Guid={A7A18258-88A6-43c0-80C2-BE8C5E39A644}
+Textures=l_tansand_p
+Type=HLX1081
+
+[Texture.58]
+Color=FF0000FF
+Name=Lake Black Sand Surf
+Guid={A4D5D692-754A-472b-AD3A-32AFC59BF76E}
+Textures=o_blacksand_ns
+Type=HLX1082
+
+[Texture.59]
+Color=FF0000FF
+Name=Lake Urban Surf
+Guid={97ED9421-8EBC-4f5c-BF77-05C49ABF73FE}
+Textures=l_tanrock_ns
+Type=HLX1083
+
+[Texture.60]
+Color=FF0000FF
+Name=Lake Harbor Surf
+Guid={4628DD8E-D1E5-4902-8A96-A66D0D18A549}
+Textures=l_tanrock_ns
+Type=HLX1084
+
+[Texture.61]
+Color=FF0000FF
+Name=Lake Ice Surf
+Guid={D47000F1-4006-44da-8DCD-8B0A4A4C1FFC}
+Textures=o_ice_ns
+Type=HLX1085
+
+[Texture.62]
+Color=FF0000FF
+Name=Lake Bank Surf
+Guid={7813ACEF-4C5E-4035-A590-919E5F6AC4D9}
+Textures=o_blackrock_ls
+Type=HLX1086
+
+[Texture.63]
+Color=FF0000FF
+Name=Lake Swamp Surf
+Guid={D309358E-8FBA-42c9-930F-BACA34275651}
+Textures=l_swamp_p
+Type=HLX1087
+
+[Texture.64]
+Color=FF0000FF
+Name=Lake Dry Lakebed Surf
+Guid={A3834D57-B3D4-4250-AD8D-EBF5F28C929E}
+Textures=l_tansand_p
+Type=HLX1088
+
+[Texture.65]
+Color=FF0000FF
+Name=Lake White Sand No Surf
+Guid={F711C72F-9464-4566-9C5A-70DC4971A92D}
+Textures=o_whitesand_ns
+Type=HLX1089
+
+[Texture.66]
+Color=FF0000FF
+Name=Lake Tan Sand No Surf
+Guid={E9824E13-38F8-45f6-B3A4-1DE97290356D}
+Textures=o_tansand_ns
+Type=HLX1090
+
+[Texture.67]
+Color=FF0000FF
+Name=Lake Black Sand No Surf
+Guid={18A5E6BF-214D-4943-A865-499648106B11}
+Textures=o_blacksand_ns
+Type=HLX1091
+
+[Texture.68]
+Color=FF0000FF
+Name=Lake Urban No Surf
+Guid={64F024D4-7DD8-4452-83FA-9195B00F96DD}
+Textures=l_tanrock_ns
+Type=HLX1092
+
+[Texture.69]
+Color=FF0000FF
+Name=Lake Harbor No Surf
+Guid={9F40E47A-8B28-4143-86D7-A1915802D4CF}
+Textures=l_tanrock_ns
+Type=HLX1093
+
+[Texture.70]
+Color=FF0000FF
+Name=Lake Ice No Surf
+Guid={7C75263C-35E0-403b-875D-468B03E54C88}
+Textures=o_ice_ns
+Type=HLX1094
+
+[Texture.71]
+Color=FF0000FF
+Name=Lake Bank No Surf
+Guid={D5430F20-7918-4bc6-A5E1-47B50EA39859}
+Textures=o_blackrock_ns
+Type=HLX1095
+
+[Texture.72]
+Color=FF0000FF
+Name=Lake Swamp No Surf
+Guid={8D745FAE-BE76-4db7-ADD6-F3D8AA1A297C}
+Textures=l_swamp_p
+Type=HLX1096
+
+[Texture.73]
+Color=FF0000FF
+Name=Lake Dry Lakebed No Surf
+Guid={EECA04A3-878F-4380-9D19-B12BB26D6512}
+Textures=l_tansand_p
+Type=HLX1097
+
+[Texture.74]
+Color=FF0000FF
+Name=River White Sand Perennial
+Guid={EF621AF4-5FAD-41a7-9A56-BEAFFBD1F181}
+Textures=r_tansand_p
+Type=HLX1098
+
+[Texture.75]
+Color=FF0000FF
+Name=River Tan Sand Perennial
+Guid={DDA2203A-BA44-44af-97B3-1198332393CB}
+Textures=r_tansand_p
+Type=HLX1099
+
+[Texture.76]
+Color=FF0000FF
+Name=River Black Sand Perennial
+Guid={90028D32-211D-44d3-81A5-B4DCDCF9D50A}
+Textures=o_blacksand_ns
+Type=HLX1100
+
+[Texture.77]
+Color=FF0000FF
+Name=River Urban Perennial
+Guid={2BAD5791-6A8D-4105-8C67-058905091B32}
+Textures=r_tanrock_ns
+Type=HLX1101
+
+[Texture.78]
+Color=FF0000FF
+Name=River Harbor Perennial
+Guid={B79FC289-4892-4a01-87D9-F51019B94100}
+Textures=r_tanrock_ns
+Type=HLX1102
+
+[Texture.79]
+Color=FF0000FF
+Name=River Ice Perennial
+Guid={2C24A2D4-A427-4c50-805F-DB01D5277A74}
+Textures=o_ice_ns
+Type=HLX1103
+
+[Texture.80]
+Color=FF0000FF
+Name=River Bank Perennial
+Guid={6F606E53-24A7-426c-ABF2-83A57E39F1DF}
+Textures=r_tanrock_ns
+Type=HLX1104
+
+[Texture.81]
+Color=FF0000FF
+Name=River Swamp Perennial
+Guid={EDE3AC4F-07A1-47b2-A860-C28C4B682FCF}
+Textures=l_swamp_p
+Type=HLX1105
+
+[Texture.82]
+Color=FF0000FF
+Name=River Dry Riverbed Perennial
+Guid={39041993-E864-4923-9585-8612C4ADCDCF}
+Textures=r_tanrock_ns
+Type=HLX1106
+
+[Texture.83]
+Color=FF0000FF
+Name=River White Sand Non Perennial
+Guid={15C7BF3C-BBD4-4e5d-9B8A-F01F60110DA4}
+Textures=rbankNPsu
+Type=HLX1107
+
+[Texture.84]
+Color=FF0000FF
+Name=River Tan Sand Non Perennial
+Guid={F6B294E5-88A5-4956-BBFA-632C3C0A571E}
+Textures=rbankNPsu
+Type=HLX1108
+
+[Texture.85]
+Color=FF0000FF
+Name=River Black Sand Non Perennial
+Guid={40ABB66C-CF7A-4c62-A4B2-C005E2E3F0ED}
+Textures=rbankNPsu
+Type=HLX1109
+
+[Texture.86]
+Color=FF0000FF
+Name=River Urban Non Perennial
+Guid={BA85710B-FA3F-4f73-B33E-2589CC7CC3C3}
+Textures=rbankNPsu
+Type=HLX1110
+
+[Texture.87]
+Color=FF0000FF
+Name=River Harbor Non Perennial
+Guid={21EC85A5-CDB9-49cb-B7F6-626F645EC437}
+Textures=rbankNPsu
+Type=HLX1111
+
+[Texture.88]
+Color=FF0000FF
+Name=River Ice Non Perennial
+Guid={313542AF-E0E0-4053-B63C-76C29A9F3BEE}
+Textures=rbankNPsu
+Type=HLX1112
+
+[Texture.89]
+Color=FF0000FF
+Name=River Bank Non Perennial
+Guid={2811A275-CDDB-43fc-87E7-DFC873730639}
+Textures=rbankNPsu
+Type=HLX1113
+
+[Texture.90]
+Color=FF0000FF
+Name=River Swamp Non Perennial
+Guid={394CB743-8437-4a70-A469-378A1268BE56}
+Textures=rbankNPsu
+Type=HLX1114
+
+[Texture.91]
+Color=FF0000FF
+Name=River Dry Riverbed Non Perennial
+Guid={C01F88BE-32C0-4047-896F-E995732CBE38}
+Textures=rbankNPsu
+Type=HLX1115
+
+[Texture.92]
+Color=FF0000FF
+Name=River White Sand Surf
+Guid={D96EAE56-1FB9-445b-A8EA-79147C0918AB}
+Textures=r_tansand_p
+Type=HLX1116
+
+[Texture.93]
+Color=FF0000FF
+Name=River Tan Sand Surf
+Guid={C80D06F4-86B5-46db-A23B-41F3C0C2CDC6}
+Textures=r_tansand_p
+Type=HLX1117
+
+[Texture.94]
+Color=FF0000FF
+Name=River Black Sand Surf
+Guid={1D5CB8C5-040D-4655-AAD6-2D47E1598D5F}
+Textures=o_blacksand_ls
+Type=HLX1118
+
+[Texture.95]
+Color=FF0000FF
+Name=River Urban Surf
+Guid={EFFF6492-1C37-4387-875B-A4B426D937DD}
+Textures=r_tanrock_ns
+Type=HLX1119
+
+[Texture.96]
+Color=FF0000FF
+Name=River Harbor Surf
+Guid={B201EA6F-37CD-4c3f-A92A-03A38AC53D21}
+Textures=r_tanrock_ns
+Type=HLX1120
+
+[Texture.97]
+Color=FF0000FF
+Name=River Ice Surf
+Guid={BA418EF7-BD2C-473a-8974-A1FDBC8558D6}
+Textures=o_ice_ns
+Type=HLX1121
+
+[Texture.98]
+Color=FF0000FF
+Name=River Bank Surf
+Guid={8626638A-CC7B-4ead-8E3B-61CFC256404E}
+Textures=r_tanrock_ns
+Type=HLX1122
+
+[Texture.99]
+Color=FF0000FF
+Name=River Swamp Surf
+Guid={CB25B299-65BC-4d7e-B437-D65BD6743FA5}
+Textures=l_swamp_p
+Type=HLX1123
+
+[Texture.100]
+Color=FF0000FF
+Name=River Dry Riverbed Surf
+Guid={79B064AC-8F04-4f5f-AA99-91A4C00CC3BD}
+Textures=r_tanrock_ns
+Type=HLX1124
+
+[Texture.101]
+Color=FF0000FF
+Name=River White Sand No Surf
+Guid={4DD69ABF-1C64-4b81-ABCF-8CCD56EA419A}
+Textures=r_tansand_p
+Type=HLX1125
+
+[Texture.102]
+Color=FF0000FF
+Name=River Tan Sand No Surf
+Guid={22B0E627-C295-4f8a-A6BC-2AA24F4F2A98}
+Textures=r_tansand_p
+Type=HLX1126
+
+[Texture.103]
+Color=FF0000FF
+Name=River Black Sand No Surf
+Guid={77CAAFE0-D6D9-4679-A8F6-92D41608BFF8}
+Textures=o_blacksand_ns
+Type=HLX1127
+
+[Texture.104]
+Color=FF0000FF
+Name=River Urban No Surf
+Guid={991FAED2-F8AC-40c0-B3F5-47B28AA70E43}
+Textures=o_blackrock_ns
+Type=HLX1128
+
+[Texture.105]
+Color=FF0000FF
+Name=River Harbor No Surf
+Guid={BAB7F50D-9AF9-4090-9731-8D99B7AE824C}
+Textures=o_blackrock_ns
+Type=HLX1129
+
+[Texture.106]
+Color=FF0000FF
+Name=River Ice No Surf
+Guid={68A4FEA6-CFF6-4ad3-8292-FC3B3D3BB99D}
+Textures=o_ice_ns
+Type=HLX1130
+
+[Texture.107]
+Color=FF0000FF
+Name=River Bank No Surf
+Guid={FC66CBD8-69DD-4052-AFC0-6287027334D9}
+Textures=o_blackrock_ns
+Type=HLX1131
+
+[Texture.108]
+Color=FF0000FF
+Name=River Swamp No Surf
+Guid={0DAE7838-A2E3-4384-ADB1-9075D889C859}
+Textures=l_swamp_p
+Type=HLX1132
+
+[Texture.109]
+Color=FF0000FF
+Name=River Dry Riverbed No Surf
+Guid={0F979A5E-F777-47f4-A07C-DC341A50194C}
+Textures=r_tanrock_ns
+Type=HLX1133
+
+[Texture.110]
+Color=FF000080
+Name=Shorelines Default
+Guid={6BE0F0F1-C807-4C6F-81CB-B5D565C69375}
+Textures=l_tanrock_ns
+Type=HLX
+
+[Texture.111]
+Color=FF000080
+Name=Shorelines Generic Bay Harbor
+Guid={D2E16D2B-692A-4BFC-8383-B1A1A815A3E8}
+Textures=l_tanrock_ns
+Type=HLX
+
+[Texture.112]
+Color=FF000080
+Name=Shorelines Generic Lake
+Guid={7B3229D8-18ED-4F4D-AE22-12660862ABA1}
+Textures=l_tanrock_ns
+Type=HLX
+
+[Texture.113]
+Color=FF000080
+Name=Shorelines Generic River
+Guid={FDA34C77-39FD-4507-B128-F4F55FEC60DC}
+Textures=r_tanrock_ns
+Type=HLX
+
+[Texture.114]
+Color=FF000080
+Name=Shorelines Generic Ocean
+Guid={68900A2A-6679-4580-88EA-8BFED4DAC361}
+Textures=o_tansand_ls
+Type=HLX
+
+[Texture.115]
+Color=FF000080
+Name=Shorelines Generic Canal Channel
+Guid={ACC45E7F-A47A-44D6-ADA6-59C9271BDB71}
+Textures=r_tanrock_ns
+Type=HLX
+
+[Texture.116]
+Color=FF808000
+Name=Concrete 1 Lane Divided Median
+Guid={D77FF8C9-0242-4254-9165-6B1E392274F1}
+Textures=hiway_1_lane_su
+Type=RDX1134
+
+[Texture.117]
+Color=FF808000
+Name=Asphalt 1 Lane Divided Median
+Guid={ED5528D5-B6B4-4D59-A49F-02D6BCCD0D4C}
+Textures=hiway_1_lane_asphalt_su
+Type=RDX1135
+
+[Texture.118]
+Color=FF808000
+Name=Gravel 1 Lane Divided Median
+Guid={CFB6F994-C6BB-4647-98A5-5CB9A00C8864}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1136
+
+[Texture.119]
+Color=FF808000
+Name=Dirt 1 Lane Divided Median
+Guid={BFDEFB10-DBAC-4D68-A90D-D961787B2204}
+Textures=dirtroadsu
+Type=RDX1137
+
+[Texture.120]
+Color=FF808000
+Name=Concrete 2 Lanes Divided Median
+Guid={45E8A320-C85B-4FE7-BDB6-29C331C48AA8}
+Textures=hiway_2_lane_su
+Type=RDX1138
+
+[Texture.121]
+Color=FF808000
+Name=Asphalt 2 Lanes Divided Median
+Guid={698E20FC-1C69-4876-AF34-A6E9F531CCA5}
+Textures=hiway_2_lane_asphalt_su
+Type=RDX1139
+
+[Texture.122]
+Color=FF808000
+Name=Gravel 2 Lanes Divided Median
+Guid={39ED7845-29EB-4C21-95C2-544B0C6E90D8}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1140
+
+[Texture.123]
+Color=FF808000
+Name=Dirt 2 Lanes Divided Median
+Guid={4B217466-1F08-4FD5-B420-609F00F5C799}
+Textures=dirtroadsu
+Type=RDX1141
+
+[Texture.124]
+Color=FF808000
+Name=Concrete 4 Lanes Divided Median
+Guid={026EBE67-A0DD-454E-9AD3-26BB52AEDA91}
+Textures=hiway_4_lane_su
+Type=RDX1142
+
+[Texture.125]
+Color=FF808000
+Name=Asphalt 4 Lanes Divided Median
+Guid={E77770C9-77C2-4493-BCEC-FABDD8464AAB}
+Textures=hiway_2_lane_asphalt_su
+Type=RDX1143
+
+[Texture.126]
+Color=FF808000
+Name=Gravel 4 Lanes Divided Median
+Guid={18CDE698-6E29-4B13-B8A0-064BBAD95813}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1144
+
+[Texture.127]
+Color=FF808000
+Name=Dirt 4 Lanes Divided Median
+Guid={2461055C-5393-44C6-9F50-9BC1C4B0C154}
+Textures=dirtroadsu
+Type=RDX1145
+
+[Texture.128]
+Color=FF808000
+Name=Concrete 6 Lanes Divided Median
+Guid={473EE5CF-29DB-4DC1-B120-B53613A7BA06}
+Textures=hiway_4_lane_su
+Type=RDX1146
+
+[Texture.129]
+Color=FF808000
+Name=Asphalt 6 Lanes Divided Median
+Guid={56197DB8-EB2C-414F-9536-701DC3809D05}
+Textures=hiway_4_lane_su
+Type=RDX1147
+
+[Texture.130]
+Color=FF808000
+Name=Gravel 6 Lanes Divided Median
+Guid={A6B0AF95-F425-4427-8B13-D38603FBC10D}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1148
+
+[Texture.131]
+Color=FF808000
+Name=Dirt 6 Lanes Divided Median
+Guid={AAE75809-A971-4CF0-AC16-E4754510EA47}
+Textures=dirtroadsu
+Type=RDX1149
+
+[Texture.132]
+Color=FF808000
+Name=Concrete 8 Lanes Divided Median
+Guid={26DAF899-1145-4BFD-A25E-9C45F5C0F0E2}
+Textures=hiway_4_lane_su
+Type=RDX1150
+
+[Texture.133]
+Color=FF808000
+Name=Asphalt 8 Lanes Divided Median
+Guid={59C08A14-0761-47AA-86D2-A66E3F34A98B}
+Textures=hiway_4_lane_su
+Type=RDX1151
+
+[Texture.134]
+Color=FF808000
+Name=Gravel 8 Lanes Divided Median
+Guid={5F59341B-21E7-4E8F-9B41-55A68714DE00}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1152
+
+[Texture.135]
+Color=FF808000
+Name=Dirt 8 Lanes Divided Median
+Guid={5A4F3E89-4057-4F3F-919E-EC41AF0EB00D}
+Textures=dirtroadsu
+Type=RDX1153
+
+[Texture.136]
+Color=FF808000
+Name=Concrete 10 Lanes Divided Median
+Guid={DB58185D-68C0-4D04-9316-0C5E573042F9}
+Textures=hiway_4_lane_su
+Type=RDX1154
+
+[Texture.137]
+Color=FF808000
+Name=Asphalt 10 Lanes Divided Median
+Guid={954945D7-667E-47BD-B7E4-DCBB7B7EE1BC}
+Textures=hiway_4_lane_su
+Type=RDX1155
+
+[Texture.138]
+Color=FF808000
+Name=Gravel 10 Lanes Divided Median
+Guid={68597F59-5EF5-4D60-976A-0074C7D35503}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1156
+
+[Texture.139]
+Color=FF808000
+Name=Dirt 10 Lanes Divided Median
+Guid={54B44A8D-C22A-45D0-AC1E-620E4E376792}
+Textures=dirtroadsu
+Type=RDX1157
+
+[Texture.140]
+Color=FF808000
+Name=Concrete 1 Lane Undivided Median
+Guid={C288FEA7-B981-44EF-9C3D-EEEFE5A069A6}
+Textures=hiway_1_lane_su
+Type=RDX1158
+
+[Texture.141]
+Color=FF808000
+Name=Asphalt 1 Lane Undivided Median
+Guid={07A8C850-2321-4E9A-BAFD-201D0A1DD7DA}
+Textures=hiway_1_lane_asphalt_su
+Type=RDX1159
+
+[Texture.142]
+Color=FF808000
+Name=Gravel 1 Lane Undivided Median
+Guid={66FC74E3-5051-448E-9397-5DEE2DA6311D}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1160
+
+[Texture.143]
+Color=FF808000
+Name=Dirt 1 Lane Undivided Median
+Guid={B7A645EA-CD95-48CC-82B9-C2C3ACAE74BD}
+Textures=dirtroadsu
+Type=RDX1161
+
+[Texture.144]
+Color=FF808000
+Name=Concrete 2 Lanes Undivided Median
+Guid={895AC7D0-C9B9-45D7-8250-F78807E394E8}
+Textures=hiway_2_lane_su
+Type=RDX1162
+
+[Texture.145]
+Color=FF808000
+Name=Asphalt 2 Lanes Undivided Median
+Guid={325DD470-B342-4D15-AC54-F67ED9F5914F}
+Textures=hiway_2_lane_asphalt_su
+Type=RDX1163
+
+[Texture.146]
+Color=FF808000
+Name=Gravel 2 Lanes Undivided Median
+Guid={DDDF9B52-E791-4020-8E69-CC751D5B1F48}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1164
+
+[Texture.147]
+Color=FF808000
+Name=Dirt 2 Lanes Undivided Median
+Guid={C63D5DA7-D06E-4DB1-BBFF-DE899772C7EE}
+Textures=dirtroadsu
+Type=RDX1165
+
+[Texture.148]
+Color=FF808000
+Name=Concrete 4 Lanes Undivided Median
+Guid={F972B800-9F74-47A7-86F6-A5C389D90799}
+Textures=hiway_4_lane_su
+Type=RDX1166
+
+[Texture.149]
+Color=FF808000
+Name=Asphalt 4 Lanes Undivided Median
+Guid={D02AB504-E8C1-41AB-BF7D-B8C33B21DFA9}
+Textures=hiway_2_lane_asphalt_su
+Type=RDX1167
+
+[Texture.150]
+Color=FF808000
+Name=Gravel 4 Lanes Undivided Median
+Guid={6D0798EB-2896-450F-820D-0E9B61D43EAB}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1168
+
+[Texture.151]
+Color=FF808000
+Name=Dirt 4 Lanes Undivided Median
+Guid={F8A7F096-D25F-4FF8-A37A-FE158ED685E2}
+Textures=dirtroadsu
+Type=RDX1169
+
+[Texture.152]
+Color=FF808000
+Name=Concrete 6 Lanes Undivided Median
+Guid={D6596F9A-A534-4E9A-B4D4-43AFB3158B5D}
+Textures=hiway_4_lane_su
+Type=RDX1170
+
+[Texture.153]
+Color=FF808000
+Name=Asphalt 6 Lanes Undivided Median
+Guid={8FD4891E-F835-4E34-A962-C6CD04CDE9F1}
+Textures=hiway_4_lane_su
+Type=RDX1171
+
+[Texture.154]
+Color=FF808000
+Name=Gravel 6 Lanes Undivided Median
+Guid={9EB21291-9D73-4E1A-92EC-D0987B1520C1}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1172
+
+[Texture.155]
+Color=FF808000
+Name=Dirt 6 Lanes Undivided Median
+Guid={F7567C01-1221-4165-8129-E8F7EA53B07B}
+Textures=dirtroadsu
+Type=RDX1173
+
+[Texture.156]
+Color=FF808000
+Name=Concrete 8 Lanes Undivided Median
+Guid={D1406A24-1B7F-458B-AE1F-CAB1054D2D81}
+Textures=hiway_4_lane_su
+Type=RDX1174
+
+[Texture.157]
+Color=FF808000
+Name=Asphalt 8 Lanes Undivided Median
+Guid={9F2A2F6E-7672-4CB6-9258-56CE3CEBD35A}
+Textures=hiway_4_lane_su
+Type=RDX1175
+
+[Texture.158]
+Color=FF808000
+Name=Gravel 8 Lanes Undivided Median
+Guid={C19D470D-CAD3-4A2B-9DEA-2CC9AC7AA9DD}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1176
+
+[Texture.159]
+Color=FF808000
+Name=Dirt 8 Lanes Undivided Median
+Guid={FF701B43-61C9-4B00-AADB-B18726208C0D}
+Textures=dirtroadsu
+Type=RDX1177
+
+[Texture.160]
+Color=FF808000
+Name=Concrete 10 Lanes Undivided Median
+Guid={69BBD159-E33C-4D53-A8F9-E0060F983334}
+Textures=hiway_4_lane_su
+Type=RDX1178
+
+[Texture.161]
+Color=FF808000
+Name=Asphalt 10 Lanes Undivided Median
+Guid={8BC38D28-C455-47B3-873F-A765E17AEB9B}
+Textures=hiway_4_lane_su
+Type=RDX1179
+
+[Texture.162]
+Color=FF808000
+Name=Gravel 10 Lanes Undivided Median
+Guid={6C8E0CC4-7D37-4927-B230-E50A42E337A5}
+Textures=hiway_1_lane_gravel_su
+Type=RDX1180
+
+[Texture.163]
+Color=FF808000
+Name=Dirt 10 Lanes Undivided Median
+Guid={33503732-DF73-414F-A7C2-5CE20F147CD3}
+Textures=dirtroadsu
+Type=RDX1181
+
+[Texture.200]
+Color=FF808000
+Name=Railroad
+Guid={DDE116BF-0E97-4EB6-A9EC-7EF93D9F2D0E}
+Textures=railroadsu
+Type=RDX1210
+
+[Texture.201]
+Color=FF808000
+Name=Utility 1
+Guid={C942AADB-C351-4088-925E-A732C2093B63}
+Textures=utilitymask
+Type=RDX1211
+
+[Texture.202]
+Color=FF808000
+Name=Utility 2
+Guid={D745C22C-FF72-4C45-9D27-809306214B7C}
+Textures=utilitymask
+Type=RDX1212
+
+[Texture.203]
+Color=FF808080
+Name=Railroad Bridges
+Guid={02055F95-7075-463F-A3F9-BA9976869612}
+Textures=bridge
+Type=RDX1213
+
+[Texture.204]
+Color=FF808080
+Name=Concrete 1 Lane Divided Median
+Guid={CE689D4E-FD2D-43BB-A5C4-5F7C316A757E}
+Textures=bridge
+Type=RDX1214
+
+[Texture.205]
+Color=FF808080
+Name=Asphalt 1 Lane Divided Median
+Guid={1C5E053A-EFFC-432A-BEB8-7D2CEDA22707}
+Textures=bridge
+Type=RDX1215
+
+[Texture.206]
+Color=FF808080
+Name=Gravel 1 Lane Divided Median
+Guid={61A3BABE-DC75-4C6F-922C-3D0CD3AD406D}
+Textures=bridge
+Type=RDX1216
+
+[Texture.207]
+Color=FF808080
+Name=Dirt 1 Lane Divided Median
+Guid={FA5061E4-AE85-48E9-A0D0-8510C6393C81}
+Textures=bridge
+Type=RDX1217
+
+[Texture.208]
+Color=FF808080
+Name=Concrete 2 Lanes Divided Median
+Guid={DB8C67EA-61F1-4A49-A8AF-EACF7D7886DC}
+Textures=bridge
+Type=RDX1218
+
+[Texture.209]
+Color=FF808080
+Name=Asphalt 2 Lanes Divided Median
+Guid={691E2E51-61E4-4F9A-9866-8F2884C2EC44}
+Textures=bridge
+Type=RDX1219
+
+[Texture.210]
+Color=FF808080
+Name=Gravel 2 Lanes Divided Median
+Guid={DA79F479-011F-426B-8944-84C89F4732B0}
+Textures=bridge
+Type=RDX1220
+
+[Texture.211]
+Color=FF808080
+Name=Dirt 2 Lanes Divided Median
+Guid={5B7C810A-A362-4B66-B43F-AEA80442BEAA}
+Textures=bridge
+Type=RDX1221
+
+[Texture.212]
+Color=FF808080
+Name=Concrete 4 Lanes Divided Median
+Guid={B4DF746F-EACF-4C9C-B46F-695171358669}
+Textures=bridge
+Type=RDX1222
+
+[Texture.213]
+Color=FF808080
+Name=Asphalt 4 Lanes Divided Median
+Guid={A8C21FB4-0B68-4782-BAF1-593DE6D50929}
+Textures=bridge
+Type=RDX1223
+
+[Texture.214]
+Color=FF808080
+Name=Gravel 4 Lanes Divided Median
+Guid={7E3F1258-ABBC-4E4B-8564-5A509651C0AC}
+Textures=bridge
+Type=RDX1224
+
+[Texture.215]
+Color=FF808080
+Name=Dirt 4 Lanes Divided Median
+Guid={7522C9B1-033C-42DC-BE40-9742C14A0D03}
+Textures=bridge
+Type=RDX1225
+
+[Texture.216]
+Color=FF808080
+Name=Concrete 6 Lanes Divided Median
+Guid={454455C7-4BC2-4292-AA32-3047B2582BCC}
+Textures=bridge
+Type=RDX1226
+
+[Texture.217]
+Color=FF808080
+Name=Asphalt 6 Lanes Divided Median
+Guid={D613E53E-43E0-4E87-80AB-4A0ED12FDB03}
+Textures=bridge
+Type=RDX1227
+
+[Texture.218]
+Color=FF808080
+Name=Gravel 6 Lanes Divided Median
+Guid={8C951EFD-AC08-4411-8D44-4DA0E7B64927}
+Textures=bridge
+Type=RDX1228
+
+[Texture.219]
+Color=FF808080
+Name=Dirt 6 Lanes Divided Median
+Guid={DD3766B6-A725-4CF8-9713-D23DDD5484D4}
+Textures=bridge
+Type=RDX1229
+
+[Texture.220]
+Color=FF808080
+Name=Concrete 8 Lanes Divided Median
+Guid={F764658D-F269-45E2-89C3-EAB23354DB48}
+Textures=bridge
+Type=RDX1230
+
+[Texture.221]
+Color=FF808080
+Name=Asphalt 8 Lanes Divided Median
+Guid={DF97ACC4-66C7-4C91-A920-9CBDF0BB4D49}
+Textures=bridge
+Type=RDX1231
+
+[Texture.222]
+Color=FF808080
+Name=Gravel 8 Lanes Divided Median
+Guid={93E97E98-D4B2-437A-9E9A-BF6702DA7295}
+Textures=bridge
+Type=RDX1232
+
+[Texture.223]
+Color=FF808080
+Name=Dirt 8 Lanes Divided Median
+Guid={D75334AA-A567-4AB2-9F9C-545E23A84B92}
+Textures=bridge
+Type=RDX1233
+
+[Texture.224]
+Color=FF808080
+Name=Concrete 10 Lanes Divided Median
+Guid={FB8BD8EC-55F8-4C52-B9D4-8AE2563BD282}
+Textures=bridge
+Type=RDX1234
+
+[Texture.225]
+Color=FF808080
+Name=Asphalt 10 Lanes Divided Median
+Guid={89B16115-B7B7-4B2E-B8D9-F4693AC7F754}
+Textures=bridge
+Type=RDX1235
+
+[Texture.226]
+Color=FF808080
+Name=Gravel 10 Lanes Divided Median
+Guid={7ED67147-A2A6-4D96-876C-D83D301D9CD9}
+Textures=bridge
+Type=RDX1236
+
+[Texture.227]
+Color=FF808080
+Name=Dirt 10 Lanes Divided Median
+Guid={50AD6C30-1808-43E1-9FC6-CF76A0D4D9C0}
+Textures=bridge
+Type=RDX1237
+
+[Texture.228]
+Color=FF808080
+Name=Concrete 1 Lane Undivided Median
+Guid={66EF71F3-F6C4-44B8-943D-3B48E04A2320}
+Textures=bridge
+Type=RDX1238
+
+[Texture.229]
+Color=FF808080
+Name=Asphalt 1 Lane Undivided Median
+Guid={584DDC2B-3CA4-4378-A71C-1D58C97795EF}
+Textures=bridge
+Type=RDX1239
+
+[Texture.230]
+Color=FF808080
+Name=Gravel 1 Lane Undivided Median
+Guid={A65DFFD1-FEC1-400D-B8F7-442577966D54}
+Textures=bridge
+Type=RDX1240
+
+[Texture.231]
+Color=FF808080
+Name=Dirt 1 Lane Undivided Median
+Guid={C7DC7DCE-B73D-4D55-A04B-A4F706836EA7}
+Textures=bridge
+Type=RDX1241
+
+[Texture.232]
+Color=FF808080
+Name=Concrete 2 Lanes Undivided Median
+Guid={744DE930-EE50-4A20-B883-533EC7621011}
+Textures=bridge
+Type=RDX1242
+
+[Texture.233]
+Color=FF808080
+Name=Asphalt 2 Lanes Undivided Median
+Guid={FA9A2012-7966-4DDC-B88D-08605D530F12}
+Textures=bridge
+Type=RDX1243
+
+[Texture.234]
+Color=FF808080
+Name=Gravel 2 Lanes Undivided Median
+Guid={49ECC6DC-C4FB-43C4-AA88-8F50BE3629CD}
+Textures=bridge
+Type=RDX1244
+
+[Texture.235]
+Color=FF808080
+Name=Dirt 2 Lanes Undivided Median
+Guid={C075F1F8-84BE-4D46-9EAB-EB05E8DE0CA9}
+Textures=bridge
+Type=RDX1245
+
+[Texture.236]
+Color=FF808080
+Name=Concrete 4 Lanes Undivided Median
+Guid={F513C826-2D02-4919-AD65-C9E0A1FE468E}
+Textures=bridge
+Type=RDX1246
+
+[Texture.237]
+Color=FF808080
+Name=Asphalt 4 Lanes Undivided Median
+Guid={DFA4CC41-8436-4214-ADBF-64D37194C6EF}
+Textures=bridge
+Type=RDX1247
+
+[Texture.238]
+Color=FF808080
+Name=Gravel 4 Lanes Undivided Median
+Guid={1724C5A8-A8DC-4E2C-AC6C-C089E30A8BBC}
+Textures=bridge
+Type=RDX1248
+
+[Texture.239]
+Color=FF808080
+Name=Dirt 4 Lanes Undivided Median
+Guid={7A6A5C34-A08A-4628-AFC3-DC4AEBEBAA56}
+Textures=bridge
+Type=RDX1249
+
+[Texture.240]
+Color=FF808080
+Name=Concrete 6 Lanes Undivided Median
+Guid={60E82018-85B7-4084-A427-57CC5733A1F7}
+Textures=bridge
+Type=RDX1250
+
+[Texture.241]
+Color=FF808080
+Name=Asphalt 6 Lanes Undivided Median
+Guid={B14B483D-7A40-4BA4-8560-3EE51D468023}
+Textures=bridge
+Type=RDX1251
+
+[Texture.242]
+Color=FF808080
+Name=Gravel 6 Lanes Undivided Median
+Guid={EDCD2062-7912-41CC-929C-8A876AFD77E9}
+Textures=bridge
+Type=RDX1252
+
+[Texture.243]
+Color=FF808080
+Name=Dirt 6 Lanes Undivided Median
+Guid={635F696E-E093-4B59-8CDC-EF0CF25B8F70}
+Textures=bridge
+Type=RDX1253
+
+[Texture.244]
+Color=FF808080
+Name=Concrete 8 Lanes Undivided Median
+Guid={64179BD1-3D47-4557-80A1-B0D0A2A0D6FF}
+Textures=bridge
+Type=RDX1254
+
+[Texture.245]
+Color=FF808080
+Name=Asphalt 8 Lanes Undivided Median
+Guid={E6F36B33-67D4-46BC-B7F7-E1846C960BF7}
+Textures=bridge
+Type=RDX1255
+
+[Texture.246]
+Color=FF808080
+Name=Gravel 8 Lanes Undivided Median
+Guid={9D702D69-6AFE-425D-88AB-8F251FD20F65}
+Textures=bridge
+Type=RDX1256
+
+[Texture.247]
+Color=FF808080
+Name=Dirt 8 Lanes Undivided Median
+Guid={5D1C21C4-2A8A-447B-9B82-C898D51171ED}
+Textures=bridge
+Type=RDX1257
+
+[Texture.248]
+Color=FF808080
+Name=Concrete 10 Lanes Undivided Median
+Guid={74B0460F-AAB3-4B52-BCDC-3F620C479ACC}
+Textures=bridge
+Type=RDX1258
+
+[Texture.249]
+Color=FF808080
+Name=Asphalt 10 Lanes Undivided Median
+Guid={B012F953-34EC-4FEB-863C-F176AEA4863A}
+Textures=bridge
+Type=RDX1259
+
+[Texture.250]
+Color=FF808080
+Name=Gravel 10 Lanes Undivided Median
+Guid={A8026621-8DAB-4402-8527-8F09C0C06D04}
+Textures=bridge
+Type=RDX1260
+
+[Texture.251]
+Color=FF808080
+Name=Dirt 10 Lanes Undivided Median
+Guid={E7207CCC-5A9A-46D8-9253-F759E6F7DF39}
+Textures=bridge
+Type=RDX1261
+
+[Texture.252]
+Color=FF000080
+Name=Default Non Perennial
+Guid={5A2FA49F-0C06-4F9E-B9DF-DE9A3FEE1FE9}
+Textures=none
+Type=HLX
+
+[Texture.253]
+Color=FF000080
+Name=Generic Canal Channel Non Perennial
+Guid={8F1F4156-6280-4C00-B48E-83528DC35C01}
+Textures=none
+Type=HLX
+
+[Texture.254]
+Color=FF000080
+Name=Generic Ocean Non Perennial
+Guid={B42CEE74-803E-4C5E-A0E8-0C4FC157C3FB}
+Textures=none
+Type=HLX
+
+[Texture.255]
+Color=FF000080
+Name=Generic River Non Perennial
+Guid={1737844C-9935-4BCB-B945-5FEEA579BEED}
+Textures=none
+Type=HLX
+
+[Texture.256]
+Color=FF000080
+Name=Generic Lake Non Perennial
+Guid={27336EE7-364F-4221-9DA8-804784E3CB75}
+Textures=none
+Type=HLX
+
+[Texture.257]
+Color=FF000080
+Name=Generic Bay Harbor Non Perennial
+Guid={E7BB1216-599D-41F7-8183-1496B8DE18D0}
+Textures=none
+Type=HLX
+
+[Texture.387]
+Color=FF000081
+Name=Wave Effect  No Texture
+Guid={ABD41838-4644-4d3d-84DC-792F7C24712A}
+Textures=none
+Type=HLX
+
+[Texture.388]
+Color=FF808000
+Name=Utility - No Grass Corridor
+Guid={2BDD9A8D-82DE-4b1e-8E27-CE6BE9F4C3CB}
+Textures=none
+Type=RDX
+
+
+
+

@@ -1,0 +1,241 @@
+Name=001_Shallow Inland Water, Blue
+Color=FF4E7CF2
+Textures=301b2su1
+
+Name=002_Deep Inland Water, Blue
+Color=FF2861F0
+Textures=302b2su1
+
+Name=003_Ocean Inlets, Blue
+Color=FF104BE0
+Textures=303b2su1
+
+Name=004_Non Perennial Inland Sea, Blue
+Color=FFFF5A11
+Textures=304b2su1
+
+Name=005_Non Perennial Inland Water, Blue
+Color=FFC83D0
+Textures=305b2su1
+
+Name=006_Outflow Water, Blue
+Color=FF0E3FBA
+Textures=306b2su1
+
+Name=007_Shallow Inland Water, Brown
+Color=FFB89238
+Textures=307b2su1
+
+Name=008_Deep Inland Water, Brown
+Color=FF997A2F
+Textures=308b2su1
+
+Name=009_Ocean Inlets, Brown
+Color=FF7A6126
+Textures=309b2su1
+
+Name=010_Non Perennial Inland Sea, Brown
+Color=FFFFFF99
+Textures=310b2su1
+
+Name=011_Non Perennial Inland Water, Brown
+Color=FF800000
+Textures=311b2su1
+
+Name=012_Outflow Water, Brown
+Color=FF5B491D
+Textures=312b2su1
+
+Name=013_Shallow Ocean Water 1, Class1
+Color=FF69D3FF
+Textures=313b2su1
+
+Name=014_Shallow Ocean Water 2, Class1
+Color=FF41C7FF
+Textures=314b2su1
+
+Name=015_Shallow Ocean Water 3, Class1
+Color=FF1ABBFE
+Textures=315b2su1
+
+Name=016_Shallow Ocean Water 4, Class1
+Color=FF02A9EE
+Textures=316b2su1
+
+Name=017_Medium Depth Ocean Water, Class1
+Color=FF028CC6
+Textures=317b2su1
+
+Name=018_Deep Ocean Water, Class1
+Color=FF01719F
+Textures=318b2su1
+
+Name=019_Shallow Ocean Water 1, Class2
+Color=FF69B0FF
+Textures=319b2su1
+
+Name=020_Shallow Ocean Water 2, Class2
+Color=FF429BFE
+Textures=320b2su1
+
+Name=021_Shallow Ocean Water 3, Class2
+Color=FF1B85FD
+Textures=321b2su1
+
+Name=022_Shallow Ocean Water 4, Class2
+Color=FF0371ED
+Textures=322b2su1
+
+Name=023_Medium Depth Ocean Water, Class2
+Color=FF025EC6
+Textures=323b2su1
+
+Name=024_Deep Ocean Water, Class2
+Color=FF014B9F
+Textures=324b2su1
+
+Name=025_Shallow Ocean Water 1, Class3
+Color=FF698CFF
+Textures=325b2su1
+
+Name=026_Shallow Ocean Water 2, Class3
+Color=FF426EFE
+Textures=326b2su1
+
+Name=027_Shallow Ocean Water 3, Class3
+Color=FF1B50FD
+Textures=327b2su1
+
+Name=028_Shallow Ocean Water 4, Class3
+Color=FF033AED
+Textures=328b2su1
+
+Name=029_Medium Depth Ocean Water, Class3
+Color=FF0230C6
+Textures=329b2su1
+
+Name=030_Deep Ocean Water, Class3
+Color=FF01269F
+Textures=330b2su1
+
+Name=031_Shallow Ocean Water 1, Class4
+Color=FF6969FF
+Textures=331b2su1
+
+Name=032_Shallow Ocean Water 2, Class4
+Color=FF4242FE
+Textures=332b2su1
+
+Name=033_Shallow Ocean Water 3, Class4
+Color=FF1B1BFD
+Textures=333b2su1
+
+Name=034_Shallow Ocean Water 4, Class4
+Color=FF0303ED
+Textures=334b2su1
+
+Name=035_Medium Depth Ocean Water, Class4
+Color=FF0202C6
+Textures=335b2su1
+
+Name=036_Deep Ocean Water, Class4
+Color=FF01019F
+Textures=336b2su1
+
+Name=037_Shallow Ocean Water 1, Class1, Tropical
+Color=FF69FF9E
+Textures=337b2su1
+
+Name=038_Shallow Ocean Water 2, Class1, Tropical
+Color=FF42FE84
+Textures=338b2su1
+
+Name=039_Shallow Ocean Water 3, Class1, Tropical
+Color=FF1BFD6B
+Textures=339b2su1
+
+Name=040_Shallow Ocean Water 4, Class1,Tropical
+Color=FF03ED56
+Textures=340b2su1
+
+Name=041_Medium Depth Ocean Water, Class1, Tropical
+Color=FF02C647
+Textures=341b2su1
+
+Name=042_Deep Ocean Water, Class1, Tropical
+Color=FF019F39
+Textures=342b2su1
+
+Name=043_Shallow Ocean Water 1, Class2, Tropical
+Color=FF69FFC1
+Textures=343b2su1
+
+Name=044_Shallow Ocean Water 2, Class2, Tropical
+Color=FF42FEB1
+Textures=344b2su1
+
+Name=045_Shallow Ocean Water 3, Class2, Tropical
+Color=FF1BFDA0
+Textures=345b2su1
+
+Name=046_Shallow Ocean Water 4, Class2, Tropical
+Color=FF03ED8D
+Textures=346b2su1
+
+Name=047_Medium Depth Ocean Water, Class2, Tropical
+Color=FF02C675
+Textures=347b2su1
+
+Name=048_Deep Ocean Water, Class2, Tropical
+Color=FF019F5E
+Textures=348b2su1
+
+Name=049_Shallow Ocean Water 1, Class3, Tropical
+Color=FF69FFE5
+Textures=349b2su1
+
+Name=050_Shallow Ocean Water 2, Class3, Tropical
+Color=FF42FEDD
+Textures=350b2su1
+
+Name=051_Shallow Ocean Water 3, Class3, Tropical
+Color=FF1BFDD5
+Textures=351b2su1
+
+Name=052_Shallow Ocean Water 4, Class3, Tropical
+Color=FF03EDC4
+Textures=352b2su1
+
+Name=053_Medium Depth Ocean Water, Class3, Tropical
+Color=FF02C6A3
+Textures=353b2su1
+
+Name=054_Deep Ocean Water, Class3, Tropical
+Color=FF019F83
+Textures=354b2su1
+
+Name=055_Shallow Ocean Water 1, Class4, Tropical
+Color=FF69F6FF
+Textures=355b2su1
+
+Name=056_Shallow Ocean Water 2, Class4, Tropical
+Color=FF42F3FE
+Textures=356b2su1
+
+Name=057_Shallow Ocean Water 3, Class4, Tropical
+Color=FF1BF0FD
+Textures=357b2su1
+
+Name=058_Shallow Ocean Water 4, Class4, Tropical
+Color=FF03DFED
+Textures=358b2su1
+
+Name=059_Medium Depth Ocean Water, Class4, Tropical
+Color=FF02BBC6
+Textures=359b2su1
+
+Name=060_Deep Ocean Water, Class4, Tropical
+Color=FF01969F
+Textures=360b2su1
+
+
