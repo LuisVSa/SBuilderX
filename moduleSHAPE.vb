@@ -1235,7 +1235,10 @@ erro1:
         ' append the fields
         If Not DBF.AppendFields() Then Exit Sub
 
-        UiidTrail = "-0000-0000-0000-000000000000}"
+        ' UiidTrail = "-0000-0000-0000-000000000000}"
+        Dim myGuid As Guid
+        myGuid = Guid.NewGuid
+        UiidTrail = Right(myGuid.ToString("B"), 29).ToUpper
 
         ' populate the fields
         K = 0
@@ -1401,8 +1404,12 @@ erro1:
         ' append the fields
         If Not DBF.AppendFields() Then Exit Sub
 
+        ' UiidTrail = "-0000-0000-0000-000000000000}"
+        Dim myGuid As Guid
+        myGuid = Guid.NewGuid
+        UiidTrail = Right(myGuid.ToString("B"), 29).ToUpper
+
         ' populate the fields
-        UiidTrail = "-0000-0000-0000-000000000000}"
         K = 1
         For N = 1 To NoOfLines
             If Lines(N).Selected Then
