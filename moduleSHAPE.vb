@@ -709,7 +709,7 @@ erro1:
         DBF.Close()
 
         ' now create the SHP and the SHX files
-        CreateShpAndShxFilesFromLines(filename, False)
+        CreateShpAndShxFilesFromLines(filename, "ALL")
 
         FrmStart.Cursor = System.Windows.Forms.Cursors.Default
         Exit Sub
@@ -759,7 +759,7 @@ erro1:
         DBF.Close()
 
         ' now create the SHP and the SHX files
-        CreateShpAndShxFilesFromPolys(filename, False)   ' SelectedOnly = False
+        CreateShpAndShxFilesFromPolys(filename, "ALL")
 
         FrmStart.Cursor = System.Windows.Forms.Cursors.Default
         Exit Sub
@@ -769,7 +769,10 @@ erro1:
 
     End Sub
 
-    Private Function CreateShpAndShxFilesFromPolys(ByVal filename As String, ByVal SelectedOnly As Boolean) As Boolean
+    Private Function CreateShpAndShxFilesFromPolys(ByVal filename As String, ByVal type As String) As Boolean
+
+        ' type can be ALL (used when exporting shape files) or
+        ' EXX XXX LCP HPX HGX FLX  (when creating shape files for shp2vec)
 
         CreateShpAndShxFilesFromPolys = False
 
@@ -796,10 +799,10 @@ erro1:
         Dim ptrEnd As Integer = 0
 
         Dim nRecords As Integer
-        If SelectedOnly Then
-            nRecords = NumberOfRecordsInSelectedPolys()
-        Else
+        If type = "ALL" Then
             nRecords = NumberOfRecordsInPolys()
+        Else
+            nRecords = NumberOfRecordsInSelectedPolys(type)
         End If
 
         Dim RecOffset() As Integer
@@ -821,19 +824,19 @@ erro1:
         Dim P() As Integer   ' point to the 1st index of a part in the sequence of points
         For N = 1 To NoOfPolys
             If Polys(N).NoOfChilds >= 0 Then
-                If Not SelectedOnly Or Polys(N).Selected Then
+                If type = "ALL" Or type = Mid(Polys(N).Type, 1, 3) Then
                     ' new record 
                     REC = REC + 1
                     ptrBegin = CInt(fs.Position)
                     RecOffset(REC) = ptrBegin / 2
-                    nParts = Polys(N).NoOfChilds + 1
+                    nParts = Polys(N).NoOfChilds + 1   ' the childs plus the parent
                     ReDim P(nParts)
                     P(1) = 0     ' always zero!
                     ' find nPoints for the record and build P()
                     nPoints = Polys(N).NoOfPoints + 1
                     For M = 2 To nParts
+                        P(M) = nPoints
                         np = Polys(Polys(N).Childs(M - 1)).NoOfPoints + 1
-                        P(M) = P(M - 1) + np
                         nPoints = nPoints + np
                     Next
                     ' advance 4 + 4 + 4 + 4 x 8 = 44 ( recNum recLen ShapeType and box )
@@ -988,8 +991,12 @@ erro1:
 
     End Function
 
-    Private Function CreateShpAndShxFilesFromLines(ByVal filename As String, ByVal SelectedOnly As Boolean) As Boolean
+    Private Function CreateShpAndShxFilesFromLines(ByVal filename As String, ByVal type As String) As Boolean
 
+        ' type can be ALL for exporting shape files or 
+        '  STX FWX RDX HLX RRX UTX for shp2vec
+
+        CreateShpAndShxFilesFromLines = False
         FrmStart.Cursor = System.Windows.Forms.Cursors.WaitCursor
         On Error GoTo erro1
 
@@ -1013,13 +1020,11 @@ erro1:
         Dim ptrEnd As Integer = 0
 
         Dim nRecords As Integer
-        If SelectedOnly Then
-            nRecords = 0
-            For N = 1 To NoOfLines
-                If Lines(N).Selected Then nRecords = nRecords + 1
-            Next
-        Else
+
+        If type = "ALL" Then
             nRecords = NoOfLines
+        Else
+            nRecords = NumberOfRecordsInSelectedLines(type)
         End If
 
         ' these are for the SHX file
@@ -1040,7 +1045,7 @@ erro1:
         ZZmin = 100000 : ZZmax = -100000
 
         For N = 1 To NoOfLines
-            If Not SelectedOnly Or Lines(N).Selected Then
+            If type = "ALL" Or type = Mid(Lines(N).Type, 1, 3) Then
                 ' new record 
                 ptrBegin = CInt(fs.Position)
                 RecOffset(N) = ptrBegin / 2
@@ -1172,6 +1177,21 @@ erro1:
 
     End Function
 
+    Private Function NumberOfRecordsInSelectedLines(ByVal type As String) As Integer
+
+        Dim N As Integer
+
+        NumberOfRecordsInSelectedLines = 0
+
+        For N = 1 To NoOfLines
+            If Lines(N).Selected Then
+                If Mid(Lines(N).Type, 1, 3) = type Then
+                    NumberOfRecordsInSelectedLines = NumberOfRecordsInSelectedLines + 1
+                End If
+            End If
+        Next
+
+    End Function
     Private Function NumberOfRecordsInPolys() As Integer
 
         Dim N As Integer
@@ -1186,7 +1206,7 @@ erro1:
 
     End Function
 
-    Private Function NumberOfRecordsInSelectedPolys() As Integer
+    Private Function NumberOfRecordsInSelectedPolys(ByVal type As String) As Integer
 
         Dim N As Integer
 
@@ -1195,7 +1215,9 @@ erro1:
         For N = 1 To NoOfPolys
             If Polys(N).Selected Then
                 If Polys(N).NoOfChilds >= 0 Then
-                    NumberOfRecordsInSelectedPolys = NumberOfRecordsInSelectedPolys + 1
+                    If Mid(Polys(N).Type, 1, 3) = type Then
+                        NumberOfRecordsInSelectedPolys = NumberOfRecordsInSelectedPolys + 1
+                    End If
                 End If
             End If
         Next
@@ -1208,12 +1230,14 @@ erro1:
         Dim N, K As Integer
         Dim Uiid, UiidTrail As String
 
+        Dim thisType As String
+
         ' slopes
         Dim SY As Double = 0
         Dim SX As Double = 0
 
         ' to be used by SHX creation and DBFile creation
-        Dim nRecords As Integer = NumberOfRecordsInSelectedPolys()
+        Dim nRecords As Integer = NumberOfRecordsInSelectedPolys(type)
 
         Dim DBF As New DBFWriter
 
@@ -1227,14 +1251,14 @@ erro1:
         If type <> "HGX" Then
             If Not DBF.CreateField("Guid", shp_CHARACTER, 38, 0) Then Exit Sub
         End If
-            If type = "HPX" Then
+        If type = "HPX" Then
             If Not DBF.CreateField("SlopeX", shp_FLOAT, 13, 3) Then Exit Sub
             If Not DBF.CreateField("SlopeY", shp_FLOAT, 13, 3) Then Exit Sub
         End If
 
         ' append the fields
         If Not DBF.AppendFields() Then Exit Sub
-
+        
         ' UiidTrail = "-0000-0000-0000-000000000000}"
         Dim myGuid As Guid
         myGuid = Guid.NewGuid
@@ -1246,7 +1270,8 @@ erro1:
             If Polys(N).Selected Then
                 If Polys(N).NoOfChilds >= 0 Then
                     K = K + 1
-                    If Polys(N).Type = type Or (Polys(N).Type = "XXX" And type = "EXX") Then
+                    thisType = Mid(Polys(N).Type, 1, 3)
+                    If thisType = type Or (thisType = "XXX" And type = "EXX") Then
                         Uiid = Format(K, "{00000000") & UiidTrail
                         DBF.AddRecord(K, 1, Uiid)
                         If type <> "HGX" Then
@@ -1432,7 +1457,7 @@ erro1:
         DBF.Close()
 
         ' now create the SHP and the SHX files
-        CreateShpAndShxFilesFromLines(filename, True)   ' only selected lines will be exported as shp and shx
+        CreateShpAndShxFilesFromLines(filename, type)   ' only selected lines will be exported as shp and shx
 
     End Sub
 

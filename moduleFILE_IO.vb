@@ -835,6 +835,13 @@ OutputAmendedINIFile:
 
         Dim Lixo As Integer
 
+        If Not My.Computer.FileSystem.FileExists(filename) Then
+            MsgBox("This file was not found!", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
+        On Error GoTo erro
+
         Dim oFile As New FileStream(filename, FileMode.Open)
         Dim BFormatter As New BinaryFormatter With {
             .Binder = New SbuilderBinder
@@ -842,7 +849,6 @@ OutputAmendedINIFile:
 
         Dim Version As String
 
-        ' On Error GoTo erro
         Version = BFormatter.Deserialize(oFile)
 
         SetFileBackUp(filename)
