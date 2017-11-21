@@ -1000,7 +1000,7 @@ erro1:
         FrmStart.Cursor = System.Windows.Forms.Cursors.WaitCursor
         On Error GoTo erro1
 
-        Dim N, M, J, K, np As Integer
+        Dim N, M, J, K, REC, np As Integer
 
         Dim Xmin, Xmax As Double
         Dim Ymin, Ymax As Double
@@ -1044,11 +1044,13 @@ erro1:
         XXmin = 180 : XXmax = -180 : YYmin = 90 : YYmax = -90
         ZZmin = 100000 : ZZmax = -100000
 
+        REC = 0
         For N = 1 To NoOfLines
             If type = "ALL" Or type = Mid(Lines(N).Type, 1, 3) Then
                 ' new record 
+                REC = REC + 1
                 ptrBegin = CInt(fs.Position)
-                RecOffset(N) = ptrBegin / 2
+                RecOffset(REC) = ptrBegin / 2
                 nPoints = Lines(N).NoOfPoints
                 ' advance 4 + 4 + 4 + 4 x 8 = 44 ( recNum recLen ShapeType and box )
                 ' plus 4 + 4 (nParts nPoints) + 4  for P(1) ; P(1)=0 
@@ -1087,10 +1089,10 @@ erro1:
                 ptrEnd = CInt(fs.Position)
                 recLen = (ptrEnd - ptrBegin) / 2    ' get the record lenght
                 recLen = recLen - 4 ' contents lenght of record is less by 8 bytes
-                RecLenght(N) = recLen
+                RecLenght(REC) = recLen
                 ' go back and fill the record header
                 bw.Seek(ptrBegin, SeekOrigin.Begin)
-                bw.Write(BigEndian(N))
+                bw.Write(BigEndian(REC))
                 bw.Write(BigEndian(recLen))
                 bw.Write(ShapeType)
                 bw.Write(Xmin)
@@ -1269,9 +1271,9 @@ erro1:
         For N = 1 To NoOfPolys
             If Polys(N).Selected Then
                 If Polys(N).NoOfChilds >= 0 Then
-                    K = K + 1
                     thisType = Mid(Polys(N).Type, 1, 3)
                     If thisType = type Or (thisType = "XXX" And type = "EXX") Then
+                        K = K + 1
                         Uiid = Format(K, "{00000000") & UiidTrail
                         DBF.AddRecord(K, 1, Uiid)
                         If type <> "HGX" Then
@@ -1293,7 +1295,7 @@ erro1:
         DBF.Close()
 
         ' now create the SHP and the SHX files
-        CreateShpAndShxFilesFromPolys(filename, True)   ' only selected polys will be exported as shp and shx
+        CreateShpAndShxFilesFromPolys(filename, type)   ' only some polys will be exported as shp and shx
 
     End Sub
 
