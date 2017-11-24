@@ -1424,8 +1424,11 @@ erro1:
         If Not DBF.CreateField("Uuid", shp_CHARACTER, 38, 0) Then Exit Sub
         If Not DBF.CreateField("Guid", shp_CHARACTER, 38, 0) Then Exit Sub
         If type = "FWX" Then
-            If Not DBF.CreateField("NumberOfLanes", shp_NUMERIC, 1, 0) Then Exit Sub
-            If Not DBF.CreateField("TrafficDirection", shp_CHARACTER, 1, 0) Then Exit Sub
+            ' by Dick on November 24, 2017
+            'If Not DBF.CreateField("NumberOfLanes", shp_NUMERIC, 1, 0) Then Exit Sub
+            'If Not DBF.CreateField("TrafficDirection", shp_CHARACTER, 1, 0) Then Exit Sub
+            If Not DBF.CreateField("NumberOfLa", shp_NUMERIC, 1, 0) Then Exit Sub
+            If Not DBF.CreateField("TrafficDir", shp_CHARACTER, 1, 0) Then Exit Sub
         End If
 
         ' append the fields
@@ -1445,8 +1448,13 @@ erro1:
                     DBF.AddRecord(K, 1, Uiid)
                     DBF.AddRecord(K, 2, Lines(N).Guid)
                     If type = "FWX" Then
-                        Lanes = CByte(Mid(Lines(N).Type, 4, 1))   ' change from Cint() to CByte() in November 2017
-                        DirT = Mid(Lines(N).Type, 5, 1)
+                        'Lanes = CByte(Mid(Lines(N).Type, 4, 1))   ' change from Cint() to CByte() in November 2017
+                        'DirT = Mid(Lines(N).Type, 5, 1)
+                        'DBF.AddRecord(K, 3, Lanes)
+                        'DBF.AddRecord(K, 4, DirT)
+                        ' after Dick proposal on November 24 2017
+                        If Mid(Lines(N).Type, 4, 1) = "" Then Lanes = 2 Else Lanes = CByte(Mid(Lines(N).Type, 4, 1))   ' change from Cint() to CByte() in November 2017
+                        If Mid(Lines(N).Type, 5, 1) = "" Then DirT = "F" Else DirT = Mid(Lines(N).Type, 5, 1)
                         DBF.AddRecord(K, 3, Lanes)
                         DBF.AddRecord(K, 4, DirT)
                     End If
