@@ -1412,17 +1412,23 @@ erro1:
 
         Dim Uiid, UiidTrail As String
 
-        Dim Lanes As Byte = 2    ' the SDK says it it is a UInt8
-        Dim DirT As String = "B"
+        Dim Lanes As Byte    ' the SDK says it it is a UInt8
+        Dim DirT As String
         Dim N, K As Integer
+
+        ' to be used by SHX creation and DBFile creation
+        Dim nRecords As Integer = NumberOfRecordsInSelectedLines(type)
 
         Dim DBF As New DBFWriter
 
-        If Not DBF.FileWriter(filename, NoOfLines) Then Exit Sub
+        'If Not DBF.FileWriter(filename, NoOfLines) Then Exit Sub
+        If Not DBF.FileWriter(filename, nRecords) Then Exit Sub
 
         ' add the fields
         If Not DBF.CreateField("Uuid", shp_CHARACTER, 38, 0) Then Exit Sub
-        If Not DBF.CreateField("Guid", shp_CHARACTER, 38, 0) Then Exit Sub
+        If type <> "FWX" Then        ' create Guid except for FWX  November 25 2017
+            If Not DBF.CreateField("Guid", shp_CHARACTER, 38, 0) Then Exit Sub
+        End If
         If type = "FWX" Then
             ' by Dick on November 24, 2017
             'If Not DBF.CreateField("NumberOfLanes", shp_NUMERIC, 1, 0) Then Exit Sub
@@ -1446,17 +1452,20 @@ erro1:
                 If Mid(Lines(N).Type, 1, 3) = type Then
                     Uiid = Format(K, "{00000000") & UiidTrail
                     DBF.AddRecord(K, 1, Uiid)
-                    DBF.AddRecord(K, 2, Lines(N).Guid)
+                    ' DBF.AddRecord(K, 2, Lines(N).Guid)
+                    If type <> "FWX" Then
+                        DBF.AddRecord(K, 2, Lines(N).Guid)
+                    End If
                     If type = "FWX" Then
                         'Lanes = CByte(Mid(Lines(N).Type, 4, 1))   ' change from Cint() to CByte() in November 2017
                         'DirT = Mid(Lines(N).Type, 5, 1)
                         'DBF.AddRecord(K, 3, Lanes)
                         'DBF.AddRecord(K, 4, DirT)
-                        ' after Dick proposal on November 24 2017
+                        ' after Dick proposal on November 24/25 2017
                         If Mid(Lines(N).Type, 4, 1) = "" Then Lanes = 2 Else Lanes = CByte(Mid(Lines(N).Type, 4, 1))   ' change from Cint() to CByte() in November 2017
                         If Mid(Lines(N).Type, 5, 1) = "" Then DirT = "F" Else DirT = Mid(Lines(N).Type, 5, 1)
-                        DBF.AddRecord(K, 3, Lanes)
-                        DBF.AddRecord(K, 4, DirT)
+                        DBF.AddRecord(K, 2, Lanes)
+                        DBF.AddRecord(K, 3, DirT)
                     End If
                     K = K + 1
                 End If

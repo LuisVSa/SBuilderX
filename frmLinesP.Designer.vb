@@ -498,12 +498,12 @@ Partial Class FrmLinesP
         'cbDir
         '
         Me.cbDir.FormattingEnabled = True
-        Me.cbDir.Items.AddRange(New Object() {"B", "F", "T"})
+        Me.cbDir.Items.AddRange(New Object() {"F", "T"})
         Me.cbDir.Location = New System.Drawing.Point(323, 34)
         Me.cbDir.Name = "cbDir"
         Me.cbDir.Size = New System.Drawing.Size(46, 21)
         Me.cbDir.TabIndex = 17
-        Me.cbDir.Text = "B"
+        Me.cbDir.Text = "F"
         '
         'cmdDetail
         '
