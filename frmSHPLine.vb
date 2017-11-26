@@ -37,8 +37,6 @@ Friend Class FrmSHPLine
             cmbWidth.Items.Add(FieldNames(N - 1))
             cmbColor.Items.Add(FieldNames(N - 1))
             cmbAltitude.Items.Add(FieldNames(N - 1))
-
-
         Next
 
         cmbName.SelectedIndex = 0

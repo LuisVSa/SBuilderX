@@ -37,15 +37,17 @@ Module moduleSHAPE
 
     Friend AddToCells As Boolean
 
-    'these are field types we use
-    'Private Const SHPF_STRING As Integer = 10
-    'Private Const SHPF_NUMERIC As Integer = 19
-    'Private Const SHPF_DOUBLE As Integer = 7
+    ' these are used by appending FWX lines
+    ' will be changed to whatever is set when
+    ' we close the Properties page of a line
+    Friend DefaultNoOfLanes As Byte = 2
+    Friend DefaultTrafficDir As String = "F"
 
     ' used by classDBFWriter
     Private Const shp_CHARACTER As Byte = 67   ' C
     Private Const shp_NUMERIC As Byte = 78     ' N
     Private Const shp_FLOAT As Byte = 70    ' F
+
 
 
     Friend Sub AppendSHPFile(ByVal filename As String)
@@ -169,11 +171,30 @@ erro1:
         ReDim FieldTypes(NoOfFields - 1)
 
         Dim TypeField As Integer = -1  ' added because of Luis Feliz - type for traffic lines was lost!
+        ' If there is a field with name = "Type" then the type of each line
+        ' is taken from the records of this field. TypeField < 0 means that the
+        ' type is obtained from the Guid
+
+        ' these are to catch the case of FWX lines
+        Dim IsLanes As Boolean = False
+        Dim IsDirT As Boolean = False
+        Dim LanesField As Integer
+        Dim DirTField As Integer
+        Dim myLanes(1) As Byte
+        Dim myDirT(1) As String
 
         For N = 0 To NoOfFields - 1
             FieldTypes(N) = DBF.FieldInfo(N).Type
             FieldNames(N) = DBF.FieldInfo(N).Name
             If FieldNames(N) = "Type" Then TypeField = N
+            If FieldNames(N) = "NumberOfLa" Then
+                IsLanes = True
+                LanesField = N
+            End If
+            If FieldNames(N) = "TrafficDir" Then
+                IsDirT = True
+                DirTField = N
+            End If
         Next N
 
         FrmSHPLine.ShowDialog()
@@ -186,7 +207,7 @@ erro1:
 
         If ShapeLineNameField > 0 Then
             If FieldTypes(ShapeLineNameField - 1) <> DBFReader.FieldType.FTString Then
-                A = "Field """ & FieldNames(ShapeLineNameField - 1) & """ is not a string and will be ignored!"
+                A = "Field " & FieldNames(ShapeLineNameField - 1) & " is not a string and will be ignored!"
                 ShapeLineNameField = 0
                 MsgBox(A, MsgBoxStyle.Exclamation)
             End If
@@ -194,7 +215,7 @@ erro1:
 
         If ShapeLineGuidField > 0 Then
             If FieldTypes(ShapeLineGuidField - 1) <> DBFReader.FieldType.FTString Then
-                A = "Field """ & FieldNames(ShapeLineGuidField - 1) & """ is not a string and will be ignored!"
+                A = "Field " & FieldNames(ShapeLineGuidField - 1) & " is not a string and will be ignored!"
                 ShapeLineGuidField = 0
                 MsgBox(A, MsgBoxStyle.Exclamation)
             End If
@@ -202,7 +223,7 @@ erro1:
 
         If ShapeLineWidthField > 0 Then
             If FieldTypes(ShapeLineWidthField - 1) <> DBFReader.FieldType.FTDouble Then
-                A = "Field """ & FieldNames(ShapeLineWidthField - 1) & """ is not a double precision number and will be ignored!"
+                A = "Field " & FieldNames(ShapeLineWidthField - 1) & " is not a double precision number and will be ignored!"
                 ShapeLineWidthField = 0
                 MsgBox(A, MsgBoxStyle.Exclamation)
             End If
@@ -211,7 +232,7 @@ erro1:
         If IsZ Then
             If ShapeLineAltitudeField > 1 Then
                 If FieldTypes(ShapeLineAltitudeField - 2) <> DBFReader.FieldType.FTDouble Then
-                    A = "Field """ & FieldNames(ShapeLineAltitudeField - 2) & """ is not a double precision number and will be ignored!"
+                    A = "Field " & FieldNames(ShapeLineAltitudeField - 2) & " is not a double precision number and will be ignored!"
                     ShapeLineAltitudeField = 0
                     MsgBox(A, MsgBoxStyle.Exclamation)
                 End If
@@ -219,7 +240,7 @@ erro1:
         Else
             If ShapeLineAltitudeField > 0 Then
                 If FieldTypes(ShapeLineAltitudeField - 1) <> DBFReader.FieldType.FTDouble Then
-                    A = "Field """ & FieldNames(ShapeLineAltitudeField - 1) & """ is not a double precision number and will be ignored!"
+                    A = "Field " & FieldNames(ShapeLineAltitudeField - 1) & " is not a double precision number and will be ignored!"
                     ShapeLineAltitudeField = 0
                     MsgBox(A, MsgBoxStyle.Exclamation)
                 End If
@@ -228,7 +249,7 @@ erro1:
 
         If ShapeLineAltitudeField > 1 Then
             If FieldTypes(ShapeLineAltitudeField - 2) <> DBFReader.FieldType.FTDouble Then
-                A = "Field """ & FieldNames(ShapeLineAltitudeField - 2) & """ is not a double precision number and will be ignored!"
+                A = "Field " & FieldNames(ShapeLineAltitudeField - 2) & " is not a double precision number and will be ignored!"
                 ShapeLineAltitudeField = 0
                 MsgBox(A, MsgBoxStyle.Exclamation)
             End If
@@ -236,7 +257,7 @@ erro1:
 
         If ShapeLineColorField > 0 Then
             If FieldTypes(ShapeLineColorField - 1) <> DBFReader.FieldType.FTInteger Then
-                A = "Field """ & FieldNames(ShapeLineColorField - 1) & """ is not a integer number and will be ignored!"
+                A = "Field " & FieldNames(ShapeLineColorField - 1) & " is not an integer number and will be ignored!"
                 ShapeLineColorField = 0
                 MsgBox(A, MsgBoxStyle.Exclamation)
             End If
@@ -245,6 +266,9 @@ erro1:
         ReDim myLines(NoOfItems - 1)
         ReDim myWidths(NoOfItems - 1)
         ReDim myAltitudes(NoOfItems - 1)
+
+        If IsLanes Then ReDim myLanes(NoOfItems - 1)
+        If IsDirT Then ReDim myDirT(NoOfItems - 1)
 
         For N = 0 To NoOfItems - 1
             If ShapeLineNameField = 0 Then
@@ -264,13 +288,30 @@ erro1:
                 End If
             End If
 
+            If IsLanes Then
+                A = DBF.Attribute(N, LanesField)
+                If A <> "" Then myLanes(N) = A Else myLanes(N) = DefaultNoOfLanes
+            End If
+
+            If IsDirT Then
+                A = DBF.Attribute(N, DirTField)
+                If A <> "" Then myDirT(N) = A Else myDirT(N) = DefaultTrafficDir
+            End If
+
             If TypeField >= 0 Then
                 myLines(N).Type = DBF.Attribute(N, TypeField)
                 If myLines(N).Type = "" Then
                     myLines(N).Type = GetLineTypeFromGuid(myLines(N).Guid)
                 End If
             Else
-                myLines(N).Type = GetLineTypeFromGuid(myLines(N).Guid)
+                If Not IsLanes And Not IsDirT Then
+                    myLines(N).Type = GetLineTypeFromGuid(myLines(N).Guid)
+                Else  ' form the type here without looking to Guid
+                    A = "FWX"
+                    If IsLanes Then A = A & myLanes(N) Else A = A & DefaultNoOfLanes
+                    If IsDirT Then A = A & myDirT(N) Else A = A & DefaultTrafficDir
+                    myLines(N).Type = A
+                End If
             End If
 
             If ShapeLineColorField = 0 Then
@@ -378,6 +419,9 @@ erro1:
         For K = 1 To NoOfLineTypes
             If LineTypes(K).Guid = guid Then
                 GetLineTypeFromGuid = LineTypes(K).Type
+                If GetLineTypeFromGuid = "FWX" Then
+                    GetLineTypeFromGuid = GetLineTypeFromGuid & DefaultNoOfLanes.ToString & DefaultTrafficDir
+                End If
                 Exit For
             End If
         Next
@@ -1462,8 +1506,11 @@ erro1:
                         'DBF.AddRecord(K, 3, Lanes)
                         'DBF.AddRecord(K, 4, DirT)
                         ' after Dick proposal on November 24/25 2017
-                        If Mid(Lines(N).Type, 4, 1) = "" Then Lanes = 2 Else Lanes = CByte(Mid(Lines(N).Type, 4, 1))   ' change from Cint() to CByte() in November 2017
-                        If Mid(Lines(N).Type, 5, 1) = "" Then DirT = "F" Else DirT = Mid(Lines(N).Type, 5, 1)
+                        'If Mid(Lines(N).Type, 4, 1) = "" Then Lanes = 2 Else Lanes = CByte(Mid(Lines(N).Type, 4, 1))   ' change from Cint() to CByte() in November 2017
+                        'If Mid(Lines(N).Type, 5, 1) = "" Then DirT = "F" Else DirT = Mid(Lines(N).Type, 5, 1)
+                        ' then changed by Luis
+                        If Mid(Lines(N).Type, 4, 1) = "" Then Lanes = DefaultNoOfLanes Else Lanes = CByte(Mid(Lines(N).Type, 4, 1))   ' change from Cint() to CByte() in November 2017
+                        If Mid(Lines(N).Type, 5, 1) = "" Then DirT = DefaultTrafficDir Else DirT = Mid(Lines(N).Type, 5, 1)
                         DBF.AddRecord(K, 2, Lanes)
                         DBF.AddRecord(K, 3, DirT)
                     End If

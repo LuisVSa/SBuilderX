@@ -1172,28 +1172,28 @@ Color=FF808000
 Name=Railroad
 Guid={DDE116BF-0E97-4EB6-A9EC-7EF93D9F2D0E}
 Textures=railroadsu
-Type=RDX1210
+Type=RRX1210
 
 [Texture.201]
 Color=FF808000
 Name=Utility 1
 Guid={C942AADB-C351-4088-925E-A732C2093B63}
 Textures=utilitymask
-Type=RDX1211
+Type=UTX1211
 
 [Texture.202]
 Color=FF808000
 Name=Utility 2
 Guid={D745C22C-FF72-4C45-9D27-809306214B7C}
 Textures=utilitymask
-Type=RDX1212
+Type=UTX1212
 
 [Texture.203]
 Color=FF808080
 Name=Railroad Bridges
 Guid={02055F95-7075-463F-A3F9-BA9976869612}
 Textures=bridge
-Type=RDX1213
+Type=RRX1213
 
 [Texture.204]
 Color=FF808080
@@ -1585,7 +1585,7 @@ Color=FF808000
 Name=Utility - No Grass Corridor
 Guid={2BDD9A8D-82DE-4b1e-8E27-CE6BE9F4C3CB}
 Textures=none
-Type=RDX
+Type=UTX
 
 
 

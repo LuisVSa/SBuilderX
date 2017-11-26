@@ -743,6 +743,10 @@ erro1:
             RebuildDisplay()
         End If
 
+        ' this could be used when appending FWX lines
+        DefaultNoOfLanes = CByte(cbLanes.SelectedItem)
+        DefaultTrafficDir = cbDir.SelectedItem
+
         Init = True
         POPIndex = 0
         Dispose()
