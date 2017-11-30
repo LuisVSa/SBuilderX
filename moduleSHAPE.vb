@@ -197,6 +197,8 @@ erro1:
             End If
         Next N
 
+        If IsLanes Or IsDirT Then ShapeLineGuid = "{54B91ED8-BC02-41B7-8C3B-2B8449FF85EC}"
+
         FrmSHPLine.ShowDialog()
         ' *********************
 
